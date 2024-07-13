@@ -1,1 +1,1170 @@
-/* You can add global styles to this file, and also import other style files */
+
+*{
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden; /* SERVE A NASCONDERE LA SCROLLBAR PER L'AGGIUNTA AL CARRELLO*/
+    font-family: helveticaLight;
+}
+/* CLICCABILI*/
+.clickable{
+    cursor: pointer;
+ }
+
+ #coverUnderBasket{     /* LO SFONDO CHE VERRA' CREATO ALL APERTURA DEL BASKET*/
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top:96px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.603);
+ }
+/*----------------------------------------------- CONTENITORI HEADER */
+#UpperHead{
+    width: 100%;
+    height: 36px;
+    background-color: #F2F2F2;
+}
+
+
+#MidHead{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    position: relative;
+}
+
+#Slider{
+    width: 100%;
+    height: 58px;
+    background-color: #F2F2F2;
+}
+
+.leftLogos{
+    width: 50%;
+    display: block;
+    float: left;
+    margin-left: 50px; 
+    margin-top: 8px;     
+} 
+.UpperList{
+    display: block;
+    position: relative;
+    right:65px;
+    min-width: 70px;
+    float: right;
+}
+
+/*------------------------------------ LOGOS IN ALTO A SINISTRA */
+
+.leftLogos a:nth-child(1) img{
+   width: 21px;
+   height: 20px;
+   line-height: 12px;
+}
+
+.leftLogos a:nth-child(2) img{
+    width: 26px;
+    height: 20px;
+    margin-left: 20px;
+    line-height: 8px;
+ }
+
+/*------------------------------------ PROPRIETA' LISTA IN ALTO A DESTRA */
+.UpperList nav{
+    line-height: 32px;
+}
+ .UpperList ul li{
+    display: inline-block;
+    font-family: futura;
+    font-size: 0.875em;
+ }
+
+/*------------------------------------BARRA CENTRALE HEADER */
+
+.leftMainLogo{
+    display: block;
+    float: left;
+    width: 15%;
+}
+ .leftMainLogo img{
+   width: 70px;
+   height: auto;
+   margin-left: 50px;
+   margin-top: 12px; 
+ }
+
+ .homeCategories{
+    display: block;
+    float: left;
+    position: absolute;
+    z-index: 0;
+   left:580px;
+min-width: 150px;
+max-width: 600px;
+ }
+
+ .homeCategories nav{
+    line-height: 60px;
+ }
+
+ .homeCategories li{
+    display: inline-block;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 1em;
+ }
+
+ /*-----------------------------------------SEARCH BAR */
+ 
+.wrapperSearchbar{
+    position: absolute;
+    left: 78.25%;
+    top: 10px;
+    display: block;
+    float: left;
+    background-color: #F2F2F2;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+width: 180px;
+height: 38px;
+}
+.wrapperSearchbar div{
+    width: 20%;
+    height: 100%;
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    background-image: url('assets/Img/Header/glass.png');
+    background-repeat: no-repeat;
+    background-position: 5px 7px;
+}
+
+#searchbar{
+display: block;
+box-sizing: content-box;
+position: absolute;
+border: none;
+bottom: 1px;
+left: 40px;
+border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+    width: 129px;
+height: 35px;
+background-color: rgba(0, 0, 0, 0);
+font-size: 1em;
+padding-left: 8px;
+}
+
+
+#searchbar::placeholder{
+    color: rgb(160, 160, 160);
+}
+
+ /*-----------------------------------------LEFT ICONS */
+
+#rightIcons{
+    float: right;
+    margin-right: 38px;
+}
+#rightIcons li{
+    float:left;
+    margin-top: 13px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right:15px;
+}
+
+#rightIcons img{
+    margin-left: 6px;
+    margin-top: 6px;
+width: 58%;
+}
+
+/*---------------------------------------SLIDER */
+#Slider{
+    position:relative;
+    overflow: hidden;
+}
+#Slider div{
+    width: 100%;
+    height: 100%;
+position: absolute;
+text-align: center;
+padding-top: 5px;
+line-height: 23px;
+font-family:helveticaLight;
+font-size: 0.8em;
+}
+
+#Slider div:nth-child(1){
+    width: 100%;
+    height: 100%;
+position: absolute;
+left: 100%;
+text-align: center;
+}
+
+#Slider div:nth-child(2){
+    width: 100%;
+    height: 100%;
+position: absolute;
+left: 100%;
+text-align: center;
+}
+
+#Slider div:nth-child(3){
+    width: 100%;
+    height: 100%;
+position: absolute;
+left: 100%;
+text-align: center;
+}
+
+.visualizzato {
+    left: 0% !important;
+    transition: 1s;
+}
+
+.onLeft{
+    left: -100% !important;
+    transition: 1s;
+}
+
+.visualizzato span{
+    font-size: 1.2em;
+}
+
+.visualizzato .joinUs{
+    font-size: 1em;
+    font-family: helvetica;
+    text-decoration: underline;
+}
+/*-------------------------------------- BANNER */
+#topBanner{
+    width: 100%;
+    height: 47px;
+}
+
+#topBanner div{
+    float: left;
+    width: 33.3%;
+    height: 100%;
+background-image: url('assets/Img/Header/banner.png');
+background-size:contain;
+}
+
+#mainBanner{
+    position: relative;
+    /*margin-top:15px;*/
+    width: 100%;
+}
+#mainBanner img{
+    width: 100%;
+}
+.textOnBanner{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 2;
+    color: whitesmoke;
+    font-size: 2.8em;
+    font-family: argentumBold;
+    line-height: 50%;
+    top: 350px;
+    padding-left: 35px;
+}
+
+.textOnBanner p{
+    margin-top: 36px;
+    margin-left:5px;
+    font-family: argentum;
+    font-size: 0.4em;
+}
+
+.textOnBanner button{
+    width:100px;
+    height: 35px;
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    background-color: aliceblue;
+    margin-top: 35px;
+    margin-left: 5px;
+    border: 1px solid white;
+    font-family: argentum;
+    font-weight: bolder;
+    color:rgb(105, 105, 105);
+}
+
+/*----------------------------------- SHOW SHOES*/
+#showShoes{
+/*    margin-left: 30px;*/
+margin-top: 40px;
+width: 95%;
+text-align: center;
+overflow: hidden;
+margin-left: 40px;
+    }
+h3{
+    display: block;
+    width: 25%;
+    float:left;
+    font-family: argument;
+    font-size: 1.3em;
+}
+    #showShoes .shoesButtons{
+        float: right;
+        margin-right: 130px;
+        margin-top: 8px;
+    }
+
+    #showShoes .shoesButtons button{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        color: rgb(85, 85, 85);
+        background-color: #F2F2F2;
+    }
+
+#showShoes .shoesButtons button:nth-child(1){
+    background-color: rgba(251, 251, 251, 0.885);
+    color: rgb(234, 239, 243);
+}
+
+#showShoes .shoesWrapper{
+    clear: both;
+    width:100%;
+}
+
+#showShoes .shoesWrapper div{
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    margin-right: 25px;
+    background-size: contain;
+}
+
+.descriptionPrice{
+    text-align: left;
+}
+.descriptionPrice p:nth-child(2){
+    color: #b8b8b8;
+    font-size: 0.98em;
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+
+/*----------------------------------- SHOW SPORT*/
+
+#showSport{
+    /*    margin-left: 30px;*/
+    margin-top: 110px;
+    width: 95%;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 40px;
+        }
+    h3{
+        display: block;
+        width: 25%;
+        float:left;
+        font-family: helvetica;
+        font-size: 1.3em;
+    }
+        #showSport .sportButtons{
+            float: right;
+            margin-right: 130px;
+            margin-top: 8px;
+        }
+    
+        #showSport .sportButtons button{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            color: rgb(85, 85, 85);
+            background-color: #F2F2F2;
+        }
+    
+    #showSport .sportButtons button:nth-child(1){
+        background-color: rgba(251, 251, 251, 0.885);
+        color: rgb(234, 239, 243);
+    }
+    
+    #showSport .sportWrapper{
+        clear: both;
+        width:100%;
+    }
+    
+    #showSport .sportWrapper div{
+        width: 400px;
+        height: 400px;
+        display: inline-block;
+        margin-right: 25px;
+        background-size:cover;
+        background-position-x:-90px ;
+    }
+
+
+    /*----------------------------------- SHOW ADVERTS*/
+
+#showAd{
+    /*    margin-left: 30px;*/
+    margin-top: 110px;
+    width: 95%;
+    text-align: center;
+    overflow: hidden;
+    margin-left: 40px;
+        }
+    h3{
+        display: block;
+        width: 25%;
+        float:left;
+        font-family: argument;
+        font-size: 1.3em;
+    }
+        #showAd .adButtons{
+            float: right;
+            margin-right: 130px;
+            margin-top: 8px;
+        }
+    
+        #showAd .adButtons button{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            color: rgb(85, 85, 85);
+            background-color: #F2F2F2;
+        }
+    
+    #showAd .adButtons button:nth-child(1){
+        background-color: rgba(251, 251, 251, 0.885);
+        color: rgb(234, 239, 243);
+    }
+    
+    #showAd .adWrapper{
+        clear: both;
+        width:100%;
+    }
+    
+    #showAd .adWrapper div{
+        width: 400px;
+        height: 400px;
+        display: inline-block;
+        margin-right: 25px;
+        background-size:contain;
+
+    }
+
+/*------------------------FOOTER */
+footer{
+    padding-top: 60px;
+    position: relative;
+    background-color: black;
+    width: 100%;
+    height: 430px;
+    margin-top: 150px;
+}
+footer div{
+    float: left;
+    width: 15%;
+    color: white;
+}
+footer div:nth-child(1){
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+footer .footerPromos li{
+    color: white;
+    font-size: 0.9em;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+   margin-bottom: 25px;
+}
+
+footer .footerHelp li{
+    font-size: 0.85em;
+    margin-bottom: 20px;
+    color: #a2a2a2;
+}
+
+footer .footerCompany li{
+    font-size: 0.85em;
+    margin-bottom: 20px;
+    color: #a2a2a2;
+}
+
+
+footer .footerCompany .firstOfList{
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(241, 249, 255);
+    margin-bottom: 20px;
+}
+footer .footerHelp .firstOfList{
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(241, 249, 255);
+    margin-bottom: 20px;
+}
+footer .sprite{
+    width: 300px;
+    float:right;
+    margin-left: 0;
+    margin-right: 50px;
+}
+footer .sprite div{
+    width: 36px;
+    height: 36px;
+float: left;
+margin: 10px;
+border-radius: 50%;
+background-color:#949494;
+}
+
+footer .sprite div:nth-child(1){
+    background-image: url('assets/Img/sprite/css_sprites.png');
+    background-position-x:3px;
+    background-position-y:3px;
+}
+footer .sprite div:nth-child(2){
+    background-image: url('assets/Img/sprite/css_sprites.png');
+    background-position-x:-27px;
+    background-position-y:3px;
+}
+footer .sprite div:nth-child(3){
+    background-image: url('assets/Img/sprite/css_sprites.png');
+    background-position-x:-57px;
+    background-position-y:3px;
+}
+footer .sprite div:nth-child(4){
+    background-image: url('assets/Img/sprite/css_sprites.png');
+    background-position-x:-87px;
+    background-position-y:3px;
+}
+
+footer .footerCopy{
+    width: 550px;
+    font-size: 0.94em;
+    color:#a2a2a2;
+    clear: both;
+    position: relative;
+    left:900px;
+    bottom:60px;
+}
+    footer .footerCopy p{
+        margin-top: 15px;
+        margin-left: 60px;
+}
+
+/*--------------------------------------- HOVER */
+.leftLogos img:hover{
+    filter: invert(50%);
+}
+.leftMainLogo img:hover{
+    filter: invert(50%);
+}
+
+.UpperList ul li:hover{
+    filter: invert(50%);
+}
+
+#searchbar:focus{
+    background-color: #e9e9e9;
+    outline: none;
+   }
+
+.wrapperSearchbar div:hover{
+    background-color: #e9e9e9;
+   }
+
+   .wrapperSearchbar div:hover + #searchbar{
+    background-color: #F2F2F2;
+   }
+
+   #rightIcons li:hover{
+    background-color: #e9e9e9;
+   }
+
+   .textOnBanner button:hover{
+    background-color: #e9e9e9;
+    color: white;
+   }
+   footer{
+    clear: both;
+   }
+   footer .sprite div:nth-child(1):hover{
+    background-color: rgb(241, 249, 255);
+   }
+   footer .sprite div:nth-child(2):hover{
+    background-color: rgb(241, 249, 255);
+   }
+   footer .sprite div:nth-child(3):hover{
+    background-color: rgb(241, 249, 255);
+   }
+   footer .sprite div:nth-child(4):hover{
+    background-color: rgb(241, 249, 255);
+   }
+/*------------------------------------------------------------------------------PAGINA 2--------------------------------*/
+#shoesImgList{
+    float: left;
+width: 60px;
+height: 480px;
+margin-left: 310px;
+margin-top: 30px;
+margin-bottom: 100px;
+}
+
+#shoesImgList div{
+    width: 48px;
+    height: 56px;
+    margin-bottom: 5px;
+}
+
+
+#shoesImgList div img{
+    width: 100%;
+    height: 100%;
+}
+
+.border{
+    border-style: outset;
+    border-width: 4px; /* Imposta la larghezza del bordo se necessario */
+    border-color: #ffc09f;
+}
+
+#bigShow{
+    position: relative;
+    float: left;
+    width:432px;
+    height: 480px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+#bigShow .frameImg{
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/Img/Scarpa_2/6.jpg');
+    background-size: cover;
+    background-position-y:-60px;
+    overflow: hidden;
+}
+
+#bigShow .buttons{
+    position: absolute;
+    z-index: 5;
+    top:423px;
+    left:340px;
+}
+#bigShow button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    color: rgb(85, 85, 85);
+    font-weight: bold;
+    background-color: #ffffff;
+}
+h2{
+    padding-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+#sizes{
+    float: left;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+#sizes p:first-of-type{
+color: #949494;
+}
+#sizes p:last-of-type{
+   margin-top:10px;
+    }
+
+#whereToInsertSizes{
+width: 260px;
+height: 245px;
+}
+
+.sizesBox{
+    text-align: center;
+    width: 80px;
+    height: 35px;
+    border: rgb(245, 245, 245) solid 2px;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    line-height: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: .8em;
+}
+h4{
+    margin-top:30px;
+    margin-bottom: 10px;
+}
+
+.styleSelectedSize{
+    background-color: rgb(56, 56, 56);
+    color: #ffffff;
+}
+#addToButton{
+    margin-top: 25px;
+    width: 250px;
+    height: 50px;
+}
+
+#addToButton button{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+    border:none;
+    color: #ffffff;
+    background-color: rgb(52, 52, 52);
+}
+#itemAdded{
+    display: none;
+    position: absolute;
+    width: 280px;
+    height: 170px;
+    background-color: rgb(255, 255, 255);
+    z-index: 20;
+    left: 83%;
+    top:96px;
+}
+
+.smallV{
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left:3px;
+    margin-right: 5px;
+background-image: url('assets/Img/Header/approved.png');
+    background-size: cover;
+}
+
+#itemAdded span:nth-child(2){
+    margin-left: 78px;
+    height: 100%;
+}
+#itemAdded span:nth-child(2) button{
+    background-color: #eaeaea6d;
+    border-radius: 50%;
+    border: none;
+    font-size: 0.7em;
+    color: rgb(90, 90, 90);
+}
+
+#itemAdded p{
+margin-bottom: 10px;
+}
+
+#itemAdded .productBasket{
+   width: 250px;
+   height: 160px;
+}
+
+#itemAdded .productBasket .imgProduct{
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-image: url('assets/Img/Scarpa_2/6.jpg');
+    background-size: cover;
+    background-position-y: -20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#itemAdded .productBasket .detailsProduct{
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+width: 120px;
+height: 80px;
+font-size: 0.7em;
+    }
+
+.detailsProduct p:nth-child(2){
+    color: #949494;
+}
+
+.detailsProduct p:nth-child(4){
+    margin-top: 5px;
+} 
+
+#itemAdded #buttonsBasket{
+margin-left: 10px;
+}
+
+#itemAdded #buttonsBasket button{
+    width:110px;
+    height: 30px;
+    margin-top: 10px;
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    background-color:white;
+    font-size: 0.65em;
+}
+
+#itemAdded #buttonsBasket button:last-of-type{
+    background-color:rgb(37, 37, 37);
+    color:#ffffff;
+}
+/*------------------------------------------------------------------------------PAGINA 3--------------------------------*/
+
+/* COLONNA SINISTRA */
+
+#wrapperBasketPage{
+    width: 100%;
+    height: 520px;
+    margin-left: 20%;
+}
+#wrapperBasketPage #column1{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+#wrapperBasketPage #column1 .advertMember{
+    margin-top: 50px;
+    width: 100%;
+    height: 42px;
+    border: #e9e9e980 solid 3px;
+}
+
+#wrapperBasketPage #column1 .advertMember p:first-of-type{
+    color: rgba(255, 166, 0, 0.938);
+    font-size: 1em;
+}
+#wrapperBasketPage #column1 .advertMember p:nth-of-type(2){
+    font-size: 0.9em;
+}
+
+#wrapperBasketPage #column1 .advertMember span{
+    font-weight: bold;
+}
+.shoesBought{
+padding-top: 20px;
+height: 100%;
+position: relative;
+}
+/*------------------------------------------------SCARPA 1 IN BASKET */
+#shoeBasket1{
+    position: relative;
+    
+}
+
+.imgShoeBasket1{
+    background-image: url(assets/Img/Scarpa/4.jpg);
+    background-size: cover;
+    background-position-y:-30px;
+    width:160px;
+    height:160px;
+    float: left;
+    
+
+}
+.detailShoeBasket1{
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.detailShoeBasket1 p{
+    font-size: 1.2em;
+margin-bottom: 10px;
+}
+.detailShoeBasket1 p:nth-of-type(1){
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.detailShoeBasket1 p:nth-of-type(2){
+    color: #949494;
+    font-size: 1em;
+}
+.detailShoeBasket1 p:nth-of-type(3){
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+
+.priceshoeBasket1{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 260px;
+    bottom:50px;
+    font-size: 1.4em;
+    font-weight: bold;
+    clear: both;
+}
+
+#shoeBasket1 #selectQuantity{
+    margin-top: 16px;
+    width: 150px;
+    height:50px;
+}
+
+#binShoe1{
+    position: absolute;
+    left:150px;
+    bottom: 33px;
+    width: 18px;
+    height: 18px;
+    background-image: url('assets/Img/misc/icons8-bin-50.png');
+    background-size: contain;
+}
+
+/*------------------------------------------------SCARPA 2 IN BASKET */
+
+#shoeBasket2{
+    position: absolute;
+    top:220px;
+    border-top: #e9e9e9bd solid 3px;
+    padding-top: 40px;
+}
+
+.imgShoeBasket2{
+    background-image: url(assets/Img/Scarpa_2/6.jpg);
+    background-size: cover;
+    background-position-y:-30px;
+    width:160px;
+    height:160px;  
+    float: left; 
+}
+
+#shoeBasket2 .detailShoeBasket2{
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.detailShoeBasket2 p{
+    font-size: 1.2em;
+margin-bottom: 10px;
+}
+.detailShoeBasket2 p:nth-of-type(1){
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.detailShoeBasket2 p:nth-of-type(2){
+    color: #949494;
+    font-size: 1em;
+}
+.detailShoeBasket2 p:nth-of-type(3){
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+
+.priceshoeBasket2{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 260px;
+    bottom:50px;
+    font-size: 1.4em;
+    font-weight: bold;
+    clear: both;
+}
+
+#shoeBasket2 #selectQuantity{
+    margin-top: 16px;
+    width: 150px;
+    height:50px;
+}
+
+#binShoe2{
+    position: absolute;
+    left:150px;
+    bottom: 33px;
+    width: 18px;
+    height: 18px;
+    background-image: url('assets/Img/misc/icons8-bin-50.png');
+    background-size: contain;
+}
+
+ /* COLONNA DESTRA */
+ .wrapperColumn2{
+    position: relative;
+    height: 100%;
+ }
+  #wrapperBasketPage #column2{
+   width: 30%;
+   height: 80%;
+   float: left;
+   margin-left: 25px;
+   margin-top: 70px;
+ }
+
+ #wrapperBasketPage #column2 .wrapperColumn2{
+    padding-left: 50px;
+ }
+ #wrapperBasketPage #column2 span{
+    display: inline-block;
+ }
+ #wrapperBasketPage #column2 p{
+    display: inline-block;
+ }
+
+ #wrapperBasketPage #column2 > p{
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-top:28px;
+    padding-left: 10px;
+ }
+                 
+ #wrapperBasketPage #column2 .total{
+    font-size: 1.2em;
+    margin-top:30px;
+    padding-left: 10px;
+    display: inline-block;
+    position: absolute;
+    left:80px;
+    top:100px;
+    font-size: 2.5em;
+ }
+
+ #refresh{
+    margin-top:80px;
+    width: 100px;
+    height: 30px;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+    border:none;
+ }
+/*   BOTTONI FINALI*/
+
+.endButtons{
+    position: absolute;
+    bottom:53px;
+    z-index: 10;
+    width: 100%;
+}
+.endButtons button{
+    overflow: hidden;
+    display:inline-block;
+    width:300px;
+    height: 50px;
+    border-top-left-radius: 40px; 
+    border-bottom-left-radius: 40px; 
+    border-top-right-radius: 40px; 
+    border-bottom-right-radius: 40px; 
+    margin-bottom: 10px;
+}
+.endButtons button:nth-of-type(1){
+    background-color: rgb(28, 28, 28);
+    color: #ffffff;
+    font-size: 1.1em;
+}
+.endButtons button:nth-of-type(2) img{
+    position: relative;
+    width: 90px;
+    height: 90px;
+    bottom: 22px;
+
+}
+
+#shippingForm{
+    width: 50%;
+    height: 500px;
+    border: black solid 2px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#shippingForm input{
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+    width: 100%;
+    height: 50px;
+
+}
+
+#shippingForm p{
+color: rgb(213, 0, 0);
+}
+#shippingForm div{
+    width: 45%;
+    height: 80px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+#shippingForm div:nth-of-type(1){
+    margin-right: 5px;
+}
+#shippingForm div:nth-of-type(2){
+    margin-left: 5px;
+}
+#shippingForm div:nth-of-type(3){
+    width: 80%;
+}
+#shippingForm div:nth-of-type(4){
+    width: 30%;
+}
+#shippingForm div:nth-of-type(5){
+    width: 30%;
+}
+#shippingForm div:nth-of-type(6){
+    width: 30%;
+}
+#shippingForm div:nth-of-type(6) input{
+background-color: #f0f0f0;
+}
+
+#shippingForm #cardPayment{
+    width: 30%;
+    }
+#shippingForm #cardExpire{
+    width: 15%;
+}
+
+
+
+    /*---------------------------------------- FONT FACE */
+   
+ @font-face {
+        font-family: futura;
+        src: url('assets/fonts/futura/FUTURA65MEDIUM.TTF');
+    }
+    
+    @font-face { 
+        font-family: argentum;
+        src: url('assets/fonts/argentum/ArgentumSans-Light.ttf');
+    }
+    
+    @font-face {
+        font-family: argentumBold;
+        src: url('assets/fonts/argentum/ArgentumSans-Bold.ttf');
+    }
+    
+    @font-face {
+        font-family: helvetica;
+        src: url('assets/fonts/helvetica/HelveticaNeueMedium.otf');
+    }
+    
+    @font-face {
+        font-family: helveticaLight;
+        src: url('assets/fonts/helvetica/HelveticaNeueLight.otf');
+    }
+  
