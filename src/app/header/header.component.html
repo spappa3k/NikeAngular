@@ -23,16 +23,32 @@
 </div>
 <div class="homeCategories">
 <nav>
-<ul>
-    <li>New & Featured</li>
+<ul id="headerMenuCentral">
+    <li (mouseenter)="makeItVisible()">New & Featured</li>
     <li>Men</li>
     <li>Women</li>
     <li>Kids</li>
     <li>Sale</li>
 </ul>
 </nav> 
+</div>  
+<!-- -------------------------------------------------------------  UNDERMENU-->
+<div class="underMenu" [ngClass]="{'show-menu':isMenuVisible}" (mouseleave)="hide()">
+    <div class="boxColumns">
+    <div class="column1">
+        <ul>
+        <li><h4>Featured*</h4></li>
+        <li>Shop All New Arrivals</li>
+        <li>Best Sellers</li>
+        <li>Member Shop 🔥</li>
+        <li>SNKRS Launch Calendar</li>
+        <li>National Team Kits 2024</li>
+        <li>Shop Air</li>
+        <li>Summer of Sport</li>
+    </ul>
 </div>
-<div class="wrapperSearchbar"><div></div>
+</div></div>
+<div class="wrapperSearchbar">
 <input type="text" placeholder="Search" id="searchbar"></div>
 <div id="rightIcons">
 <ul>

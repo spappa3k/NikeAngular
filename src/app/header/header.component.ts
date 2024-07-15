@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+isMenuVisible= false;
 
+makeItVisible(){
+  this.isMenuVisible=true
+}
+
+hide(){
+  this.isMenuVisible=false;
+}
 }
