@@ -1185,21 +1185,24 @@ background-color: #f0f0f0;
     }
 .boxColumns{
    margin-left: 282px;
+   display: flex;
+   flex-direction: row;
 }
 
-    .column1 {
-        display: flex;
+    .column{
+       display: flex;
         justify-content: space-around;
         padding: 20px;
         width: 20%; /* Imposta la larghezza della colonna */
+        font-size: 0.8em;
     }
     
-    .column1 ul {
+    .column ul {
         list-style-type: none;
         padding: 0;
     }
     
-    .column1 ul li {
+    .column ul li {
         margin-bottom: 10px;
     }
     
