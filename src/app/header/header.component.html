@@ -37,7 +37,7 @@
     <div class="boxColumns">
     <div class="column">
         <ul>
-        <li><h4>Featured*</h4></li>
+        <li><h6>Featured</h6></li>
         <li>Shop All New Arrivals</li>
         <li>Best Sellers</li>
         <li>Member Shop 🔥</li>
@@ -49,7 +49,7 @@
 </div>
 <div class="column" >
     <ul>
-    <li><h4>Shop Icons</h4></li>
+    <li><h6>Shop Icons</h6></li>
     <li>Air Force 1</li>
     <li>Air Jordan 1</li>
     <li>Air Max</li>
@@ -61,7 +61,7 @@
 </div>
 <div class="column" >
     <ul>
-    <li><h4>Discover Sports</h4></li>
+    <li><h6>Discover Sports</h6></li>
     <li>Football</li>
     <li>Running</li>
     <li>Basketball</li>
@@ -75,7 +75,7 @@
 </div>
 <div class="column" >
     <ul>
-    <li><h4>Trending</h4></li>
+    <li><h6>Trending</h6></li>
     <li>Air Max Home</li>
     <li>Y2K Sneakers</li>
     <li>Nike Style By</li>
@@ -97,16 +97,23 @@
 
 </section>
 <!-- -------------------------------------------------------------  SLIDER HEADER-->
-<section id="Slider">
-<div class="visualizzato">
+ <!-- slider[0] is onLeft-->
+ <!-- slider[1] is visualizzato-->
+ <!-- slider[2] has no calss and go back to the right-->
+
+<section id="Slider">  
+    <!--1-->                 
+<div [class]="slider[a].className">
     <span>Member Days Are Coming</span>
 <p>
 Get ready for five days of drops, workouts and challenges, exclusively for Nike Members. <span class="joinUs">Join Us.</span> 
 </p></div>
-<div>Shop All New Arrivals
+<!--2-->       
+<div [class]="slider[b].className">Shop All New Arrivals
     <p class="joinUs">Just Do It!</p>
 </div>
-<div><span>Free Delivery & Returns</span>
+<!--3-->       
+<div [class]="slider[c].className"><span>Free Delivery & Returns</span>
     <p>Nike Members get free delivery and free 30-day returns. Learn More <span class="joinUs">Join Us</span></p></div>
 </section>
 </header>
