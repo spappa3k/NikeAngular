@@ -14,7 +14,7 @@ a:number=0;
 b:number=2;
 c:number=2;
 
-
+/* a,b,c cambieranno ad ogni stato dell index in uno dei seguenti className*/
 slider=[
   {
    className:"visualizzato"
@@ -45,9 +45,8 @@ ngOnInit(): void {
 
 
 
-
+/* Funzione per cui  all aumentare dell index cambia lo stato di a,b,c che rappresentano i 3 sliders*/
 changeSlide(){
-  console.log("oooo");
  
   if(this.currentIndex<2){
     this.currentIndex++;
