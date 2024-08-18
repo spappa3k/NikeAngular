@@ -41,6 +41,31 @@ flex-direction: row;
     margin-right: 8px;
 }
 
+
+
+/* Banner Video*/
+
+#mainBanner {
+    position: relative;
+    overflow: hidden;
+}
+
+.bannerVideo {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+}
+
+.textOnBanner {
+    position: relative;
+    z-index: 2; 
+    color: white; 
+
+}
+
 /* Classe per mostrare il menu */
 .show-menu {
     display: block !important;
@@ -49,19 +74,44 @@ flex-direction: row;
 h6{
     font-weight: bold;
 }
-
+/*Gestione dei containers che stanno nella HomePage */
 .containerHome{
-    overflow-x: auto; 
+  /*  overflow-x: auto; */
     display: flex;
     flex-direction: row; 
     gap: 20px;
-    padding-bottom: 10px;
     margin-left: 50px;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Scorrimento fluido */
+    transition: padding-bottom 0.6s ease; /* Transizione fluida sul padding */
+}
+.containerHome:hover{
+    overflow-x: auto;
+    transition: 0.6s;
+    padding-bottom: 20px;
 }
 
+/* Fix scrollbar cross-browser */
+.containerHome::-webkit-scrollbar {
+    height: 14px; /* Altezza scrollbar  */
+}
+
+.containerHome::-webkit-scrollbar-thumb {
+    background-color: rgba(107, 107, 107, 0.2); /* Colore */
+    border-radius: 10px;
+}
+
+.containerHome::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1); /* Colore sfondo */
+    border-radius: 10px;
+}
+
+
+/* Cards della HomePage */
+
 .cardHome{
-    border: 2px black solid;
-     width: 340px;
+    position: relative;
+     width: 400px;
      flex-shrink: 0;
 }
 
@@ -69,5 +119,35 @@ h6{
     margin-top: 80px;
     margin-left: 50px;
     font-size: 1.5em;
+    font-weight: bold;
+}
+
+.onBanners{
+    position: absolute;
+    z-index: 10;
+    top: 250px;
+    left: 50px;
+    color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: bold;
+}
+.onBanners p:nth-of-type(1) {
+    font-size: 1em;
+}
+.onBanners p:nth-of-type(2) {
+    font-size: 1.4em;
+}
+.onBanners button{
+    margin-top: 5px;
+    width:70px;
+    height: 35px;
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    background-color: rgb(255, 255, 255);
+    border: none;
     font-weight: bold;
 }
