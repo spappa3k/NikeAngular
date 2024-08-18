@@ -64,3 +64,10 @@ h6{
      width: 340px;
      flex-shrink: 0;
 }
+
+.title{
+    margin-top: 80px;
+    margin-left: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
