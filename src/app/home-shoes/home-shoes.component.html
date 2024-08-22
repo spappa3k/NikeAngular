@@ -1,57 +1,41 @@
 <p class="title">New In This Week</p>
 <div class="containerHome mt-4" >
-    <div class="cardHome">
-      <img src="https://previews.dropbox.com/p/thumb/ACXC8NETEfwPxt20u0Ri1JsyHsz-ZkPZlWe13pixhMv6RF_unZ4fP_BvSTlO0BW0eoJXMPFCooYDNgVq58ouIyA0Cf84PVL909J7L8qjMeroMGeiK1CprfatHDwk92ngVF-v9JmbuouehrYrrvM1ebPp-pk6iecMZpT6YsPZIdGldL2NzGmGkGuIbEVmHGdX6aRoXvbTE8PNycgBGuL7-ncYo22f2yhTaOkDu7Fidu6NS48MHU2P3HQWmfaKPXINHb6jIz9mjoV-LYyGlMRRw91FAT2Vowtncp9qJ0RcFXyx6pAH0mHp7fddbawxc_5l7uQ7wTiwNM2RhE6VbNYMJ2M0/p.jpeg?is_prewarmed=true" style="width: 100%; height: auto;" alt="Nike Air Max 270">
+    <div class="cardHome" *ngIf="bestSelling">
+      <img [src]="bestSelling[1].immagine" style="width: 100%; height: auto;" alt="Nike Air Max 270">
       <div style="padding: 10px;">
-        <h6>Nike Air Max 270</h6>
+        <h6>{{bestSelling[1].nome}}</h6>
+        <p>Sneakers</p>
+        <p>$139.99</p>
+      </div>
+    </div>
+    <div class="cardHome">
+      <img src="https://res.cloudinary.com/dtdmzhpk4/image/upload/v1724237253/7_structure25_iom1gv.webp" style="width: 100%; height: auto;" alt="Nike Air Max 270">
+      <div style="padding: 10px;">
+        <h6>Nike Air Zoom Structure 25</h6>
         <p>Sneakers</p>
         <p>$129.99</p>
       </div>
     </div>
     <div class="cardHome">
-      <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/covmdnim1rkbkbxtm23v/NIKE+AIR+MAX+270+%28GS%29.png" style="width: 100%; height: auto;" alt="Nike Air Max 270">
+      <img src="https://res.cloudinary.com/dtdmzhpk4/image/upload/v1724237255/11_airmax90_kwdevk.webp" style="width: 100%; height: auto;" alt="Nike Air Max 270">
       <div style="padding: 10px;">
-        <h6>Nike Air Max 270</h6>
+        <h6>Nike Air Max 90</h6>
         <p>Sneakers</p>
-        <p>$129.99</p>
+        <p>$119.99</p>
       </div>
     </div>
     <div class="cardHome">
-      <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/covmdnim1rkbkbxtm23v/NIKE+AIR+MAX+270+%28GS%29.png" style="width: 100%; height: auto;" alt="Nike Air Max 270">
+      <img src="https://res.cloudinary.com/dtdmzhpk4/image/upload/v1724237273/38_alphafly3eletric_ckrhwh.webp" style="width: 100%; height: auto;" alt="Nike Air Max 270">
       <div style="padding: 10px;">
-        <h6>Nike Air Max 270</h6>
+        <h6>Nike Alphafly 3 Electric</h6>
         <p>Sneakers</p>
-        <p>$129.99</p>
+        <p>$324.99</p>
       </div>
     </div>
     <div class="cardHome">
-      <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/covmdnim1rkbkbxtm23v/NIKE+AIR+MAX+270+%28GS%29.png" style="width: 100%; height: auto;" alt="Nike Air Max 270">
+      <img src="https://res.cloudinary.com/dtdmzhpk4/image/upload/v1724237274/42_airzoomvictorytour3nrg_zmwqwj.webp" style="width: 100%; height: auto;" alt="Nike Air Max 270">
       <div style="padding: 10px;">
-        <h6>Nike Air Max 270</h6>
-        <p>Sneakers</p>
-        <p>$129.99</p>
-      </div>
-    </div>
-    <div class="cardHome">
-      <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/covmdnim1rkbkbxtm23v/NIKE+AIR+MAX+270+%28GS%29.png" style="width: 100%; height: auto;" alt="Nike Air Max 270">
-      <div style="padding: 10px;">
-        <h6>Nike Air Max 270</h6>
-        <p>Sneakers</p>
-        <p>$129.99</p>
-      </div>
-    </div>
-    <div class="cardHome">
-      <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/covmdnim1rkbkbxtm23v/NIKE+AIR+MAX+270+%28GS%29.png" style="width: 100%; height: auto;" alt="Nike Air Max 270">
-      <div style="padding: 10px;">
-        <h6>Nike Air Max 270</h6>
-        <p>Sneakers</p>
-        <p>$129.99</p>
-      </div>
-    </div>
-    <div class="cardHome">
-      <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/covmdnim1rkbkbxtm23v/NIKE+AIR+MAX+270+%28GS%29.png" style="width: 100%; height: auto;" alt="Nike Air Max 270">
-      <div style="padding: 10px;">
-        <h6>Nike Air Max 270</h6>
+        <h6>Nike Air Zoom Victory Tour 3 NRG</h6>
         <p>Sneakers</p>
         <p>$129.99</p>
       </div>

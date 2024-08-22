@@ -10,6 +10,8 @@ import { HomeShoesComponent } from './home-shoes/home-shoes.component';
 import { BannersComponent } from './banners/banners.component';
 import { HomeSportComponent } from './home-sport/home-sport.component';
 import { BannerHeaderComponent } from './banner-header/banner-header.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NikeService } from './nike.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { BannerHeaderComponent } from './banner-header/banner-header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
