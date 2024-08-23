@@ -154,5 +154,20 @@ h6{
 }
 
 
+/* HOME NEW IN THIS WEEK */
+#containerShoesHome .cardHome:hover{
+    transition: 0.8s;
+    transform: scale(1.05); /* Card grows at mouse's passage */
+  }
+#detailsNewWeek h6{
+    font-size: 1.1em;
+}
 
+#detailsNewWeek p{
+margin-bottom: 5px;
+}
+
+#detailsNewWeek p:last-of-type::first-letter{
+    margin-right: 4px;
+}
   

@@ -14,11 +14,8 @@ export class HomeShoesComponent {
 constructor(private ns:NikeService, private http:HttpClient){
   this.http.get<Prodotti[]>("http://localhost:3000/prodotti")
   .subscribe(data=>{
-    this.bestSelling=data;
-    this.bestSelling.filter(p => p.nuovo_arrivi === true);
+    this.bestSelling=data.filter(p => p.nuovo_arrivi === true);
+    console.log(this.bestSelling);
   })
 }
-
-
-
 }
