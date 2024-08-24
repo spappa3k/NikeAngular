@@ -8,7 +8,7 @@ import { map, Observable } from 'rxjs';
 })
 export class NikeService{
   prodotti: Prodotti[] = [];
-  prodottoFiltered?:Prodotti;
+  prodottoFiltered:Prodotti | undefined;
 
 
   constructor(private http: HttpClient) {
@@ -23,11 +23,11 @@ export class NikeService{
   }
 
   searchById(idToSearch:number){
-this.prodottoFiltered=this.prodotti.find(p => p.id===idToSearch);
-console.log('Prodotti:', this.prodotti); // Verifica che i prodotti siano caricati
+this.prodottoFiltered=this.prodotti.find(p => p.id==idToSearch);
+console.log('Prodotti caricati:', this.prodotti); // Verifica che i prodotti siano caricati
 console.log('ID da cercare:', idToSearch); // Verifica che l'ID sia corretto
+console.log('Prodotto filtrato:', this.prodottoFiltered);
 return this.prodottoFiltered;
   }
 
 }
-
