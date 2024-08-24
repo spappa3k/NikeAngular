@@ -17,6 +17,8 @@ prodotto?:Prodotti;
     const idNumber=id ? +id : null;  /* convert to number */
   this.prodotto=this.ns.searchById(idNumber!);
 console.log("prodotto arrivato", this.prodotto);
+
+ns.viewBannerHearderOnOff(false);
   }
 }
 

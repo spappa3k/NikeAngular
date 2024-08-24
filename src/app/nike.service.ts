@@ -9,6 +9,7 @@ import { map, Observable } from 'rxjs';
 export class NikeService{
   prodotti: Prodotti[] = [];
   prodottoFiltered:Prodotti | undefined;
+  bannerOn=true;
 
 
   constructor(private http: HttpClient) {
@@ -19,8 +20,9 @@ export class NikeService{
   }
 
 
-  loadProdotti() {
-  }
+viewBannerHearderOnOff(isBannerOn:boolean){
+this.bannerOn=isBannerOn;
+}
 
   searchById(idToSearch:number){
 this.prodottoFiltered=this.prodotti.find(p => p.id==idToSearch);

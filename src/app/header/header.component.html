@@ -114,4 +114,6 @@ Get ready for five days of drops, workouts and challenges, exclusively for Nike 
     <p>Nike Members get free delivery and free 30-day returns. Learn More <span class="joinUs">Join Us</span></p></div>
 </section>
 </header>
-<app-banner-header></app-banner-header>
+<ng-container *ngIf="ns.bannerOn">
+    <app-banner-header></app-banner-header>
+</ng-container>

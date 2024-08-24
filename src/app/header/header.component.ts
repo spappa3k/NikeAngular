@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
+import { NikeService } from '../nike.service';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,18 @@ import { interval } from 'rxjs';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit{
-isMenuVisible= false;
+isMenuVisible=false;
 currentIndex:number=0;
+
 
 a:number=0;
 b:number=2;
 c:number=2;
+
+constructor(public ns:NikeService){
+
+}
+
 
 /* a,b,c cambieranno ad ogni stato dell index in uno dei seguenti className*/
 slider=[
