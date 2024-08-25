@@ -170,4 +170,24 @@ margin-bottom: 5px;
 #detailsNewWeek p:last-of-type::first-letter{
     margin-right: 4px;
 }
-  
+
+/* MANAGE SIZES SHOES  */
+
+#whereToInsertSizes{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(8,1fr);
+gap: 10px;
+}
+
+#whereToInsertSizes div{
+height: 30px;
+    background-color: rgb(241, 241, 241);
+    text-align: center;
+    padding-top: 7px;
+    font-size: 0.9em;
+}
+#whereToInsertSizes div:hover{
+    border: 1px solid gray;
+    background-color: rgb(255, 255, 255);
+}
