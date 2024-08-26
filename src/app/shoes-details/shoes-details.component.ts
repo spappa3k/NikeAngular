@@ -28,6 +28,5 @@ console.log("prodotto arrivato", this.prodotto);
 ns.viewBannerHearderOnOff(false);
   }
 
-
 }
 

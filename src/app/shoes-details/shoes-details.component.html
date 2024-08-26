@@ -29,7 +29,7 @@
     </ul>
 </section>
 <section id="bigShow">
-    <div class="frameImg" [ngStyle]="{'background-image': prodotto.immagine}"></div>
+    <div class="frameImg" [ngStyle]="{'background-image': 'url(' + prodotto.immagine + ')'}"></div>
     <div class="buttons">
         <button type="button" class="clickable">
             &lt;
@@ -45,8 +45,11 @@
     <p>{{ prodotto.prezzo | currency:'EUR'}}</p>
     <h4>Choose your size</h4>
  <div id="whereToInsertSizes">
-    <ng-container *ngFor="let size of prodotto.taglie_disponibili" >
-<div>{{size}}</div>
+    <ng-container *ngFor="let size of prodotto.taglie_disponibili; let i = index">
+        <ng-container *ngIf="i == 7">
+            <div class="styleSelectedSizeAngular">{{size}}</div>
+        </ng-container>
+        <div>{{size}}</div>
     </ng-container>
  </div>
  <div id="addToButton">

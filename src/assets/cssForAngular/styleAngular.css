@@ -191,3 +191,8 @@ height: 30px;
     border: 1px solid gray;
     background-color: rgb(255, 255, 255);
 }
+
+.styleSelectedSizeAngular{
+    background-color: rgb(14, 14, 14);
+    color: #ffffff;
+}
