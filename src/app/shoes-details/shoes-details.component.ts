@@ -12,6 +12,8 @@ import { style } from '@angular/animations';
 export class ShoesDetailsComponent{
 prodotto?:Prodotti;
 selectedToBlack=4; // starting size selected
+selectedSideImage=5; // default view of the shoes
+numbers: number[] = [1, 2, 3, 4, 5, 6, 7];
 
   constructor(private ns:NikeService, private route:ActivatedRoute){
 
@@ -36,5 +38,27 @@ ns.viewBannerHearderOnOff(false);
 this.selectedToBlack=whichOfArray;
   }
 
-}
+  // FUNCTION TO RECALL ON CLICK THE VIEW FROM SIDE SMALL FRAMES
+  selectAnotherSideImage(index: number) {
+    console.log('Selected side image:', index);
+    this.selectedSideImage = index;
+  }
+  
+// BUTTON INCREASE FRAME TO VIEW
+  increaseSideImage(index:number){
+    if(index==this.numbers.length-1){
+      this.selectedSideImage = 0;
+    }else{
+      this.selectedSideImage++;
+    }
+  }
 
+// BUTTON DECREASE FRAME TO VIEW
+  decreaseSideImage(index:number){
+    if(index==0){
+      this.selectedSideImage=this.numbers.length-1;
+    }else{
+      this.selectedSideImage--
+    }
+  }
+}

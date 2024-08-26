@@ -1,40 +1,32 @@
 <div *ngIf="prodotto">
 <section id="shoesImgList">
     <ul>
-        <div class="clickable">
-            <img src="/assets/Img/Scarpa_2/preVideo.png" alt="shoeVideo">
-        </div>
-        <div class="clickable">
-            <img src="/assets/Img/Scarpa_2/1.jpg" alt="shoe">
-        </div>
-        <div class="clickable">
-            <img src="/assets/Img/Scarpa_2/2.jpg" alt="shoe">
-        </div>
-        <div class="clickable">
-            <img src="/assets/Img/Scarpa_2/3.jpg" alt="shoe">
-        </div>
-        <div class="clickable">
-            <img src="/assets/Img/Scarpa_2/4.jpg" alt="shoe">
-        </div>
-        <div class="clickable">
-            <img src="/assets/Img/Scarpa_2/5.jpg" alt="shoe">
-        </div>
-        <div  class="border clickable">
-            <img src="/assets/Img/Scarpa_2/6.jpg" alt="shoe">
-        </div>
-        <div class="clickable">
-            <img src="/assets/Img/Scarpa_2/7.jpg" alt="shoe">
-        </div>
+       <ng-container *ngFor="let square of numbers; let ind=index">
+       <div 
+       [ngClass]="{'borderAngular':ind==selectedSideImage}"
+       (click)="selectAnotherSideImage(ind)"
+       >
+       <ng-container *ngIf="ind==5">
+        <img [src]="prodotto.immagine"alt="shoe">
+    </ng-container>
+    <img [src]="'/assets/Img/Scarpa_2/' + square + '.jpg'" alt="shoe">
+    </div>
+</ng-container>
 
     </ul>
 </section>
 <section id="bigShow">
+    <ng-container *ngIf="selectedSideImage==5">
     <div class="frameImg" [ngStyle]="{'background-image': 'url(' + prodotto.immagine + ')'}"></div>
+</ng-container>
+<ng-container *ngIf="selectedSideImage!=5">
+    <div class="frameImg" [ngStyle]="{'background-image': 'url(/assets/Img/Scarpa_2/' + (selectedSideImage + 1) + '.jpg)'}"></div>
+</ng-container>
     <div class="buttons">
-        <button type="button" class="clickable">
+        <button type="button" (click)=" decreaseSideImage(selectedSideImage)" style="margin-right: 5px;">
             &lt;
         </button>
-        <button type="button" class="clickable">
+        <button type="button" (click)="increaseSideImage(selectedSideImage)">
             &gt;
         </button>
     </div>

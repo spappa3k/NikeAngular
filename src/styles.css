@@ -628,7 +628,8 @@ margin-bottom: 100px;
 #shoesImgList div{
     width: 48px;
     height: 56px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
 }
 
 
@@ -682,7 +683,7 @@ h2{
 }
 #sizes{
     float: left;
-    margin-top: 15px;
+    margin-top: 27px;
     margin-left: 70px;
 }
 #sizes p:first-of-type{

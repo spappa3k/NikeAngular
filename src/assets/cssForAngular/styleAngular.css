@@ -200,3 +200,8 @@ gap: 10px;
     padding-top: 7px;
     font-size: 0.9em;
 }
+
+/* BORDER ON SELECTED FRAME FOR VIEW */
+.borderAngular{
+   border: 4px rgb(238, 161, 99) solid;
+}
