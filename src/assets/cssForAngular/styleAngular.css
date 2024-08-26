@@ -174,10 +174,15 @@ margin-bottom: 5px;
 /* MANAGE SIZES SHOES  */
 
 #whereToInsertSizes{
+margin-top: 10px;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(8,1fr);
 gap: 10px;
+}
+
+#sizes h4{
+margin-top: 40px;
 }
 
 #whereToInsertSizes .noSelected{
