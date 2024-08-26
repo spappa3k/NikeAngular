@@ -180,19 +180,23 @@ grid-template-rows: repeat(8,1fr);
 gap: 10px;
 }
 
-#whereToInsertSizes div{
-height: 30px;
+#whereToInsertSizes .noSelected{
     background-color: rgb(241, 241, 241);
+    height: 30px;
     text-align: center;
     padding-top: 7px;
     font-size: 0.9em;
 }
-#whereToInsertSizes div:hover{
+#whereToInsertSizes .noSelected:hover{
     border: 1px solid gray;
     background-color: rgb(255, 255, 255);
 }
 
-.styleSelectedSizeAngular{
+.selectedSizeAngular{
     background-color: rgb(14, 14, 14);
     color: #ffffff;
+    height: 30px;
+    text-align: center;
+    padding-top: 7px;
+    font-size: 0.9em;
 }

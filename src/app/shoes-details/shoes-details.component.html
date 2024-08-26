@@ -46,10 +46,9 @@
     <h4>Choose your size</h4>
  <div id="whereToInsertSizes">
     <ng-container *ngFor="let size of prodotto.taglie_disponibili; let i = index">
-        <ng-container *ngIf="i == 7">
-            <div class="styleSelectedSizeAngular">{{size}}</div>
-        </ng-container>
-        <div>{{size}}</div>
+        <div 
+        [ngClass]="{'selectedSizeAngular': i==selectedToBlack, 'noSelected': i!==selectedToBlack}"
+         (click)="selectAnotherSize(i)">{{size}}</div>
     </ng-container>
  </div>
  <div id="addToButton">

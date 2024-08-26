@@ -11,13 +11,15 @@ import { style } from '@angular/animations';
 })
 export class ShoesDetailsComponent{
 prodotto?:Prodotti;
+selectedToBlack=4; // starting size selected
 
   constructor(private ns:NikeService, private route:ActivatedRoute){
-    /* GET ID*/
+
+// GET ID
     const id= this.route.snapshot.paramMap.get('id');
     const idNumber=id ? +id : null;  /* convert to number */
 
-/* CALL TO SERVICE*/
+// CALL TO SERVICE
   this.ns.searchById(idNumber!)
   .subscribe(data=>{
     this.prodotto=data;
@@ -26,6 +28,12 @@ prodotto?:Prodotti;
   
 console.log("prodotto arrivato", this.prodotto);
 ns.viewBannerHearderOnOff(false);
+  }
+
+
+// FUNCTION TO RECALL ON CLICK OF A NEW SIZE
+  selectAnotherSize(whichOfArray:number){
+this.selectedToBlack=whichOfArray;
   }
 
 }
