@@ -10,6 +10,7 @@ import { Prodotti } from '../../assets/models/models';
 })
 export class ListComponent implements OnInit{
   prodotti:Prodotti[]=[];
+  nameOfPage?:string;
 
 
   constructor(private ns:NikeService, private route:ActivatedRoute){
@@ -27,6 +28,7 @@ export class ListComponent implements OnInit{
       if(passedFilter==="all"){
 this.ns.allProducts().subscribe(data=>{
 this.prodotti=data;
+this.nameOfPage="All Products";
 })
       }
     })

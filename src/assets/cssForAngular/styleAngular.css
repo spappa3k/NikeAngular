@@ -210,3 +210,19 @@ margin-top: 40px;
 .borderAngular{
    border: 4px rgb(238, 161, 99) solid;
 }
+
+
+/* PAGE LIST PRODUCTS */
+
+.containerList{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+
+}
+
+.cardList{
+    position: relative;
+     width: 300px;
+     flex-shrink: 0;
+}

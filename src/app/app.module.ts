@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NikeService } from './nike.service';
 import { ShoesDetailsComponent } from './shoes-details/shoes-details.component';
 import { ListComponent } from './list/list.component';
+import { SideOfListComponent } from './side-of-list/side-of-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ListComponent } from './list/list.component';
     HomeSportComponent,
     BannerHeaderComponent,
     ShoesDetailsComponent,
-    ListComponent
+    ListComponent,
+    SideOfListComponent
   ],
   imports: [
     BrowserModule,
