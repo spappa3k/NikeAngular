@@ -237,5 +237,36 @@ margin-top: 40px;
 #sideOfList{
     width:400px;
     height: 500px;
-    border: black solid 1px;
-}
+    background-color: #f4f4f4; /* Colore di sfondo del contenitore */
+    padding: 20px; /* Spaziatura interna */
+    border-radius: 5px; /* Bordo arrotondato */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra gli elementi orizzontalmente */
+  }
+  
+  /* Stile per la lista */
+  #sideOfList ul {
+    list-style-type: none; /* Rimuove i pallini di default */
+    padding: 0; /* Rimuove il padding di default */
+    margin: 0; /* Rimuove il margine di default */
+    display: flex;
+    flex-direction: column; /* Dispone gli elementi in colonna */
+    gap: 10px; /* Spazio tra gli elementi */
+  }
+  
+  /* Stile per gli elementi della lista */
+  #sideOfList li {
+    font-size: 18px; 
+    font-weight: bold; 
+    padding: 10px; 
+    text-align: center; 
+    cursor: pointer; 
+    width: 100%; 
+    box-sizing: border-box; 
+  }
+  
+ 
+  #sideOfList li:hover {
+    background-color: #ddd;
+  }
