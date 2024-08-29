@@ -1,8 +1,11 @@
+<section id="listPage">
 <div id="sideOfList">
 <ul>
-    <li>ALL</li>
-    <li>SNEAKERS</li>
-    <li>RUNNING</li>
-    <li>TRAINING</li>
+    <li (click)="allP()" [routerLink]="['/list','all']">ALL</li>
+    <li (click)="sneakers()" [routerLink]="['/list','sneakers']">SNEAKERS</li>
+    <li (click)="running()" [routerLink]="['/list','running']">RUNNING</li>
+    <li (click)="training()" [routerLink]="['/list','training']">TRAINING</li>
 </ul>
 </div>
+<app-list></app-list>
+</section>

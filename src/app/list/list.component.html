@@ -1,6 +1,4 @@
-<section id="listPage">
-<app-side-of-list></app-side-of-list>
-<div class="containerList mt-4">
+<div class="containerList mt-4" *ngIf="prodotti">
     <ng-container *ngFor="let shoe of prodotti">
       <div class="cardList" [routerLink]="['/details',shoe.id]">
         <img [src]="shoe.immagine" style="width: 100%; height: auto;" [alt]="shoe.nome">
@@ -12,4 +10,3 @@
       </div>
     </ng-container>
   </div>
-</section>

@@ -33,4 +33,16 @@ const id=idToSearch
 return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
   }
 
+
+  sneakersOnly(){
+    return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?categoria=Sneakers")
+      }
+
+      runningOnly(){
+        return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?categoria=Running")
+          }
+
+          trainingOnly(){
+            return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?categoria=Training")
+              }
 }
