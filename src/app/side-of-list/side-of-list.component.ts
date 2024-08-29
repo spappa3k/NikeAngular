@@ -36,7 +36,7 @@ export class SideOfListComponent implements OnInit {
       this.listComponent?.update(this.passedFilter!);
     }
 
-// WHEN PRESSED ALL FOR THE FILTERS
+// CLICK ALL
     allP(){
       this.route.params.subscribe(list => {
         this.passedFilter = list['filter'];
@@ -44,7 +44,7 @@ export class SideOfListComponent implements OnInit {
         this.updateToChild();
       });
     }
-
+// CLICK SNEAKERS
     sneakers(){
       this.route.params.subscribe(list => {
         this.passedFilter = list['filter'];
@@ -52,7 +52,7 @@ export class SideOfListComponent implements OnInit {
         this.updateToChild();
       });
     }
-
+// CLICK RUNNING
     running(){
       this.route.params.subscribe(list => {
         this.passedFilter = list['filter'];
@@ -60,7 +60,7 @@ export class SideOfListComponent implements OnInit {
         this.updateToChild();
       });
     }
-
+//  CLICK TRAINING
     training(){
       this.route.params.subscribe(list => {
         this.passedFilter = list['filter'];

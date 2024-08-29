@@ -33,7 +33,7 @@ const id=idToSearch
 return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
   }
 
-
+// DO THE API CALL DEPENDING ON THE LISTCOMPONENT
   sneakersOnly(){
     return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?categoria=Sneakers")
       }

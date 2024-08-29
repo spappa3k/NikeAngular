@@ -21,6 +21,8 @@ Status?:string;
 update(status:string){
   this.Status=status;
 
+
+  /* TAKE DATA FROM OBSERVABLE IN THE SERVICE DEPENDING ON WHICH FILTER IS NEEDED*/
   if(this.Status=="all"){
 this.ns.allProducts().subscribe(data=>{
   this.prodotti=data;
