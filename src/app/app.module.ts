@@ -13,6 +13,7 @@ import { BannerHeaderComponent } from './banner-header/banner-header.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NikeService } from './nike.service';
 import { ShoesDetailsComponent } from './shoes-details/shoes-details.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShoesDetailsComponent } from './shoes-details/shoes-details.component';
     BannersComponent,
     HomeSportComponent,
     BannerHeaderComponent,
-    ShoesDetailsComponent
+    ShoesDetailsComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
