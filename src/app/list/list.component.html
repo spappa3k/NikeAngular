@@ -1,4 +1,5 @@
-<h3>{{nameOfPage}}</h3>
+<section id="listPage">
+<app-side-of-list></app-side-of-list>
 <div class="containerList mt-4">
     <ng-container *ngFor="let shoe of prodotti">
       <div class="cardList" [routerLink]="['/details',shoe.id]">
@@ -11,3 +12,4 @@
       </div>
     </ng-container>
   </div>
+</section>

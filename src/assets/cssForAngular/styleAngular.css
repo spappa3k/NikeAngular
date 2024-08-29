@@ -215,9 +215,10 @@ margin-top: 40px;
 /* PAGE LIST PRODUCTS */
 
 .containerList{
+    margin-left: 80px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:20px;
+    gap:40px;
 
 }
 
@@ -225,4 +226,16 @@ margin-top: 40px;
     position: relative;
      width: 300px;
      flex-shrink: 0;
+}
+
+#listPage{
+    display: flex;
+    flex-direction: row;
+}
+
+/* SIDE OF LIST */
+#sideOfList{
+    width:400px;
+    height: 500px;
+    border: black solid 1px;
 }
