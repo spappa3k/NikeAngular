@@ -5,6 +5,7 @@
 body{
     overflow-x: hidden; /* SERVE A NASCONDERE LA SCROLLBAR PER L'AGGIUNTA AL CARRELLO*/
     font-family: helveticaLight;
+    color:#444f59;
 }
 /* CLICCABILI*/
 .clickable{
@@ -124,7 +125,7 @@ max-width: 600px;
     top: 10px;
     display: block;
     float: left;
-    background-color: #F2F2F2;
+    background-color: rgb(242, 242, 242);
     border-top-left-radius: 20px; 
     border-bottom-left-radius: 20px; 
     border-top-right-radius: 20px; 

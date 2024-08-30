@@ -1,10 +1,10 @@
 <section id="listPage">
 <div id="sideOfList">
 <ul>
-    <li (click)="allP()" [routerLink]="['/list','all']">ALL</li>
-    <li (click)="sneakers()" [routerLink]="['/list','sneakers']">SNEAKERS</li>
-    <li (click)="running()" [routerLink]="['/list','running']">RUNNING</li>
-    <li (click)="training()" [routerLink]="['/list','training']">TRAINING</li>
+    <li (click)="allP()" [routerLink]="['/list','all']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">ALL</li>
+    <li (click)="sneakers()" [routerLink]="['/list','sneakers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">SNEAKERS</li>
+    <li (click)="running()" [routerLink]="['/list','running']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">RUNNING</li>
+    <li (click)="training()" [routerLink]="['/list','training']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">TRAINING</li>
 </ul>
 </div>
 <app-list></app-list>

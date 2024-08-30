@@ -235,8 +235,11 @@ margin-top: 40px;
 
 /* SIDE OF LIST */
 #sideOfList{
+    overflow-y: visible;
+    position: sticky;
+    top: 0px;
     width:400px;
-    height: 500px;
+    height: 400px;
     background-color: #f4f4f4; /* Colore di sfondo del contenitore */
     padding: 20px; /* Spaziatura interna */
     border-radius: 5px; /* Bordo arrotondato */
@@ -269,4 +272,10 @@ margin-top: 40px;
  
   #sideOfList li:hover {
     background-color: #ddd;
+  }
+
+  .active{
+    transition: 1s;
+    background-color: rgb(104, 104, 104);
+    color: #f2f2f2;
   }
