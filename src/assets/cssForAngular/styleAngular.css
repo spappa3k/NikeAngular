@@ -228,6 +228,11 @@ margin-top: 40px;
      flex-shrink: 0;
 }
 
+.cardList:hover{
+    transition: 0.8s;
+    transform: scale(1.10); /* Card grows at mouse's passage */
+}
+
 #listPage{
     display: flex;
     flex-direction: row;
@@ -235,6 +240,7 @@ margin-top: 40px;
 
 /* SIDE OF LIST */
 #sideOfList{
+    margin-top: 20px;
     overflow-y: visible;
     position: sticky;
     top: 0px;
@@ -274,8 +280,40 @@ margin-top: 40px;
     background-color: #ddd;
   }
 
-  .active{
-    transition: 1s;
-    background-color: rgb(104, 104, 104);
-    color: #f2f2f2;
+
+  /* animation new arrivals */
+  #sideOfList li:nth-child(6){
+    font-size: 0.9em;
+    color: rgb(255, 255, 255);}
+
+.glow{
+    animation: glow 2s ease-in-out infinite;
   }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 5px #a49e43, 0 0 10px #bcd832, 0 0 15px #e6d21e;
+      opacity: 0.5; /* Luce più debole */
+    }
+    50% {
+      text-shadow: 0 0 10px #cfd443, 0 0 25px #d8be14, 0 0 40px #fff700;
+      opacity: 1; /* Luce piena */
+    }
+    100% {
+        text-shadow: 0 0 5px #a49e43, 0 0 10px #bcd832, 0 0 15px #e6d21e;
+      opacity: 0.5; /* Luce più debole ritorno */
+    }
+  }
+
+  #sideOfList li:nth-child(7){
+    font-size: 0.9em;
+  }
+
+    /* When tag is active (category selected) */
+    .active{
+        animation: none;
+        transition: 1s;
+        background-color: rgb(104, 104, 104);
+        color: #f2f2f2;
+
+      }

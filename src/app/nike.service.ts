@@ -45,4 +45,10 @@ return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
           trainingOnly(){
             return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?categoria=Training")
               }
+              newArrivals(){
+                return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?nuovo_arrivi=true")
+              }
+              best(){
+                return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?best_seller=5")
+              }
 }

@@ -5,6 +5,11 @@
     <li (click)="sneakers()" [routerLink]="['/list','sneakers']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">SNEAKERS</li>
     <li (click)="running()" [routerLink]="['/list','running']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">RUNNING</li>
     <li (click)="training()" [routerLink]="['/list','training']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">TRAINING</li>
+    <hr>
+    <li (click)="newArrivals()" [routerLink]="['/list','newArrivals']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"
+    class="glow">NEW ARRIVALS🔥</li>
+    <li (click)="best()" [routerLink]="['/list','best']" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">BEST SELLINGS ⭐</li>
+    
 </ul>
 </div>
 <app-list></app-list>

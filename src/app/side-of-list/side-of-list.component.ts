@@ -68,4 +68,22 @@ export class SideOfListComponent implements OnInit {
         this.updateToChild();
       });
     }
+
+    //  CLICK NEW ARRIVALS
+    newArrivals(){
+      this.route.params.subscribe(list => {
+        this.passedFilter = list['filter'];
+        console.log("status: ", this.passedFilter);
+        this.updateToChild();
+      });
+    }
+
+      //  CLICK BEST SELLINGS
+      best(){
+        this.route.params.subscribe(list => {
+          this.passedFilter = list['filter'];
+          console.log("status: ", this.passedFilter);
+          this.updateToChild();
+        });
+      }
 }

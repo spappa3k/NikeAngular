@@ -49,5 +49,19 @@ this.ns.allProducts().subscribe(data=>{
       console.log("Filtrati running: ",this.prodotti);
     })
   }
+
+  if(this.Status=="newArrivals"){
+    this.ns.newArrivals().subscribe(data=>{
+      this.prodotti=data;
+      console.log("Filtrati New: ",this.prodotti);
+    })
+  }
+
+  if(this.Status=="best"){
+    this.ns.best().subscribe(data=>{
+      this.prodotti=data;
+      console.log("Filtrati New: ",this.prodotti);
+    })
+  }
 }
 }
