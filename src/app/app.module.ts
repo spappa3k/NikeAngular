@@ -16,6 +16,7 @@ import { ShoesDetailsComponent } from './shoes-details/shoes-details.component';
 import { ListComponent } from './list/list.component';
 import { SideOfListComponent } from './side-of-list/side-of-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TitleOfSearchComponent } from './title-of-search/title-of-search.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BannerHeaderComponent,
     ShoesDetailsComponent,
     ListComponent,
-    SideOfListComponent
+    SideOfListComponent,
+    TitleOfSearchComponent
   ],
   imports: [
     BrowserModule,

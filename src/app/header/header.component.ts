@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { interval } from 'rxjs';
 import { NikeService } from '../nike.service';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -18,6 +18,14 @@ searchForm:FormGroup
 a:number=0;
 b:number=2;
 c:number=2;
+
+/* Creazione Emitter */
+@Output()
+evento=new EventEmitter<string>();
+
+/* Stringa che passeremo all emitter*/
+productName?:string
+
 
 constructor(public ns:NikeService){
 this.searchForm=new FormGroup({
@@ -83,8 +91,9 @@ changeSlide(){
   }
   }
   
-onSubmit(){
-  const query=this.searchForm?.value;
-  console.log("CERCATO: ",query);
+onSubmit(){   /* prendiamo il nome del prodotto dal submit ed emettiamolo in output */
+  this.productName=this.searchForm?.value;
+  this.evento.emit(this.productName);
+
 }
 }
