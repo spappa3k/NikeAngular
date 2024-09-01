@@ -8,13 +8,14 @@ import { Router } from '@angular/router';
 })
 export class AppComponent{
   title = 'NikeAngular';
-
-  constructor(private route:Router){}
+  nameProductSearched?:string;
+  constructor(private router: Router){}
 
   /* ricevi stringa emessa dall output e reindirizza a /list */
+
   takeNameProduct(nameP:string){
-let nameProductSearched=nameP;
-console.log("ricevuto dall emitter: ",nameProductSearched);
-this.route.navigate(["/list",nameProductSearched]);
+this.nameProductSearched=nameP;
+console.log("ricevuto dall emitter: ",this.nameProductSearched);
+this.router.navigate(['/list',this.nameProductSearched]);
   }
 }

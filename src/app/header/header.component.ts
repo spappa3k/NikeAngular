@@ -92,7 +92,7 @@ changeSlide(){
   }
   
 onSubmit(){   /* prendiamo il nome del prodotto dal submit ed emettiamolo in output */
-  this.productName=this.searchForm?.value;
+  this.productName=this.searchForm?.value.searchQuery;
   this.evento.emit(this.productName);
 
 }

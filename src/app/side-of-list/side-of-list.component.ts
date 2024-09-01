@@ -14,7 +14,7 @@ export class SideOfListComponent implements OnInit {
 
   prodotti: Prodotti[] = [];
   passedFilter?:string;
-
+fromAppComponent?:string;
   constructor(private ns: NikeService, private route: ActivatedRoute) {
     ns.viewBannerHearderOnOff(false);
   }
@@ -28,7 +28,7 @@ export class SideOfListComponent implements OnInit {
 
 // CALLED AFTER THE VIEW IT'S READY
   ngAfterViewInit(): void {
-    this.updateToChild(); 
+   this.updateToChild();    
   }
 // GO AND TELL THE CHILD THE FILTER TO USE
   updateToChild(){
