@@ -15,6 +15,7 @@ import { NikeService } from './nike.service';
 import { ShoesDetailsComponent } from './shoes-details/shoes-details.component';
 import { ListComponent } from './list/list.component';
 import { SideOfListComponent } from './side-of-list/side-of-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SideOfListComponent } from './side-of-list/side-of-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
   ],

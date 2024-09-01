@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { NikeService } from '../nike.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +12,17 @@ export class HeaderComponent implements OnInit{
 isMenuVisible=false;
 currentIndex:number=0;
 
+/* reactive form per ricerca prodotto dsa nome*/
+searchForm:FormGroup
 
 a:number=0;
 b:number=2;
 c:number=2;
 
 constructor(public ns:NikeService){
-
+this.searchForm=new FormGroup({
+  searchQuery:new FormControl('')
+})
 }
 
 
@@ -78,4 +83,8 @@ changeSlide(){
   }
   }
   
+onSubmit(){
+  const query=this.searchForm?.value;
+  console.log("CERCATO: ",query);
+}
 }

@@ -87,7 +87,11 @@
 </div>
 </div></div>
 <div class="wrapperSearchbar">
-<input type="text" placeholder="Search" id="searchbar"></div>
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <button class="lens" type="submit"></button>
+<input type="text" formControlName="searchQuery" placeholder="Search" id="searchbar">
+</form>
+</div>
 <div id="rightIcons">
 <ul>
     <li><img src="/assets/Img/Header/heart.png"></li>
