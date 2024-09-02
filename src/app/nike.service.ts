@@ -51,8 +51,4 @@ return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
               best(){
                 return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?best_seller=5")
               }
-              byName(name:string){
-                return this.http.get<Prodotti[]>("http://localhost:3000/prodotti/?nome="+name)
-
               }
-}

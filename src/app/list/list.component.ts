@@ -12,6 +12,7 @@ export class ListComponent{
   prodotti:Prodotti[]=[];
   nameOfPage?:string;
 
+
 constructor(private ns:NikeService){}
 
 @Input()
@@ -20,13 +21,25 @@ Status?:string;
 
 update(status:string){
   this.Status=status;
-  if (this.Status !== "all" && this.Status !== "sneakers" && this.Status !== "running" && this.Status !== "training" && this.Status !== "newArrivals" && this.Status !== "best") {
-    console.log("STATUS DIVERSO:", this.Status);
-    this.ns.byName(this.Status.toLowerCase()).subscribe(data=>{
-      this.prodotti=data.filter(prodotto=>{    /* FILTER SU LA STRINGA CERCATA  */
+  if (                                         /*  SE NON Eà UNA DI QUESTE PAROLE CHIAVI NELLA RICERCA SI VA CON IL FILTRAGGIO  */
+    this.Status.toLowerCase() !== "all" &&
+    this.Status.toLowerCase() !== "sneakers" &&
+    this.Status.toLowerCase() !== "running" &&
+    this.Status.toLowerCase() !== "training" &&
+    this.Status.toLowerCase() !== "newarrivals" &&
+    this.Status.toLowerCase() !== "best"
+  ) {
+    this.prodotti=[];
+    /*  FACCIAMO LA CHIAMATA DI TUTTI I PRODOTTI E POI FILTRIAMO PER NOME CHE INCLUDONO LA PAROLA RICERCATA E IN LOWERCASE */
+    this.ns.allProducts().subscribe(data=>{
+      this.prodotti = data.filter(prodotto =>
         prodotto.nome.toLowerCase().includes(this.Status!.toLowerCase())
-      })
-  })
+      );
+      console.log("STA ANDANDO");
+    });
+
+
+
 }
   /* TAKE DATA FROM OBSERVABLE IN THE SERVICE DEPENDING ON WHICH FILTER IS NEEDED*/
   if(this.Status=="all"){
@@ -69,5 +82,11 @@ this.ns.allProducts().subscribe(data=>{
       console.log("Filtrati New: ",this.prodotti);
     })
   }
+}
+
+
+applyFilter(nameSearched:any){
+  this.nameOfPage=nameSearched;
+console.log("IL NOME CERCATO DOPO E':");
 }
 }

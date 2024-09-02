@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ListComponent } from './list/list.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 export class AppComponent{
   title = 'NikeAngular';
   nameProductSearched?:string;
+
+  @ViewChild(ListComponent) listComponent?: ListComponent;
+
   constructor(private router: Router){}
 
   /* ricevi stringa emessa dall output e reindirizza a /list */
@@ -16,6 +19,11 @@ export class AppComponent{
   takeNameProduct(nameP:string){
 this.nameProductSearched=nameP;
 console.log("ricevuto dall emitter: ",this.nameProductSearched);
-this.router.navigate(['/list',this.nameProductSearched]);
+this.router.navigate(['/list',this.nameProductSearched]).then(() => {
+  // Verifica se listComponent è disponibile e chiama applyFilter
+  if (this.listComponent) {
+    this.listComponent.applyFilter(this.nameProductSearched!);
+  }
+})
   }
 }

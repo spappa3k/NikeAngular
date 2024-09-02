@@ -15,6 +15,7 @@ currentIndex:number=0;
 /* reactive form per ricerca prodotto dsa nome*/
 searchForm:FormGroup
 
+/* NEL TEMPLATE EQUIVALGONO A slider[a], slider[b], slider[c] */
 a:number=0;
 b:number=2;
 c:number=2;
@@ -93,7 +94,8 @@ changeSlide(){
   
 onSubmit(){   /* prendiamo il nome del prodotto dal submit ed emettiamolo in output */
   this.productName=this.searchForm?.value.searchQuery;
+  if(this.productName){
   this.evento.emit(this.productName);
-
+  }
 }
 }
