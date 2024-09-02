@@ -22,10 +22,12 @@ update(status:string){
   this.Status=status;
   if (this.Status !== "all" && this.Status !== "sneakers" && this.Status !== "running" && this.Status !== "training" && this.Status !== "newArrivals" && this.Status !== "best") {
     console.log("STATUS DIVERSO:", this.Status);
-    this.ns.byName().subscribe(data=>{
-      this.prodotti=data;
+    this.ns.byName(this.Status.toLowerCase()).subscribe(data=>{
+      this.prodotti=data.filter(prodotto=>{    /* FILTER SU LA STRINGA CERCATA  */
+        prodotto.nome.toLowerCase().includes(this.Status!.toLowerCase())
+      })
   })
-  
+}
   /* TAKE DATA FROM OBSERVABLE IN THE SERVICE DEPENDING ON WHICH FILTER IS NEEDED*/
   if(this.Status=="all"){
 this.ns.allProducts().subscribe(data=>{
@@ -68,4 +70,4 @@ this.ns.allProducts().subscribe(data=>{
     })
   }
 }
-}}
+}
