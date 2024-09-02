@@ -84,9 +84,4 @@ this.ns.allProducts().subscribe(data=>{
   }
 }
 
-
-applyFilter(nameSearched:any){
-  this.nameOfPage=nameSearched;
-console.log("IL NOME CERCATO DOPO E':");
-}
 }

@@ -19,11 +19,6 @@ export class AppComponent{
   takeNameProduct(nameP:string){
 this.nameProductSearched=nameP;
 console.log("ricevuto dall emitter: ",this.nameProductSearched);
-this.router.navigate(['/list',this.nameProductSearched]).then(() => {
-  // Verifica se listComponent è disponibile e chiama applyFilter
-  if (this.listComponent) {
-    this.listComponent.applyFilter(this.nameProductSearched!);
-  }
-})
+this.router.navigate(['/list',this.nameProductSearched]);
   }
 }
