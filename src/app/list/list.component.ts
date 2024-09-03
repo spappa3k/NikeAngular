@@ -21,6 +21,7 @@ Status?:string;
 
 update(status:string){
   this.Status=status;
+  console.log("STATUS:",this.Status);
   if (                                         /*  SE NON Eà UNA DI QUESTE PAROLE CHIAVI NELLA RICERCA SI VA CON IL FILTRAGGIO  */
     this.Status.toLowerCase() !== "all" &&
     this.Status.toLowerCase() !== "sneakers" &&
@@ -29,7 +30,7 @@ update(status:string){
     this.Status.toLowerCase() !== "newarrivals" &&
     this.Status.toLowerCase() !== "best"
   ) {
-    this.prodotti=[];
+
     /*  FACCIAMO LA CHIAMATA DI TUTTI I PRODOTTI E POI FILTRIAMO PER NOME CHE INCLUDONO LA PAROLA RICERCATA E IN LOWERCASE */
     this.ns.allProducts().subscribe(data=>{
       this.prodotti = data.filter(prodotto =>
@@ -37,9 +38,6 @@ update(status:string){
       );
       console.log("STA ANDANDO");
     });
-
-
-
 }
   /* TAKE DATA FROM OBSERVABLE IN THE SERVICE DEPENDING ON WHICH FILTER IS NEEDED*/
   if(this.Status=="all"){
