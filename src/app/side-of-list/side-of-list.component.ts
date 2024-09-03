@@ -23,6 +23,7 @@ fromAppComponent?:string;
     this.route.params.subscribe(list => {
       this.passedFilter = list['filter'];
       console.log("status: ", this.passedFilter);
+      this.updateToChild();
     });
   }
 
