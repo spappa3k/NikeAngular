@@ -7,16 +7,11 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NikeService{
-  prodotti: Prodotti[] = [];
   prodottoFiltered:Prodotti | undefined;
   bannerOn=true;
 
 
   constructor(private http: HttpClient) {
-    this.http.get<Prodotti[]>("http://localhost:3000/prodotti")
-    .subscribe(data => {
-      this.prodotti = data;
-    })
   }
 
 

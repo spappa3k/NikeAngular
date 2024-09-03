@@ -96,6 +96,7 @@ onSubmit(){   /* prendiamo il nome del prodotto dal submit ed emettiamolo in out
   this.productName=this.searchForm?.value.searchQuery;
   if(this.productName){
   this.evento.emit(this.productName);
+  this.searchForm.reset();
   }
 }
 }

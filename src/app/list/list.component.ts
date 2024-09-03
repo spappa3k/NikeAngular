@@ -8,6 +8,7 @@ import { Prodotti } from '../../assets/models/models';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
+
 export class ListComponent{
   prodotti:Prodotti[]=[];
   nameOfPage?:string;
@@ -21,8 +22,8 @@ Status?:string;
 
 update(status:string){
   this.Status=status;
-  console.log("STATUS:",this.Status);
-  if (                                         /*  SE NON Eà UNA DI QUESTE PAROLE CHIAVI NELLA RICERCA SI VA CON IL FILTRAGGIO  */
+
+  if (                                         /*  SE NON E' UNA DI QUESTE PAROLE CHIAVI NELLA RICERCA SI VA CON IL FILTRAGGIO  */
     this.Status.toLowerCase() !== "all" &&
     this.Status.toLowerCase() !== "sneakers" &&
     this.Status.toLowerCase() !== "running" &&
@@ -32,13 +33,18 @@ update(status:string){
   ) {
 
     /*  FACCIAMO LA CHIAMATA DI TUTTI I PRODOTTI E POI FILTRIAMO PER NOME CHE INCLUDONO LA PAROLA RICERCATA E IN LOWERCASE */
-    this.ns.allProducts().subscribe(data=>{
+    console.log("Chiamata al servizio per tutti i prodotti...");
+    this.ns.allProducts().subscribe(data => {
+      console.log("DENTRO SUBSCRIBE:",this.Status);
       this.prodotti = data.filter(prodotto =>
         prodotto.nome.toLowerCase().includes(this.Status!.toLowerCase())
       );
-      console.log("STA ANDANDO");
+      console.log("Prodotti filtrati:", this.prodotti);
     });
 }
+
+
+
   /* TAKE DATA FROM OBSERVABLE IN THE SERVICE DEPENDING ON WHICH FILTER IS NEEDED*/
   if(this.Status=="all"){
 this.ns.allProducts().subscribe(data=>{
