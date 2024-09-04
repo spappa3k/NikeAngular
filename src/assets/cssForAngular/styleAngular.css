@@ -319,9 +319,14 @@ margin-top: 40px;
       }
 
       .productSearched{
-        font-weight: bold;
-        font-size: 1.7em;
-        margin-top: 20px;
+        font-size: 1.2em;
        text-align: center;
-       font-style: helvetica;
+       background-color: #f2f2f2;
+       height: 50px;
+       padding-top: 18px;
+      }
+
+      .productSearched span{
+        font-weight: bold;
+        color: rgb(69, 73, 125);
       }
