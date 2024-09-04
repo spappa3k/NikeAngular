@@ -1,1 +1,4 @@
-<p>title-of-search works!</p>
+<ng-container *ngIf="!toAvoid.includes(searched!)">
+    <h1 class="productSearched">Results for ' {{searched}} ':</h1>
+</ng-container>
+

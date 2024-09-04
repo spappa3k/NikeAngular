@@ -246,22 +246,22 @@ margin-top: 40px;
     top: 0px;
     width:400px;
     height: 400px;
-    background-color: #f4f4f4; /* Colore di sfondo del contenitore */
-    padding: 20px; /* Spaziatura interna */
-    border-radius: 5px; /* Bordo arrotondato */
+    background-color: #f4f4f4; 
+    padding: 20px; 
+    border-radius: 5px; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra gli elementi orizzontalmente */
+    align-items: center; 
   }
   
   /* Stile per la lista */
   #sideOfList ul {
-    list-style-type: none; /* Rimuove i pallini di default */
-    padding: 0; /* Rimuove il padding di default */
-    margin: 0; /* Rimuove il margine di default */
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
     display: flex;
-    flex-direction: column; /* Dispone gli elementi in colonna */
-    gap: 10px; /* Spazio tra gli elementi */
+    flex-direction: column; 
+    gap: 10px; 
   }
   
   /* Stile per gli elementi della lista */
@@ -316,4 +316,11 @@ margin-top: 40px;
         background-color: rgb(104, 104, 104);
         color: #f2f2f2;
 
+      }
+
+      .productSearched{
+        font-weight: bold;
+        font-size: 1.7em;
+        margin-top: 10px;
+       text-align: center;
       }
