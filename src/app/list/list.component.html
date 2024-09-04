@@ -1,4 +1,4 @@
-<div class="containerList mt-4" *ngIf="prodotti">
+<div class="containerList mt-4" *ngIf="prodotti && prodotti.length > 0; else noProducts">
     <ng-container *ngFor="let shoe of prodotti">
       <div class="cardList" [routerLink]="['/details',shoe.id]">
         <img [src]="shoe.immagine" style="width: 100%; height: auto;" [alt]="shoe.nome">
@@ -10,3 +10,8 @@
       </div>
     </ng-container>
   </div>
+  <ng-template #noProducts>
+    <div class="noItems">
+      <p>No Items found.</p>
+    </div>
+  </ng-template>

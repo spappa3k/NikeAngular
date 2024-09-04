@@ -330,3 +330,8 @@ margin-top: 40px;
         font-weight: bold;
         color: rgb(69, 73, 125);
       }
+
+      .noItems p{
+        margin: 200px 300px; 
+  font-size: 1.9em;
+      }

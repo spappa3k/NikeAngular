@@ -89,7 +89,7 @@
 <div class="wrapperSearchbar">
     <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <button class="lens" type="submit"></button>
-<input type="text" formControlName="searchQuery" placeholder="Search" id="searchbar">
+<input type="text" formControlName="searchQuery" placeholder="Search" id="searchbar" maxlength="30">
 </form>
 </div>
 <div id="rightIcons">
