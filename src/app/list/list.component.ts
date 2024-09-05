@@ -48,9 +48,6 @@ update(status:string){
       );
     });
 }
-
-
-
   /* TAKE DATA FROM OBSERVABLE IN THE SERVICE DEPENDING ON WHICH FILTER IS NEEDED*/
   if(this.Status=="all"){
 this.ns.allProducts().subscribe(data=>{
