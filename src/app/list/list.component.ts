@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NikeService } from '../nike.service';
 import { ActivatedRoute } from '@angular/router';
-import { Prodotti } from '../../assets/models/models';
+import { Prodotti, FilterPrice } from '../../assets/models/models';
 
 @Component({
   selector: 'app-list',
@@ -12,12 +12,19 @@ import { Prodotti } from '../../assets/models/models';
 export class ListComponent{
   prodotti:Prodotti[]=[];
   nameOfPage?:string;
-
+  prodotttiFiltered:Prodotti[]=[]
+  filterOn=false;
+  filterDefault={
+    expensive:false,
+    medium:false,
+    cheap:false
+  }
 
 constructor(private ns:NikeService){}
 
 @Input()
 Status?:string;
+priceFilters?:FilterPrice;
 
 
 update(status:string){
@@ -39,7 +46,6 @@ update(status:string){
       this.prodotti = data.filter(prodotto =>
         prodotto.nome.toLowerCase().includes(this.Status!.toLowerCase())
       );
-      console.log("Prodotti filtrati:", this.prodotti);
     });
 }
 
@@ -86,6 +92,60 @@ this.ns.allProducts().subscribe(data=>{
       console.log("Filtrati New: ",this.prodotti);
     })
   }
+
 }
 
+updatePriceFilter(filteredPrice: FilterPrice) {
+  this.priceFilters = filteredPrice;
+
+
+  /*  CHEAP ON, MEDIUM ON, EXPENSIVE ON   */
+  if (this.priceFilters.cheap && this.priceFilters.medium && this.priceFilters.expensive) {
+    this.prodotttiFiltered  = this.prodotti;
+    this.filterOn=false;
+  }
+
+  /*  CHEAP ON, MEDIUM ON, EXPENSIVE OFF   */
+  if (this.priceFilters.cheap && this.priceFilters.medium && !this.priceFilters.expensive) {
+    this.prodotttiFiltered  = this.prodotti.filter(p => p.prezzo < 200);
+    this.filterOn=true;
+  }
+
+  /*  CHEAP ON, MEDIUM OFF, EXPENSIVE ON   */
+  if (this.priceFilters.cheap && !this.priceFilters.medium && this.priceFilters.expensive) {
+    this.prodotttiFiltered  = this.prodotti.filter(p => p.prezzo < 100 || p.prezzo > 200);
+    this.filterOn=true;
+  }
+
+  /*  CHEAP ON, MEDIUM OFF, EXPENSIVE OFF   */
+  if (this.priceFilters.cheap && !this.priceFilters.medium && !this.priceFilters.expensive) {
+    this.prodotttiFiltered  = this.prodotti.filter(p => p.prezzo < 100);
+    this.filterOn=true;
+  }
+
+  /*  CHEAP OFF, MEDIUM ON, EXPENSIVE ON   */
+  if (!this.priceFilters.cheap && this.priceFilters.medium && this.priceFilters.expensive) {
+    this.prodotttiFiltered  = this.prodotti.filter(p => p.prezzo >= 100);
+    this.filterOn=true;
+  }
+
+  /*  CHEAP OFF, MEDIUM ON, EXPENSIVE OFF   */
+  if (!this.priceFilters.cheap && this.priceFilters.medium && !this.priceFilters.expensive) {
+    this.prodotttiFiltered  = this.prodotti.filter(p => p.prezzo >= 100 && p.prezzo < 200);
+    this.filterOn=true;
+  }
+
+  /*  CHEAP OFF, MEDIUM OFF, EXPENSIVE ON   */
+  if (!this.priceFilters.cheap && !this.priceFilters.medium && this.priceFilters.expensive) {
+    this.prodotttiFiltered  = this.prodotti.filter(p => p.prezzo > 200);
+    this.filterOn=true;
+  }
+
+  /*  CHEAP OFF, MEDIUM OFF, EXPENSIVE OFF   */
+  if (!this.priceFilters.cheap && !this.priceFilters.medium && !this.priceFilters.expensive) {
+    this.prodotttiFiltered  = this.prodotti;
+    this.filterOn=false;
+  }
+  console.log(this.prodotttiFiltered);
+}
 }

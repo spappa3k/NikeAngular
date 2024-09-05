@@ -15,6 +15,13 @@ export class SideOfListComponent implements OnInit {
   prodotti: Prodotti[] = [];
   passedFilter?:string;
 fromAppComponent?:string;
+/* Bindate ai checkbox dei filtri di prezzo */
+priceCheck = {
+  expensive: false,
+  medium: false,
+  cheap: false
+};
+
   constructor(private ns: NikeService, private route: ActivatedRoute) {
     ns.viewBannerHearderOnOff(false);
   }
@@ -86,5 +93,11 @@ fromAppComponent?:string;
           console.log("status: ", this.passedFilter);
           this.updateToChild();
         });
+      }
+
+
+      // CAMBIA LO STATO DEI CHECKBOX
+      changeStatusCheck(){
+this.listComponent?.updatePriceFilter(this.priceCheck);
       }
 }

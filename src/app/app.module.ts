@@ -15,7 +15,7 @@ import { NikeService } from './nike.service';
 import { ShoesDetailsComponent } from './shoes-details/shoes-details.component';
 import { ListComponent } from './list/list.component';
 import { SideOfListComponent } from './side-of-list/side-of-list.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleOfSearchComponent } from './title-of-search/title-of-search.component';
 import { BasketComponent } from './basket/basket.component';
 
@@ -39,7 +39,8 @@ import { BasketComponent } from './basket/basket.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
   ],

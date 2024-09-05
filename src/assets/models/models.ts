@@ -10,4 +10,10 @@
     nuovo_arrivi: boolean
     best_seller: number
   }
+
+  export interface FilterPrice {
+    expensive:boolean
+    medium:boolean
+    cheap:boolean
+  }
   
