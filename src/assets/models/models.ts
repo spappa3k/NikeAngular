@@ -16,4 +16,13 @@
     medium:boolean
     cheap:boolean
   }
+
+  export interface ProdottoForCheckout {
+    id: number
+    nome: string
+    categoria: string
+    prezzo: number
+    immagine: string
+    taglia:string
+  }
   

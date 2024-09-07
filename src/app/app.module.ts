@@ -18,6 +18,7 @@ import { SideOfListComponent } from './side-of-list/side-of-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleOfSearchComponent } from './title-of-search/title-of-search.component';
 import { BasketComponent } from './basket/basket.component';
+import { AddedToBasketComponent } from './added-to-basket/added-to-basket.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BasketComponent } from './basket/basket.component';
     ListComponent,
     SideOfListComponent,
     TitleOfSearchComponent,
-    BasketComponent
+    BasketComponent,
+    AddedToBasketComponent
   ],
   imports: [
     BrowserModule,

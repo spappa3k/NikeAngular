@@ -1,0 +1,22 @@
+<section id="itemAdded" *ngIf="prodottoToPush">
+    <div>
+        <span class="smallV"></span>Added to the basket <span><button type="button">x</button></span>
+        <div class="productBasket">
+            <div class="imgProduct">
+                <img [src]="prodottoToPush.immagine">
+            </div>
+            <div class="makeFlex">
+            <div class="detailsProduct">
+                <p>{{prodottoToPush.nome}}</p>
+                <p>Size: {{prodottoToPush.taglia}}</p>
+                <p class="sizeBasket"></p>
+                <p>{{prodottoToPush.prezzo}}</p>
+            </div>
+            <div id="buttonsBasket">
+                <button type="button">Basket</button>
+                <button type="button">Buy</button>
+            </div>
+        </div>
+        </div>
+        </div>
+</section>

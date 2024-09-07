@@ -44,7 +44,10 @@
     </ng-container>
  </div>
  <div id="addToButton">
-    <button type="button" id="realButton">Add to Bag</button>
+    <button type="button" id="realButton" (click)="itemAddetoToBasket()">Add to Basket</button>
  </div>
 </section>
 </div>
+<ng-container *ngIf="itemAdded">
+<app-added-to-basket [prodottoToPush]="prodottoInfoToPush"></app-added-to-basket>
+</ng-container>
