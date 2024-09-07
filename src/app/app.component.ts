@@ -9,6 +9,7 @@ import { ListComponent } from './list/list.component';
 export class AppComponent{
   title = 'NikeAngular';
   nameProductSearched?:string;
+  backgroundOn:boolean=false;
 
   @ViewChild(ListComponent) listComponent?: ListComponent;
 
@@ -21,4 +22,6 @@ this.nameProductSearched=nameP;
 console.log("ricevuto dall emitter: ",this.nameProductSearched);
 this.router.navigate(['/list',this.nameProductSearched]);
   }
+
+
 }

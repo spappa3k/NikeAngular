@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NikeService } from '../nike.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Prodotti, ProdottoForCheckout } from '../../assets/models/models';
@@ -17,6 +17,10 @@ export class ShoesDetailsComponent {
   itemAdded = false;
   sizeToPush = this.prodotto?.taglie_disponibili[this.selectedToBlack];
   prodottoInfoToPush?: ProdottoForCheckout;
+  backgroundBasketOn:boolean=false;
+
+
+
 
   constructor(private ns: NikeService, private route: ActivatedRoute) {
 
