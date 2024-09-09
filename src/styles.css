@@ -746,7 +746,7 @@ h4{
     width: 280px;
     height: 160px;
     background-color: rgb(255, 255, 255);
-    z-index: 51;
+    z-index: 9999;
     left: 80%;
     top:96px;
 }

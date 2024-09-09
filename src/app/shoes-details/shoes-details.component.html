@@ -61,3 +61,11 @@
 <ng-container *ngIf="itemAdded">
 <app-added-to-basket  (itemAddedOn)="itemAddedToBasketFromEmit($event)"  [prodottoToPush]="prodottoInfoToPush"></app-added-to-basket>
 </ng-container>
+
+<ng-container *ngIf="showMaximumShoesMessage">
+    <div id="overlay"></div>
+    <div id="messageMax">
+      <p>Your basket is FULL</p>
+      <button type="button" class="okMessage" (click)="hideMaxmessage()">Ok</button>
+    </div>
+  </ng-container>

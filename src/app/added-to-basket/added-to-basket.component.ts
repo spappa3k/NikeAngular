@@ -28,4 +28,8 @@ ngOnInit(): void {
 pushIt(){
   this.ns.pushToBasket(this.prodottoToPush!);
 }
+
+emptyIt(){
+  this.ns.emptyArray();
+}
 }

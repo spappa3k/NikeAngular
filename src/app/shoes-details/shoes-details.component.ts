@@ -19,7 +19,7 @@ export class ShoesDetailsComponent {
   prodottoInfoToPush?: ProdottoForCheckout;
   backgroundBasketOn:boolean=false;
   selectedQuantity:number=1
-
+showMaximumShoesMessage=false;
 
 
 
@@ -60,7 +60,7 @@ export class ShoesDetailsComponent {
   }
 // PRENDIAMO IL VALORE DEL TARGET DELL EVENTO E LO SPOSTIAMO NELLA VARIABILE DA PUSHARE NELL ARRAY DA MANDARE
   onQuantityChange(event:any){
-this.selectedQuantity=event.target.value;
+this.selectedQuantity=+event.target.value;  /*  con il + davanti convertiamo il risultato del select in numero */
 this.prodottoInfoToPush!.quantita=this.selectedQuantity;
   }
 
@@ -89,11 +89,22 @@ this.prodottoInfoToPush!.quantita=this.selectedQuantity;
   }
 
   itemAddetoToBasket() {    /* ABBIAMO TUTTE LE INFO NECESSARIE E COSTRUIAMO L OGGETTO DA PUSHARE  */ 
+
+    /* controlliamo se il numero di paia + il numero di quelle che stiamo per mettere supera la quantita massima*/
+    if(this.ns.numberOfShoes+this.selectedQuantity<16){
     this.itemAdded = true;
+  }else{
+    this.showMaximumShoesMessage=true;
+  }
   }
 
   itemAddedToBasketFromEmit(itemAddedFE:boolean){
 this.itemAdded=itemAddedFE;
+  }
+
+
+  hideMaxmessage(){
+    this.showMaximumShoesMessage=false;
   }
 
 }

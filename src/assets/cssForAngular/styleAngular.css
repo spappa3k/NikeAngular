@@ -366,3 +366,75 @@ font-size: 0.8em;
         text-align: center;
         width: 50px;
       }
+
+/* MESSAGGIO BASKET PIENO  */
+      
+   /* Overlay grigio semi-trasparente */
+#overlay{
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Grigio semi-trasparente */
+    z-index: 9998; /* Un livello sotto il messaggio popup */
+  }
+  
+  /* Messaggio popup */
+  #messageMax{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 400px;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    z-index: 9999;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #messageMax p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .okMessage {
+    background-color: #a49e43;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* CONTATORE ITEMS BASKET HEADER  */
+  .counterBasket{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: 23px;
+    left: 20px;
+    font-size: 0.5em;
+    background-color: rgb(255, 33, 33);
+    padding-top: 2px;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+  }
+  
+  
+  
+  

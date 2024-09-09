@@ -1,5 +1,4 @@
-<div class="backgroundCoverAdded">
-</div>
+<div class="backgroundCoverAdded"></div>
 <section id="itemAdded" *ngIf="prodottoToPush">
     <div>
         <span class="smallV"></span>Added to the basket <span><button type="button" (click)="itemAddedOn.emit(false)">x</button></span>
@@ -15,11 +14,12 @@
                 <p>{{prodottoToPush.prezzo}} QNT:{{prodottoToPush.quantita}}</p>
             </div>
             <div id="buttonsBasket">
-                <button type="button" (click)="itemAddedOn.emit(false)">Basket</button>
+                <button type="button" (click)="itemAddedOn.emit(false); emptyIt()">tmpSVUOTA</button>
                 <button type="button" (click)="itemAddedOn.emit(false)">Buy</button>
             </div>
         </div>
         </div>
         </div>
 </section>
+
 
