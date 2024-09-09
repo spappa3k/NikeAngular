@@ -96,7 +96,7 @@
 <ul>
     <li><img src="/assets/Img/Header/heart.png"></li>
     <li style="position: relative;"><img src="/assets/Img/Header/basket.png">
-    <div class="counterBasket">{{ns.numberOfShoes}}</div></li>
+    <div class="counterBasket" *ngIf="ns.numberOfShoes!=0">{{ns.numberOfShoes}}</div></li>
 </ul>
 </div>
 
