@@ -14,7 +14,7 @@
                 <p>{{prodottoToPush.prezzo}} QNT:{{prodottoToPush.quantita}}</p>
             </div>
             <div id="buttonsBasket">
-                <button type="button" (click)="itemAddedOn.emit(false); emptyIt()">tmpSVUOTA</button>
+                <button type="button" (click)="itemAddedOn.emit(false)" [routerLink]="['/basket']">Basket</button>
                 <button type="button" (click)="itemAddedOn.emit(false)">Buy</button>
             </div>
         </div>

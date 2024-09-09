@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ShoesDetailsComponent } from './shoes-details/shoes-details.component';
 import { ListComponent } from './list/list.component';
 import { SideOfListComponent } from './side-of-list/side-of-list.component';
+import { BasketComponent } from './basket/basket.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,9 @@ const routes: Routes = [
   },
   {
     path:"list/:filter", component:SideOfListComponent
+  },
+  {
+    path:"basket", component:BasketComponent
   }
 ];
 
