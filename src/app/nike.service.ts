@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Prodotti } from '../assets/models/models';
+import { Prodotti, ProdottoForCheckout } from '../assets/models/models';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { map, Observable } from 'rxjs';
 export class NikeService{
   prodottoFiltered:Prodotti | undefined;
   bannerOn=true;
+  prodottiInBasket:ProdottoForCheckout[]=[]
 
 
   constructor(private http: HttpClient) {
@@ -46,4 +47,9 @@ return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
               best(){
                 return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?best_seller=5")
               }
+  
+pushToBasket(prodotto:ProdottoForCheckout){
+this.prodottiInBasket.push(prodotto);
+console.log(this.prodottiInBasket);
+}
               }

@@ -1,12 +1,14 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Prodotti, ProdottoForCheckout } from '../../assets/models/models';
+import { NikeService } from '../nike.service';
 
 @Component({
   selector: 'app-added-to-basket',
   templateUrl: './added-to-basket.component.html',
   styleUrl: './added-to-basket.component.css'
 })
-export class AddedToBasketComponent {
+
+export class AddedToBasketComponent implements OnInit{
 
 @Input()
 prodottoToPush?:ProdottoForCheckout
@@ -15,4 +17,15 @@ prodottoToPush?:ProdottoForCheckout
 @Output()
 itemAddedOn = new EventEmitter<boolean>();
 
+
+constructor(private ns:NikeService){
+}
+
+ngOnInit(): void {
+  this.pushIt();
+}
+
+pushIt(){
+  this.ns.pushToBasket(this.prodottoToPush!);
+}
 }
