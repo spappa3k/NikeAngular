@@ -847,14 +847,22 @@ display: flex; flex-direction: column;
 /* COLONNA SINISTRA */
 
 #wrapperBasketPage{
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 520px;
-    margin-left: 20%;
 }
 #wrapperBasketPage #column1{
-    width: 40%;
+    width: 50%;
     height: 100%;
-    float: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#wrapperBasketPage #column1 img{
+width: 130px;
+height: auto;
 }
 #wrapperBasketPage #column1 .advertMember{
     margin-top: 50px;
@@ -880,12 +888,12 @@ height: 100%;
 position: relative;
 }
 /*------------------------------------------------SCARPA 1 IN BASKET */
-#shoeBasket1{
+#shoeBasket{
     position: relative;
     
 }
 
-.imgShoeBasket1{
+.imgShoeBasket{
     background-image: url(assets/Img/Scarpa/4.jpg);
     background-size: cover;
     background-position-y:-30px;
@@ -895,32 +903,32 @@ position: relative;
     
 
 }
-.detailShoeBasket1{
+.detailShoeBasket{
     position: relative;
     float: left;
     margin-top: 30px;
     margin-left: 20px;
 }
 
-.detailShoeBasket1 p{
+.detailShoeBasket p{
     font-size: 1.2em;
 margin-bottom: 10px;
 }
-.detailShoeBasket1 p:nth-of-type(1){
+.detailShoeBasket p:nth-of-type(1){
     font-weight: bold;
     margin-bottom: 3px;
 }
-.detailShoeBasket1 p:nth-of-type(2){
+.detailShoeBasket p:nth-of-type(2){
     color: #949494;
     font-size: 1em;
 }
-.detailShoeBasket1 p:nth-of-type(3){
+.detailShoeBasket p:nth-of-type(3){
     font-size: 1em;
     margin-top: 5px;
 }
 
 
-.priceshoeBasket1{
+.priceshoeBasket{
     width: 50px;
     height: 50px;
     position: absolute;
@@ -931,13 +939,13 @@ margin-bottom: 10px;
     clear: both;
 }
 
-#shoeBasket1 #selectQuantity{
+#shoeBasket #selectQuantity{
     margin-top: 16px;
     width: 150px;
     height:50px;
 }
 
-#binShoe1{
+#binShoe{
     position: absolute;
     left:150px;
     bottom: 33px;
@@ -948,7 +956,7 @@ margin-bottom: 10px;
 }
 
 /*------------------------------------------------SCARPA 2 IN BASKET */
-
+/*
 #shoeBasket2{
     position: absolute;
     top:220px;
@@ -1016,6 +1024,7 @@ margin-bottom: 10px;
     background-image: url('assets/Img/misc/icons8-bin-50.png');
     background-size: contain;
 }
+    */
 
  /* COLONNA DESTRA */
  .wrapperColumn2{

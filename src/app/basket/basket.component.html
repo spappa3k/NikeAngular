@@ -1,20 +1,24 @@
 <section id="wrapperBasketPage">
     <h2>What's in your Bag</h2>
+    
     <div id="column1">
         <div class="advertMember">
             <p>Free Shipping for Members!</p>
-            <p>Join us and take advantage of our fast and free shipping method!!! <span>Register</span> or
-                <span>Log-in</span></p>
+            <p>
+                Join us and take advantage of our fast and free shipping method!!! 
+                <span>Register</span> or <span>Log-in</span>
+            </p>
         </div>
-        <div class="shoesBought">
-            <div id="shoeBasket1">
-                <div class="imgShoeBasket1"></div>
-                <div class="detailShoeBasket1">
-                    <div id="binShoe1">
-                    </div>
-                    <p>Nike Dunk Low</p>
-                    <p>Men's shoes</p>
-                    <p>Size: 43 EU</p>
+
+        <ng-container *ngFor="let prodotto of prodottiInBasket">
+            <div id="shoeBasket">
+                <img class="imgShoeBasket" [src]="prodotto.immagine">
+                <div class="detailShoeBasket">
+                    <div id="binShoe"></div>
+                    <p>{{prodotto.nome}}</p>
+                    <p>{{prodotto.categoria}}</p>
+                    <p>{{prodotto.taglia}}</p>
+
                     <div id="selectQuantity">
                         Quantity
                         <select name="Quantity" id="quantity1">
@@ -23,46 +27,30 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                          </select>
+                        </select>
                     </div>
-                    <div class="priceshoeBasket1">119.99</div>
+
+                    <div class="priceshoeBasket">119.99</div>
                 </div>
-                
             </div>
-            <div id="shoeBasket2">
-                <div class="imgShoeBasket2"></div>
-                <div class="detailShoeBasket2">
-                    <div id="binShoe2">
-                    </div>
-                    <p>Nike Dunk Low Olive</p>
-                    <p>Men's shoes</p>
-                    <p>Size: 43 EU</p>
-                    <div id="selectQuantity">
-                        Quantity
-                        <select name="Quantity" id="quantity2">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                          </select>
-                    </div>
-                    <div class="priceshoeBasket2">125.99</div>
-                </div>
-                
+            <hr>
+        </ng-container>
+    </div>
+
+    <div id="column2">
+        <p>Summary</p>
+
+        <div class="wrapperColumn2">
+            <button type="button" id="refresh">Refresh</button>
+            <p class="total"></p>
+
+            <div class="endButtons">
+                <button type="button" id="purchase">Purchase</button>
+                <button type="button" id="paypal">
+                    <img src="assets/Img/misc/paypal.png">
+                </button>
             </div>
         </div>
     </div>
-    <div id="column2">
-        <p>Summary</p>
-        <div class="wrapperColumn2">
-            <button type="button" id="refresh">Refresh</button>
-        <p class="total"></p>
-    <div class="endButtons">
-        <button type="button" id="purchase">Purchase</button>
-        <button type="button" id="paypal"><img src="assets/Img/misc/paypal.png"></button>
-    </div>
-    </div>
-    </div>
-
+    
 </section>
