@@ -18,6 +18,7 @@ export class ShoesDetailsComponent {
   sizeToPush = this.prodotto?.taglie_disponibili[this.selectedToBlack];
   prodottoInfoToPush?: ProdottoForCheckout;
   backgroundBasketOn:boolean=false;
+  selectedQuantity:number=1
 
 
 
@@ -41,7 +42,8 @@ export class ShoesDetailsComponent {
           categoria: this.prodotto!.categoria,
           prezzo: this.prodotto!.prezzo,
           immagine: this.prodotto!.immagine,
-          taglia: this.prodotto!.taglie_disponibili[this.selectedSideImage]
+          taglia: this.prodotto!.taglie_disponibili[this.selectedSideImage],
+          quantita:this.selectedQuantity
         };
       });
 
@@ -55,6 +57,11 @@ export class ShoesDetailsComponent {
     this.sizeToPush = this.prodotto?.taglie_disponibili[this.selectedToBlack];
     this.prodottoInfoToPush!.taglia = this.sizeToPush!;
     console.log("MISURA: ", this.sizeToPush);
+  }
+// PRENDIAMO IL VALORE DEL TARGET DELL EVENTO E LO SPOSTIAMO NELLA VARIABILE DA PUSHARE NELL ARRAY DA MANDARE
+  onQuantityChange(event:any){
+this.selectedQuantity=event.target.value;
+this.prodottoInfoToPush!.quantita=this.selectedQuantity;
   }
 
   // FUNCTION TO RECALL ON CLICK THE VIEW FROM SIDE SMALL FRAMES
@@ -84,4 +91,9 @@ export class ShoesDetailsComponent {
   itemAddetoToBasket() {    /* ABBIAMO TUTTE LE INFO NECESSARIE E COSTRUIAMO L OGGETTO DA PUSHARE  */ 
     this.itemAdded = true;
   }
+
+  itemAddedToBasketFromEmit(itemAddedFE:boolean){
+this.itemAdded=itemAddedFE;
+  }
+
 }

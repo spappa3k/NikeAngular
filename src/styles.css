@@ -744,9 +744,9 @@ h4{
 #itemAdded{
     position: absolute;
     width: 280px;
-    height: 270px;
+    height: 160px;
     background-color: rgb(255, 255, 255);
-    z-index: 60;
+    z-index: 51;
     left: 80%;
     top:96px;
 }
@@ -840,7 +840,7 @@ display: flex; flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: #444f5990;
-    z-index: 600;
+    z-index: 50;
 }
 /*------------------------------------------------------------------------------PAGINA 3--------------------------------*/
 

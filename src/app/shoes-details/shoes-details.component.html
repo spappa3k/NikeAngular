@@ -42,6 +42,16 @@
         [ngClass]="{'selectedSizeAngular': i==selectedToBlack, 'noSelected': i!==selectedToBlack}"
          (click)="selectAnotherSize(i)">{{size}}</div>
     </ng-container>
+    <div id="selectQuantitBasket">
+        Quantity
+        <select name="Quantity" id="quantity1" [(ngModel)]="selectedQuantity" (change)="onQuantityChange($event)"> <!-- usiamo un evento per questione di conflitto con ngModel-->
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+    </div>
  </div>
  <div id="addToButton">
     <button type="button" id="realButton" (click)="itemAddetoToBasket()">Add to Basket</button>
@@ -49,5 +59,5 @@
 </section>
 </div>
 <ng-container *ngIf="itemAdded">
-<app-added-to-basket [prodottoToPush]="prodottoInfoToPush"></app-added-to-basket>
+<app-added-to-basket  (itemAddedOn)="itemAddedToBasketFromEmit($event)"  [prodottoToPush]="prodottoInfoToPush"></app-added-to-basket>
 </ng-container>

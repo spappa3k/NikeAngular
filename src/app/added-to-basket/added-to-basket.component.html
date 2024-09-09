@@ -1,6 +1,8 @@
+<div class="backgroundCoverAdded">
+</div>
 <section id="itemAdded" *ngIf="prodottoToPush">
     <div>
-        <span class="smallV"></span>Added to the basket <span><button type="button">x</button></span>
+        <span class="smallV"></span>Added to the basket <span><button type="button" (click)="itemAddedOn.emit(false)">x</button></span>
         <div class="productBasket">
             <div class="imgProduct">
                 <img [src]="prodottoToPush.immagine">
@@ -10,13 +12,14 @@
                 <p>{{prodottoToPush.nome}}</p>
                 <p>Size: {{prodottoToPush.taglia}}</p>
                 <p class="sizeBasket"></p>
-                <p>{{prodottoToPush.prezzo}}</p>
+                <p>{{prodottoToPush.prezzo}} QNT:{{prodottoToPush.quantita}}</p>
             </div>
             <div id="buttonsBasket">
-                <button type="button">Basket</button>
-                <button type="button">Buy</button>
+                <button type="button" (click)="itemAddedOn.emit(false)">Basket</button>
+                <button type="button" (click)="itemAddedOn.emit(false)">Buy</button>
             </div>
         </div>
         </div>
         </div>
 </section>
+

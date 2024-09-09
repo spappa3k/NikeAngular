@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Prodotti, ProdottoForCheckout } from '../../assets/models/models';
 
 @Component({
@@ -10,5 +10,9 @@ export class AddedToBasketComponent {
 
 @Input()
 prodottoToPush?:ProdottoForCheckout
-  
+
+/* emettiamo evento dal template al click sulla x per dire al padre di mettere iteamAdded su false cosi si chiude il minibasket */
+@Output()
+itemAddedOn = new EventEmitter<boolean>();
+
 }

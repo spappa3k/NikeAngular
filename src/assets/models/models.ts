@@ -24,5 +24,6 @@
     prezzo: number
     immagine: string
     taglia:string
+    quantita:number
   }
   
