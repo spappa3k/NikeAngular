@@ -23,9 +23,9 @@ totalAll:number=0;
     this.prodottiInBasket.forEach(elemento=> {
      const total=elemento.prezzo*elemento.quantita;
      this.totalAll=+total;
-     console.log("TOTALE:", this.totalAll);
+     console.log("TOTALE:  ", this.totalAll);
     });
-  }
+  } 
 
   onQuantityChange(event:any){
    /* this.selectedQuantity=+event.target.value;  /*  con il + davanti convertiamo il risultato del select in numero */
