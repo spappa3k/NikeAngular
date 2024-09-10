@@ -847,10 +847,13 @@ display: flex; flex-direction: column;
 /* COLONNA SINISTRA */
 
 #wrapperBasketPage{
+    margin-top: 10px;
+    margin-left: 100px;
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 520px;
+
 }
 #wrapperBasketPage #column1{
     width: 50%;
@@ -858,28 +861,31 @@ display: flex; flex-direction: column;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow-y: scroll;
 }
 
-#wrapperBasketPage #column1 img{
+#wrapperBasketPage img{
 width: 130px;
 height: auto;
 }
-#wrapperBasketPage #column1 .advertMember{
-    margin-top: 50px;
+.advertMember{
+    margin-top: 20px;
     width: 100%;
     height: 42px;
     border: #e9e9e980 solid 3px;
+    display: inline;
+    text-align: center;
 }
 
-#wrapperBasketPage #column1 .advertMember p:first-of-type{
+.advertMember p:first-of-type{
     color: rgba(255, 166, 0, 0.938);
     font-size: 1em;
 }
-#wrapperBasketPage #column1 .advertMember p:nth-of-type(2){
+.advertMember p:nth-of-type(2){
     font-size: 0.9em;
 }
 
-#wrapperBasketPage #column1 .advertMember span{
+.advertMember span{
     font-weight: bold;
 }
 .shoesBought{
@@ -1036,7 +1042,7 @@ margin-bottom: 10px;
    height: 80%;
    float: left;
    margin-left: 25px;
-   margin-top: 70px;
+   margin-top: 40px;
  }
 
  #wrapperBasketPage #column2 .wrapperColumn2{

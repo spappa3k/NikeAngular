@@ -1,36 +1,29 @@
-<section id="wrapperBasketPage">
-    <h2>What's in your Bag</h2>
-    
+    <div class="advertMember">
+        <p>Free Shipping for Members!</p>
+        <p>
+            Join us and take advantage of our fast and free shipping method!!! 
+            <span>Register</span> or <span>Log-in</span>
+        </p>
+    </div>
+    <section id="wrapperBasketPage">
     <div id="column1">
-        <div class="advertMember">
-            <p>Free Shipping for Members!</p>
-            <p>
-                Join us and take advantage of our fast and free shipping method!!! 
-                <span>Register</span> or <span>Log-in</span>
-            </p>
-        </div>
-
         <ng-container *ngFor="let prodotto of prodottiInBasket">
             <div id="shoeBasket">
                 <img class="imgShoeBasket" [src]="prodotto.immagine">
                 <div class="detailShoeBasket">
                     <div id="binShoe"></div>
                     <p>{{prodotto.nome}}</p>
-                    <p>{{prodotto.categoria}}</p>
-                    <p>{{prodotto.taglia}}</p>
+                    <p>Category: {{prodotto.categoria}}</p>
+                    <p>Size: {{prodotto.taglia}}</p>
 
                     <div id="selectQuantity">
                         Quantity
-                        <select name="Quantity" id="quantity1">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                        <select name="Quantity" id="quantity" [(ngModel)]="prodotto.quantita" (change)="onQuantityChange($event)">
+                            <option *ngFor="let quantity of [1,2,3,4,5]" [value]="quantity">{{quantity}}</option>
                         </select>
                     </div>
 
-                    <div class="priceshoeBasket">119.99</div>
+                    <div class="priceshoeBasket">{{(prodotto.prezzo*prodotto.quantita)| currency:'EUR': 'symbol' :'1.2-2'}}</div>
                 </div>
             </div>
             <hr>

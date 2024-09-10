@@ -10,6 +10,9 @@ import { ProdottoForCheckout } from '../../assets/models/models';
 })
 export class BasketComponent implements OnInit{
 prodottiInBasket:ProdottoForCheckout[]=[]
+totalPriceProdotti:number[]=[]
+totalAll:number=0;
+
 
   constructor(private ns:NikeService){
   ns.viewBannerHearderOnOff(false);
@@ -17,6 +20,18 @@ prodottiInBasket:ProdottoForCheckout[]=[]
 
   ngOnInit(): void {
     this.prodottiInBasket=this.ns.prodottiInBasket;
+    this.prodottiInBasket.forEach(elemento=> {
+     const total=elemento.prezzo*elemento.quantita;
+     this.totalAll=+total;
+     console.log("TOTALE:", this.totalAll);
+    });
   }
 
+  onQuantityChange(event:any){
+   /* this.selectedQuantity=+event.target.value;  /*  con il + davanti convertiamo il risultato del select in numero */
+      }
+
+      ngOnDestroy():void{
+        console.log("distrutto");
+      }
 }
