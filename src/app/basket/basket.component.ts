@@ -14,6 +14,8 @@ totalPriceProdotti:number[]=[]
 totalAll:number=0;
 numberOFPairs:number=0
 showMaximumMessage:boolean=false;
+totalAtCheckout:number=0;
+isNgOnInIt=true;
 
 
   constructor(private ns:NikeService){
@@ -31,7 +33,8 @@ this.numberOFPairs+=item.quantita;
      let total=elemento.prezzo*elemento.quantita;
      this.totalAll+=total;
     });
-    console.log("TOTALE:  ", this.totalAll);
+    this.storeTotal(this.totalAll);
+    this.isNgOnInIt=false;
   } 
 
   onQuantityChange(index:number,event:any){
@@ -58,6 +61,26 @@ this.showMaximumMessage=false;
 }
 
 
+binIt(index:number){
+this.prodottiInBasket.splice(index,1);   
+this.ns.prodottiInBasket=this.prodottiInBasket;
+}
+
+storeTotal(total:number){
+if(!this.isNgOnInIt){
+  this.prodottiInBasket.forEach(item=>{
+    this.numberOFPairs+=item.quantita;
+        });
+        console.log("Quantita: ",this.numberOFPairs);
+        this.prodottiInBasket.forEach(elemento=> {
+         let total=elemento.prezzo*elemento.quantita;
+         this.totalAll+=total;
+        });
+        this.storeTotal(this.totalAll)
+      }
+this.totalAtCheckout=total;
+      
+}
 
 
       ngOnDestroy():void{

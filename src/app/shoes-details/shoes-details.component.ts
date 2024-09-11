@@ -25,37 +25,32 @@ stopAlreadyInBasket=false;
 
 
 
-  constructor(private ns: NikeService, private route: ActivatedRoute) {
-
-    // GET ID
-    const id = this.route.snapshot.paramMap.get('id');
-    const idNumber = id ? +id : null;  /* convert to number */
-
-    // CALL TO SERVICE
-    this.ns.searchById(idNumber!)
-      .subscribe(data => {
-        this.prodotto = data;
-
-        // Initialize prodottoInfoToPush after prodotto is fetched
-        this.prodottoInfoToPush = {
-          id: this.prodotto!.id,
-          nome: this.prodotto!.nome,
-          categoria: this.prodotto!.categoria,
-          prezzo: this.prodotto!.prezzo,
-          immagine: this.prodotto!.immagine,
-          taglia: this.prodotto!.taglie_disponibili[this.selectedSideImage],
-          quantita:this.selectedQuantity
-        };
-      });
-
-    console.log("prodotto arrivato", this.prodotto);
-    ns.viewBannerHearderOnOff(false);
-  }
+  constructor(private ns: NikeService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+       // GET ID
+       const id = this.route.snapshot.paramMap.get('id');
+       const idNumber = id ? +id : null;  /* convert to number */
+   
+       // CALL TO SERVICE
+       this.ns.searchById(idNumber!)
+         .subscribe(data => {
+           this.prodotto = data;
+   
+           // Initialize prodottoInfoToPush after prodotto is fetched
+           this.prodottoInfoToPush = {
+             id: this.prodotto!.id,
+             nome: this.prodotto!.nome,
+             categoria: this.prodotto!.categoria,
+             prezzo: this.prodotto!.prezzo,
+             immagine: this.prodotto!.immagine,
+             taglia: this.prodotto!.taglie_disponibili[this.selectedSideImage],
+             quantita:this.selectedQuantity
+           };
+         });      
+       this.ns.viewBannerHearderOnOff(false);
     
-    const found = this.ns.prodottiInBasket.find(p => p.id === this.prodotto!.id);
-
+       const found = this.ns.prodottiInBasket?.find(p => p.id === this.prodotto?.id);
     if (found) {
       this.stopAlreadyInBasket = true;  // Se l'elemento è trovato nell array del service, non permettere l'acquisto
   }}
@@ -128,6 +123,6 @@ this.itemAdded=itemAddedFE;
     this.showAlreadyInBasketMessage=false;
   }
 
-
+ngOnDestroy(){}
 
 }

@@ -11,7 +11,7 @@
             <div id="shoeBasket">
                 <img class="imgShoeBasket" [src]="prodotto.immagine">
                 <div class="detailShoeBasket">
-                    <div id="binShoe"></div>
+                    <div id="binShoe" (click)="binIt(i)"></div>
                     <p>{{prodotto.nome}}</p>
                     <p>Category: {{prodotto.categoria}}</p>
                     <p>Size: {{prodotto.taglia}}</p>
@@ -34,14 +34,10 @@
         <p>Summary</p>
 
         <div class="wrapperColumn2">
-            <button type="button" id="refresh">Refresh</button>
             <p class="total"></p>
 
             <div class="endButtons" *ngIf="numberOFPairs<16">
-                <button type="button" id="purchase">Purchase</button>
-                <button type="button" id="paypal">
-                    <img src="assets/Img/misc/paypal.png">
-                </button>
+                <button type="button" id="purchase">Checkout</button>
                 <div class="endButtons" *ngIf="numberOFPairs>15">
                     <p style="font-size: 0.7; color: red;">*Too many items! Maximum 15 allowed for the purchase</p>
                 </div>
