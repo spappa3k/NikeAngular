@@ -93,13 +93,11 @@ this.prodottoInfoToPush!.quantita=this.selectedQuantity;
   }
 
   itemAddetoToBasket() {    /* ABBIAMO TUTTE LE INFO NECESSARIE E COSTRUIAMO L OGGETTO DA PUSHARE  */ 
-let sizeOfFound:string="";
-    const found = this.ns.prodottiInBasket.find(p => {
-      p.id === this.prodotto!.id;
-    sizeOfFound=p.taglia;
-    });
 
-    if (found&&sizeOfFound!=this.prodottoInfoToPush?.taglia) {
+    const found = this.ns.prodottiInBasket.find(p => 
+      p.id === this.prodotto!.id);
+
+    if (found) {
       this.showAlreadyInBasketMessage = true;  // Se l'elemento è trovato nell array del service, manda il messaggio che l'item e' gia nel basket
     this.stopAlreadyInBasket=true;
     }
