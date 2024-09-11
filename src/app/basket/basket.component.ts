@@ -13,6 +13,7 @@ prodottiInBasket:ProdottoForCheckout[]=[]
 totalPriceProdotti:number[]=[]
 totalAll:number=0;
 numberOFPairs:number=0
+showMaximumMessage:boolean=false;
 
 
   constructor(private ns:NikeService){
@@ -33,11 +34,34 @@ this.numberOFPairs+=item.quantita;
     console.log("TOTALE:  ", this.totalAll);
   } 
 
-  onQuantityChange(event:any){
+  onQuantityChange(index:number,event:any){
+   this.prodottiInBasket[index].quantita=+event.target.value;
+
+   this.numberOFPairs=0;
+   this.prodottiInBasket.forEach(item=>{
+    this.numberOFPairs+=item.quantita;
+        });
+console.log("Quantita: ",this.numberOFPairs);
+if(this.numberOFPairs>15){
+  this.showMaximumMessage=true;
+}
+
    /* this.selectedQuantity=+event.target.value;  /*  con il + davanti convertiamo il risultato del select in numero */
       }
+
+
+
+hideMaxMessage(){
+this.showMaximumMessage=false;
+}
+
+
+
 
       ngOnDestroy():void{
         console.log("distrutto");
       }
+
+
+
 }

@@ -58,7 +58,7 @@
  </div>
 </section>
 </div>
-<ng-container *ngIf="itemAdded">
+<ng-container *ngIf="itemAdded && stopAlreadyInBasket==false">
 <app-added-to-basket  (itemAddedOn)="itemAddedToBasketFromEmit($event)"  [prodottoToPush]="prodottoInfoToPush"></app-added-to-basket>
 </ng-container>
 
@@ -66,6 +66,14 @@
     <div id="overlay"></div>
     <div id="messageMax">
       <p>Your basket is FULL</p>
-      <button type="button" class="okMessage" (click)="hideMaxmessage()">Ok</button>
+      <button type="button" class="okMessage" (click)="hideMaxMessage()">Ok</button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="showAlreadyInBasketMessage">
+    <div id="overlay"></div>
+    <div id="messageMax">
+      <p>This item is already in your <a [routerLink]="['/basket']">Basket!</a></p>
+      <button type="button" class="okMessage" (click)="hideAlreadyInBasketMessage()">Ok</button>
     </div>
   </ng-container>

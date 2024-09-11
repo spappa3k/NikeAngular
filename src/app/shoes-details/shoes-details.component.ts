@@ -9,7 +9,7 @@ import { style } from '@angular/animations';
   templateUrl: './shoes-details.component.html',
   styleUrl: './shoes-details.component.css'
 })
-export class ShoesDetailsComponent {
+export class ShoesDetailsComponent implements OnInit{
   prodotto?: Prodotti;
   selectedToBlack = 4; // starting size selected
   selectedSideImage = 5; // default view of the shoes
@@ -20,6 +20,8 @@ export class ShoesDetailsComponent {
   backgroundBasketOn:boolean=false;
   selectedQuantity:number=1
 showMaximumShoesMessage=false;
+showAlreadyInBasketMessage=false;
+stopAlreadyInBasket=false;
 
 
 
@@ -33,7 +35,6 @@ showMaximumShoesMessage=false;
     this.ns.searchById(idNumber!)
       .subscribe(data => {
         this.prodotto = data;
-        console.log("Photo:", this.prodotto.immagine);
 
         // Initialize prodottoInfoToPush after prodotto is fetched
         this.prodottoInfoToPush = {
@@ -50,6 +51,14 @@ showMaximumShoesMessage=false;
     console.log("prodotto arrivato", this.prodotto);
     ns.viewBannerHearderOnOff(false);
   }
+
+  ngOnInit(): void {
+    
+    const found = this.ns.prodottiInBasket.find(p => p.id === this.prodotto!.id);
+
+    if (found) {
+      this.stopAlreadyInBasket = true;  // Se l'elemento è trovato nell array del service, non permettere l'acquisto
+  }}
 
   // FUNCTION TO RECALL ON CLICK OF A NEW SIZE
   selectAnotherSize(whichOfArray: number) {
@@ -90,12 +99,20 @@ this.prodottoInfoToPush!.quantita=this.selectedQuantity;
 
   itemAddetoToBasket() {    /* ABBIAMO TUTTE LE INFO NECESSARIE E COSTRUIAMO L OGGETTO DA PUSHARE  */ 
 
+    const found = this.ns.prodottiInBasket.find(p => p.id === this.prodotto!.id);
+
+    if (found) {
+      this.showAlreadyInBasketMessage = true;  // Se l'elemento è trovato nell array del service, manda il messaggio che l'item e' gia nel basket
+    this.stopAlreadyInBasket=true;
+    }
+
     /* controlliamo se il numero di paia + il numero di quelle che stiamo per mettere supera la quantita massima*/
-    if(this.ns.numberOfShoes+this.selectedQuantity<16){
+    if(this.ns.numberOfShoes+this.selectedQuantity<16 && this.stopAlreadyInBasket==false){
     this.itemAdded = true;
   }else{
     this.showMaximumShoesMessage=true;
   }
+
   }
 
   itemAddedToBasketFromEmit(itemAddedFE:boolean){
@@ -103,8 +120,14 @@ this.itemAdded=itemAddedFE;
   }
 
 
-  hideMaxmessage(){
+  hideMaxMessage(){
     this.showMaximumShoesMessage=false;
   }
+
+  hideAlreadyInBasketMessage(){
+    this.showAlreadyInBasketMessage=false;
+  }
+
+
 
 }
