@@ -46,6 +46,8 @@ if(this.numberOFPairs>15){
   this.showMaximumMessage=true;
 }
 
+this.ns.numberOfShoes=this.numberOFPairs; /* aggiorniamo anche il service cosi l'iconcina del basket si aggiorna pure */
+
    /* this.selectedQuantity=+event.target.value;  /*  con il + davanti convertiamo il risultato del select in numero */
       }
 

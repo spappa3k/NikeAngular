@@ -109,7 +109,7 @@ this.prodottoInfoToPush!.quantita=this.selectedQuantity;
     /* controlliamo se il numero di paia + il numero di quelle che stiamo per mettere supera la quantita massima*/
     if(this.ns.numberOfShoes+this.selectedQuantity<16 && this.stopAlreadyInBasket==false){
     this.itemAdded = true;
-  }else{
+  }else if(this.ns.numberOfShoes+this.selectedQuantity>15 && this.stopAlreadyInBasket==false){
     this.showMaximumShoesMessage=true;
   }
 
