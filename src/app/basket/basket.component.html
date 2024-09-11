@@ -34,6 +34,7 @@
         <p>Summary</p>
 
         <div class="wrapperColumn2">
+            {{totalAtCheckout| currency:'EUR': 'symbol' :'1.2-2'}}
             <p class="total"></p>
 
             <div class="endButtons" *ngIf="numberOFPairs<16">

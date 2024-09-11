@@ -11,11 +11,10 @@ import { ProdottoForCheckout } from '../../assets/models/models';
 export class BasketComponent implements OnInit{
 prodottiInBasket:ProdottoForCheckout[]=[]
 totalPriceProdotti:number[]=[]
-totalAll:number=0;
 numberOFPairs:number=0
 showMaximumMessage:boolean=false;
 totalAtCheckout:number=0;
-isNgOnInIt=true;
+
 
 
   constructor(private ns:NikeService){
@@ -31,15 +30,13 @@ this.numberOFPairs+=item.quantita;
     console.log("Quantita: ",this.numberOFPairs);
     this.prodottiInBasket.forEach(elemento=> {
      let total=elemento.prezzo*elemento.quantita;
-     this.totalAll+=total;
-    });
-    this.storeTotal(this.totalAll);
-    this.isNgOnInIt=false;
+     this.totalAtCheckout+=total;
+    });   /* prendiamo il totale all ngOnInIt  */
+
   } 
 
   onQuantityChange(index:number,event:any){
-   this.prodottiInBasket[index].quantita=+event.target.value;
-
+   this.prodottiInBasket[index].quantita=+event.target.value; /*  con il + davanti convertiamo il risultato del select in numero */
    this.numberOFPairs=0;
    this.prodottiInBasket.forEach(item=>{
     this.numberOFPairs+=item.quantita;
@@ -50,8 +47,8 @@ if(this.numberOFPairs>15){
 }
 
 this.ns.numberOfShoes=this.numberOFPairs; /* aggiorniamo anche il service cosi l'iconcina del basket si aggiorna pure */
-
-   /* this.selectedQuantity=+event.target.value;  /*  con il + davanti convertiamo il risultato del select in numero */
+this.totalAtCheckout=0;
+this.storeTotal();
       }
 
 
@@ -64,22 +61,20 @@ this.showMaximumMessage=false;
 binIt(index:number){
 this.prodottiInBasket.splice(index,1);   
 this.ns.prodottiInBasket=this.prodottiInBasket;
+this.totalAtCheckout=0;
+this.ns.numberOfShoes=this.prodottiInBasket.length;
+this.storeTotal();
 }
 
-storeTotal(total:number){
-if(!this.isNgOnInIt){
-  this.prodottiInBasket.forEach(item=>{
-    this.numberOFPairs+=item.quantita;
-        });
-        console.log("Quantita: ",this.numberOFPairs);
+storeTotal(){
+  if (this.prodottiInBasket.length === 0) {
+this.totalAtCheckout=0;
+    return; // Esci dalla funzione se non ci sono prodotti
+}
         this.prodottiInBasket.forEach(elemento=> {
          let total=elemento.prezzo*elemento.quantita;
-         this.totalAll+=total;
-        });
-        this.storeTotal(this.totalAll)
-      }
-this.totalAtCheckout=total;
-      
+         this.totalAtCheckout+=total;
+        });     
 }
 
 
