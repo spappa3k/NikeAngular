@@ -12,6 +12,7 @@ export class BasketComponent implements OnInit{
 prodottiInBasket:ProdottoForCheckout[]=[]
 totalPriceProdotti:number[]=[]
 totalAll:number=0;
+numberOFPairs:number=0
 
 
   constructor(private ns:NikeService){
@@ -20,11 +21,16 @@ totalAll:number=0;
 
   ngOnInit(): void {
     this.prodottiInBasket=this.ns.prodottiInBasket;
-    this.prodottiInBasket.forEach(elemento=> {
-     const total=elemento.prezzo*elemento.quantita;
-     this.totalAll=+total;
-     console.log("TOTALE:  ", this.totalAll);
+
+    this.prodottiInBasket.forEach(item=>{
+this.numberOFPairs+=item.quantita;
     });
+    console.log("Quantita: ",this.numberOFPairs);
+    this.prodottiInBasket.forEach(elemento=> {
+     let total=elemento.prezzo*elemento.quantita;
+     this.totalAll+=total;
+    });
+    console.log("TOTALE:  ", this.totalAll);
   } 
 
   onQuantityChange(event:any){
