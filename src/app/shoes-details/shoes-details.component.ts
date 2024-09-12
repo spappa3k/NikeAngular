@@ -21,7 +21,7 @@ export class ShoesDetailsComponent implements OnInit{
   selectedQuantity:number=1
 showMaximumShoesMessage=false;
 showAlreadyInBasketMessage=false;
-stopAlreadyInBasket=false;
+// stopAlreadyInBasket=false;
 
 
 
@@ -49,11 +49,12 @@ stopAlreadyInBasket=false;
            };
          });      
        this.ns.viewBannerHearderOnOff(false);
-    
+  /*  
        const found = this.ns.prodottiInBasket?.find(p => p.id === this.prodotto?.id);
     if (found) {
       this.stopAlreadyInBasket = true;  // Se l'elemento è trovato nell array del service, non permettere l'acquisto
-  }}
+  }*/
+  }
 
   // FUNCTION TO RECALL ON CLICK OF A NEW SIZE
   selectAnotherSize(whichOfArray: number) {
@@ -94,7 +95,7 @@ this.prodottoInfoToPush!.quantita=this.selectedQuantity;
 
   itemAddetoToBasket() {    /* ABBIAMO TUTTE LE INFO NECESSARIE E COSTRUIAMO L OGGETTO DA PUSHARE  */ 
 
-    const found = this.ns.prodottiInBasket.find(p => 
+   /* const found = this.ns.prodottiInBasket.find(p => 
       p.id === this.prodotto!.id);
 
     if (found) {
@@ -103,9 +104,9 @@ this.prodottoInfoToPush!.quantita=this.selectedQuantity;
     }
 
     /* controlliamo se il numero di paia + il numero di quelle che stiamo per mettere supera la quantita massima*/
-    if(this.ns.numberOfShoes+this.selectedQuantity<16 && this.stopAlreadyInBasket==false){
+    if(this.ns.numberOfShoes+this.selectedQuantity<this.ns.NMAXPairs+1){
     this.itemAdded = true;
-  }else if(this.ns.numberOfShoes+this.selectedQuantity>15 && this.stopAlreadyInBasket==false){
+  }else{
     this.showMaximumShoesMessage=true;
   }
 

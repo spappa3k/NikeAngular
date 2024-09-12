@@ -17,7 +17,7 @@ totalAtCheckout:number=0;
 
 
 
-  constructor(private ns:NikeService){
+  constructor(public ns:NikeService){
   ns.viewBannerHearderOnOff(false);
   }
 
@@ -42,7 +42,7 @@ this.numberOFPairs+=item.quantita;
     this.numberOFPairs+=item.quantita;
         });
 console.log("Quantita: ",this.numberOFPairs);
-if(this.numberOFPairs>15){
+if(this.numberOFPairs>this.ns.NMAXPairs){
   this.showMaximumMessage=true;
 }
 

@@ -50,8 +50,8 @@
         <ng-container ></ng-container>
     <div id="overlay"></div>
     <div id="messageMax" style="width: 800px;">
-      <p>TOO MANY ITEMS! Maximum pairs allowed:  <span style="color: red;">15</span></p>
-      <p style="font-size: 0.9em;"><span style="color: yellow;">Tip: </span> change the quantity of one of your items</p>
+      <p>TOO MANY ITEMS! Maximum pairs allowed:  <span style="color: rgb(16, 0, 158);">{{this.ns.NMAXPairs}}</span></p>
+      <p style="font-size: 0.9em;"><span style="color: rgb(255, 166, 0);">Tip: </span> Adjust the quantity of one of your items</p>
       <button type="button" class="okMessage" (click)="hideMaxMessage()">Ok</button>
     </div>
   </ng-container>

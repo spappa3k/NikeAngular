@@ -11,7 +11,7 @@ export class NikeService{
   bannerOn=true;
   prodottiInBasket:ProdottoForCheckout[]=[]
   numberOfShoes:number=0
-
+NMAXPairs=12;
 
   constructor(private http: HttpClient) {
   }
@@ -50,10 +50,11 @@ return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
               }
   
 pushToBasket(prodotto:ProdottoForCheckout){
-this.prodottiInBasket.push(prodotto);
+  const prodottoCopia = { ...prodotto };
+this.prodottiInBasket.push(prodottoCopia);
 console.log(this.prodottiInBasket);
 this.numberOfShoes=this.numberOfShoes+prodotto.quantita;
-console.log("Quante paia?: ",this.numberOfShoes);
+console.log("PRODOTTI NEL SERVICE ",this.prodottiInBasket);
 }
 /* DA TOGLIERE DOPO */
 emptyArray(){

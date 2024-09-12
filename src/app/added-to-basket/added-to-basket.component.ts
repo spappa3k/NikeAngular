@@ -27,5 +27,7 @@ ngOnInit(): void {
 
 pushIt(){
   this.ns.pushToBasket(this.prodottoToPush!);
+  console.log("Prodotto pushato: ", this.prodottoToPush);
 }
+
 }

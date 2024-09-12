@@ -58,7 +58,7 @@
  </div>
 </section>
 </div>
-<ng-container *ngIf="itemAdded && stopAlreadyInBasket==false">
+<ng-container *ngIf="itemAdded">
 <app-added-to-basket  (itemAddedOn)="itemAddedToBasketFromEmit($event)"  [prodottoToPush]="prodottoInfoToPush"></app-added-to-basket>
 </ng-container>
 
