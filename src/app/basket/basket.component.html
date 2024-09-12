@@ -39,7 +39,7 @@
             <!-- Totale -->
              <div class="listOfProductsSummary">
              <ul *ngFor="let prodottoListato of prodottiInBasket">
-            <li class="itemListed">{{prodottoListato.quantita}}x&nbsp;<span>{{prodottoListato.nome}}</span></li>
+            <li class="itemListed">{{prodottoListato.quantita}}x&nbsp;<span>{{prodottoListato.nome}}&nbsp;</span>(<span style="color: gray; font-size: 0.9em;">Size: {{prodottoListato.taglia}}</span>)</li>
              </ul>
             <p class="items-cost">Items cost: {{totalAtAllProducts | currency:'EUR': 'symbol' :'1.2-2'}}</p>
         </div>
