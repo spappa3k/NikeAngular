@@ -26,25 +26,43 @@
                     <div class="priceshoeBasket">{{(prodotto.prezzo*prodotto.quantita)| currency:'EUR': 'symbol' :'1.2-2'}}</div>
                 </div>
             </div>
+            <ng-container *ngIf="i!=prodottiInBasket.length-1">
             <hr>
+        </ng-container>
         </ng-container>
     </div>
 
     <div id="column2">
         <p>Summary</p>
-
+    
         <div class="wrapperColumn2">
-            {{totalAtCheckout| currency:'EUR': 'symbol' :'1.2-2'}}
-            <p class="total"></p>
+            <!-- Totale -->
+            <p class="items-cost">Items cost: {{totalAtAllProducts | currency:'EUR': 'symbol' :'1.2-2'}}</p>
 
-            <div class="endButtons" *ngIf="numberOFPairs<ns.NMAXPairs+1">
-                <button type="button" id="purchase">Checkout</button>
-                <div class="endButtons" *ngIf="numberOFPairs>ns.NMAXPairs">
-                    <p style="font-size: 0.7; color: red;">*Too many items! Maximum {{ns.NMAXPairs}} allowed for the purchase</p>
-                </div>
+            <!-- Radio buttons per la spedizione -->
+            <div class="shipping-options">
+                <label class="shipping-option">
+                    <input type="radio" name="shipping" [(ngModel)]="selectedShipping" [value]="0" (change)="updateTotalAfterShipping()">
+                    Free Shipping : <span>5 - 7 working days delivery</span>
+                </label>
+                <label class="shipping-option">
+                    <input type="radio" name="shipping" [(ngModel)]="selectedShipping" [value]="3.99" (change)="updateTotalAfterShipping()">
+                   € 3.99 : <span>2 - 3 working days delivery</span>
+                </label>
+                <label class="shipping-option">
+                    <input type="radio" name="shipping" [(ngModel)]="selectedShipping" [value]="5.99" (change)="updateTotalAfterShipping()">
+                   € 5.99 : <span>Next working day delivery</span>
+                </label>
             </div>
-        </div>
-    </div>
+        
+            <!-- Totale aggiornato -->
+            <p class="total">Total: {{TotalAFterShipping | currency:'EUR': 'symbol' :'1.2-2'}}</p>
+    
+            <!-- Bottone di acquisto -->
+            <div class="endButtons" *ngIf="numberOFPairs < ns.NMAXPairs + 1">
+                <button type="button" id="purchase">Checkout</button>
+            </div>
+    
     
     <ng-container *ngIf="showMaximumMessage">
         <ng-container ></ng-container>
@@ -56,4 +74,3 @@
     </div>
   </ng-container>
 
-</section>

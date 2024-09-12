@@ -12,10 +12,10 @@ export class BasketComponent implements OnInit{
 prodottiInBasket:ProdottoForCheckout[]=[]
 totalPriceProdotti:number[]=[]
 numberOFPairs:number=0
-showMaximumMessage:boolean=false;
-totalAtCheckout:number=0;
-
-
+showMaximumMessage:boolean=false
+totalAtAllProducts:number=0
+selectedShipping:number=0
+TotalAFterShipping:number=0
 
   constructor(public ns:NikeService){
   ns.viewBannerHearderOnOff(false);
@@ -30,7 +30,8 @@ this.numberOFPairs+=item.quantita;
     console.log("Quantita: ",this.numberOFPairs);
     this.prodottiInBasket.forEach(elemento=> {
      let total=elemento.prezzo*elemento.quantita;
-     this.totalAtCheckout+=total;
+     this.totalAtAllProducts+=total;
+     this.TotalAFterShipping=this.totalAtAllProducts;
     });   /* prendiamo il totale all ngOnInIt  */
 
   } 
@@ -47,7 +48,7 @@ if(this.numberOFPairs>this.ns.NMAXPairs){
 }
 
 this.ns.numberOfShoes=this.numberOFPairs; /* aggiorniamo anche il service cosi l'iconcina del basket si aggiorna pure */
-this.totalAtCheckout=0;
+this.totalAtAllProducts=0;
 this.storeTotal();
       }
 
@@ -61,20 +62,29 @@ this.showMaximumMessage=false;
 binIt(index:number){
 this.prodottiInBasket.splice(index,1);   
 this.ns.prodottiInBasket=this.prodottiInBasket;
-this.totalAtCheckout=0;
+this.totalAtAllProducts=0;
 this.ns.numberOfShoes=this.prodottiInBasket.length;
 this.storeTotal();
 }
 
 storeTotal(){
   if (this.prodottiInBasket.length === 0) {
-this.totalAtCheckout=0;
+this.totalAtAllProducts=0;
     return; // Esci dalla funzione se non ci sono prodotti
 }
         this.prodottiInBasket.forEach(elemento=> {
          let total=elemento.prezzo*elemento.quantita;
-         this.totalAtCheckout+=total;
+         this.totalAtAllProducts+=total;
         });     
+        this.updateTotalAfterShipping()
+}
+
+updateTotalAfterShipping(){
+  if(this.selectedShipping>0){
+  this.TotalAFterShipping=this.totalAtAllProducts+this.selectedShipping;
+  }else{
+    this.TotalAFterShipping=this.totalAtAllProducts;
+  }
 }
 
 
