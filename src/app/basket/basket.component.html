@@ -9,7 +9,7 @@
     <div id="column1">
         <ng-container *ngFor="let prodotto of prodottiInBasket; let i = index">
             <div id="shoeBasket">
-                <img class="imgShoeBasket" [src]="prodotto.immagine">
+                <img class="imgShoeBasket" [src]="prodotto.immagine" [routerLink]="['/details',prodotto.id]">
                 <div class="detailShoeBasket">
                     <div id="binShoe" (click)="binIt(i)"></div>
                     <p>{{prodotto.nome}}</p>
@@ -37,10 +37,10 @@
             {{totalAtCheckout| currency:'EUR': 'symbol' :'1.2-2'}}
             <p class="total"></p>
 
-            <div class="endButtons" *ngIf="numberOFPairs<16">
+            <div class="endButtons" *ngIf="numberOFPairs<ns.NMAXPairs+1">
                 <button type="button" id="purchase">Checkout</button>
-                <div class="endButtons" *ngIf="numberOFPairs>15">
-                    <p style="font-size: 0.7; color: red;">*Too many items! Maximum 15 allowed for the purchase</p>
+                <div class="endButtons" *ngIf="numberOFPairs>ns.NMAXPairs">
+                    <p style="font-size: 0.7; color: red;">*Too many items! Maximum {{ns.NMAXPairs}} allowed for the purchase</p>
                 </div>
             </div>
         </div>
