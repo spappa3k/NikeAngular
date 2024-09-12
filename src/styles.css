@@ -855,13 +855,17 @@ display: flex; flex-direction: column;
     height: 520px;
 
 }
-#wrapperBasketPage #column1{
+#wrapperBasketPage #column1 {
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    overflow-y: scroll;
+    overflow-y: hidden; /* Scrollbar nascosta di default */
+}
+
+#wrapperBasketPage #column1:hover {
+    overflow-y: scroll; /* Mostra la scrollbar quando si passa sopra */
 }
 
 #wrapperBasketPage img{
@@ -900,9 +904,6 @@ position: relative;
 }
 
 .imgShoeBasket{
-    background-image: url(assets/Img/Scarpa/4.jpg);
-    background-size: cover;
-    background-position-y:-30px;
     width:160px;
     height:160px;
     float: left;
