@@ -37,10 +37,14 @@
     
         <div class="wrapperColumn2">
             <!-- Totale -->
+             <div class="listOfProductsSummary">
+             <ul *ngFor="let prodottoListato of prodottiInBasket">
+            <li class="itemListed">{{prodottoListato.quantita}}x&nbsp;<span>{{prodottoListato.nome}}</span></li>
+             </ul>
             <p class="items-cost">Items cost: {{totalAtAllProducts | currency:'EUR': 'symbol' :'1.2-2'}}</p>
-
+        </div>
             <!-- Radio buttons per la spedizione -->
-            <div class="shipping-options">
+            <div>
                 <label class="shipping-option">
                     <input type="radio" name="shipping" [(ngModel)]="selectedShipping" [value]="0" (change)="updateTotalAfterShipping()">
                     Free Shipping : <span>5 - 7 working days delivery</span>
@@ -56,7 +60,7 @@
             </div>
         
             <!-- Totale aggiornato -->
-            <p class="total">Total: {{TotalAFterShipping | currency:'EUR': 'symbol' :'1.2-2'}}</p>
+            <p class="totalAFterShipping">Total: {{TotalAFterShipping | currency:'EUR': 'symbol' :'1.2-2'}}</p>
     
             <!-- Bottone di acquisto -->
             <div class="endButtons" *ngIf="numberOFPairs < ns.NMAXPairs + 1">

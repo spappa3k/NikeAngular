@@ -447,12 +447,40 @@ font-size: 0.8em;
   margin-top:20px;
 }
 
+#wrapperBasketPage #column2{
+ width: 30%;
+ height: 80%;
+ float: left;
+ margin-left: 25px;
+
+}
+
+#wrapperBasketPage #column2 .wrapperColumn2{
+  padding-left: 50px;
+}
+#wrapperBasketPage #column2 span{
+  display: inline-block;
+}
+#wrapperBasketPage #column2 p{
+  display: inline-block;
+}
+
+#wrapperBasketPage #column2 > p{
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-top:28px;
+  padding-left: 10px;
+}
+               
+
+
 /* Stile per il testo del totale degli articoli */
 .items-cost {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  margin-top: 10px;
 }
 
 /* Stile per le opzioni di spedizione */
@@ -478,14 +506,20 @@ font-size: 0.8em;
   margin-left: 5px;
 }
 
-/* Stile per il totale aggiornato */
-.total {
-  font-size: 1.5em;
+.totalAFterShipping {
+  margin-top: 35px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.3em;
   font-weight: bold;
   color: #333;
   border-top: 1px solid #ddd;
   padding-top: 10px;
 }
 
-  
+.itemListed{
+  font-size: 0.8em;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
   
