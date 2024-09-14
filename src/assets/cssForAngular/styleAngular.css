@@ -527,9 +527,11 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 
 /*Checkout page/*
 /* form */
+
 form label{
   margin-right: 5px;
 }
+
 
 .personalInfo input{
   max-width: 400px;
