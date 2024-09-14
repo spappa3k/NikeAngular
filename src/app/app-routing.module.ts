@@ -5,6 +5,7 @@ import { ShoesDetailsComponent } from './shoes-details/shoes-details.component';
 import { ListComponent } from './list/list.component';
 import { SideOfListComponent } from './side-of-list/side-of-list.component';
 import { BasketComponent } from './basket/basket.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path:"basket", component:BasketComponent
+  },
+  {
+    path:"checkout", component:CheckoutComponent
   }
 ];
 

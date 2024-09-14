@@ -522,4 +522,26 @@ font-size: 0.8em;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-  
+
+/**********************************************/
+
+/*Checkout page/*
+/* form */
+form label{
+  margin-right: 5px;
+}
+
+.personalInfo input{
+  max-width: 400px;
+}
+
+.personalInfo select{
+  max-width: 170px;
+}
+
+.personalInfo .phoneNumber{
+  max-width: 140px;
+}
+.personalInfo .date{
+  max-width: 140px;
+}
