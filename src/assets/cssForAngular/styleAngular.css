@@ -595,3 +595,7 @@ h6 {
 .personalInfo .date {
   max-width: 140px;
 }
+.personalInfo .input-group input {
+  height: 38px; /* Forza una stessa altezza per tutti i campi di input */
+  padding: 0.375rem 0.75rem; /* Padding coerente per tutti */
+}
