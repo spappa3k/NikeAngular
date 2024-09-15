@@ -2,33 +2,33 @@
     <div class="container mt-5 d-flex">
       
           <!---------------------------------------------------------- Personal Info ----------------------------------------------->
-          <div class="form-section me-4" style="border: 2px black solid; flex: 1;">
+          <div class="form-section me-4 personalInfo" style="border: 2px black solid; flex: 1;">
             <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()">
          
-          <div class="mb-3">
+          <div class="mb-3 FirstNameDiv">
             <label for="FirstName" class="form-label">First Name:</label>
-            <input type="text" id="FirstName" formControlName="FirstName" class="form-control">
+            <input type="text" id="FirstName" formControlName="FirstName" class="form-control" maxlength="18">
           </div>
   
-          <div class="mb-3">
+          <div class="mb-3 LastNameDiv">
             <label for="LastName" class="form-label">Last Name:</label>
-            <input type="text" id="LastName" formControlName="LastName" class="form-control">
+            <input type="text" id="LastName" formControlName="LastName" class="form-control" maxlength="25">
           </div>
   
-          <div class="mb-3">
+          <div class="mb-3 EmailDiv">
             <label for="Email" class="form-label">Email:</label>
-            <input type="email" id="Email" formControlName="Email" class="form-control">
+            <input type="email" id="Email" formControlName="Email" class="form-control" maxlength="38">
           </div>
   
-          <div class="mb-3">
+          <div class="mb-3 PhoneNumberDiv">
             <label for="PhoneNumber" class="form-label mb-0">Phone Number:</label>
-            <div class="input-group">
-              <span class="input-group-text">+44</span>
+            <div>
+              <span class="input-group-text" style="width: 50px;">+44</span>
               <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" class="form-control">
             </div>
           </div>
   
-          <div class="mb-3">
+          <div class="mb-3 GenderDiv">
             <label for="Gender" class="form-label">Gender:</label>
             <select id="Gender" formControlName="Gender" class="form-select">
               <option value="Male">Male</option>
@@ -37,7 +37,7 @@
             </select>
           </div>
   
-          <div class="mb-3">
+          <div class="mb-3 DateOfBirthDiv">
             <label for="DateOfBirth" class="form-label">Date of Birth:</label>
             <input type="date" id="DateOfBirth" formControlName="DateOfBirth" class="form-control">
           </div>
