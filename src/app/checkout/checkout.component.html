@@ -2,8 +2,8 @@
     <div class="container mt-5 d-flex">
       
           <!---------------------------------------------------------- Personal Info ----------------------------------------------->
-          <div class="form-section me-4 personalInfo" style="border: 2px black solid; flex: 1;">
-            <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()">
+          <div class="form-section me-4" style="border: 2px black solid; flex: 1;">
+            <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()" class="personalInfo">
          
           <div class="mb-3 FirstNameDiv">
             <label for="FirstName" class="form-label">First Name:</label>
@@ -22,8 +22,8 @@
   
           <div class="mb-3 PhoneNumberDiv">
             <label for="PhoneNumber" class="form-label mb-0">Phone Number:</label>
-            <div>
-              <span class="input-group-text" style="width: 50px;">+44</span>
+            <div class="input-group">
+              <span class="input-group-text">+44</span>
               <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" class="form-control">
             </div>
           </div>

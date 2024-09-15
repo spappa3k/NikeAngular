@@ -557,25 +557,17 @@ h6 {
 /*Checkout page/*
 /* form */
 
-form label {
-  margin-right: 5px;
+.personalInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Due colonne di dimensioni flessibili */
+  grid-template-rows: auto auto auto; /* Tre righe con altezza automatica */
+  grid-template-areas: 
+    "firstName lastName"
+    "email phoneNumber"
+    "gender dateOfBirth";
+  gap: 10px; /* Spazio tra gli elementi */
 }
 
-
-.personalInfo input {
-  max-width: 400px;
-}
-
-.FirstNameDiv {
-  display: block;
-  float: left;
-  margin-right: 50px;
-  align-items: center;
-}
-
-.EmailDiv{
-float: left;
-}
 
 
 #FirstName {
@@ -591,7 +583,7 @@ float: left;
 }
 
 #PhoneNumber{
-  max-width: 100px;
+  max-width: 150px;
 }
 
 
@@ -599,9 +591,6 @@ float: left;
   max-width: 170px;
 }
 
-.personalInfo .phoneNumber {
-  max-width: 140px;
-}
 
 .personalInfo .date {
   max-width: 140px;
