@@ -1,9 +1,10 @@
 <section class="checkoutForm">
     <div class="container mt-5 d-flex">
-      <div class="form-section me-4" style="border: 2px black solid; flex: 1;">
-        <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()">
-  
+      
           <!---------------------------------------------------------- Personal Info ----------------------------------------------->
+          <div class="form-section me-4" style="border: 2px black solid; flex: 1;">
+            <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()">
+         
           <div class="mb-3">
             <label for="FirstName" class="form-label">First Name:</label>
             <input type="text" id="FirstName" formControlName="FirstName" class="form-control">
@@ -46,14 +47,13 @@
         </form>
       </div>
   
-      <div class="form-section" style="border: 2px solid red; flex: 1;">
-        <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()">
-  
           <!------------------------------------------------------- Shipping ------------------------------------------------->
-          <div class="mb-3">
+          <div class="form-section" style="border: 2px solid red; flex: 1;">
+            <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()">
+            <div class="mb-3">
             <label for="StreetAddress" class="form-label">Street Address:</label>
             <input type="text" id="StreetAddress" formControlName="StreetAddress" class="form-control">
-          </div>
+            </div>
   
           <div class="mb-3">
             <label for="AdditionalAddress" class="form-label">Additional Address:</label>
@@ -80,6 +80,21 @@
         </form>
       </div>
     </div>
-    <div class="container mt-5" style="text-align: center;">ciao</div>
+    <div class="container mt-5" style="text-align: center;">
+      <form [formGroup]="formCheckoutPayment">
+
+      <div class="mb-3">
+        <label for="CardHolderName" class="form-label">CardHolderName:</label>
+        <input type="text" id="CardHolderName" formControlName="CardHolderName" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="YearExpire" class="form-label">Expiring Date:</label>
+        <input type="text" id="MonthExpire" formControlName="MonthExpire"  placeholder="MM" style="width: 38px;" maxlength="2"/> /
+        <input type="text" id="YearExpire" formControlName="YearExpire" placeholder="YYYY" style="width: 48px;" maxlength="4" />
+      </div>
+
+    </form>
+      </div>
   </section>
   

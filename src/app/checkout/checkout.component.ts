@@ -11,6 +11,7 @@ import { NikeService } from '../nike.service';
 export class CheckoutComponent implements OnInit{
 formCheckoutPersonalInfo:FormGroup;
 formCheckoutShipping:FormGroup;
+formCheckoutPayment:FormGroup;
 
 cities = [
   "Birmingham",
@@ -61,6 +62,15 @@ PhoneNumber:new FormControl('')
     City:new FormControl(''),
     CAP:new FormControl(''),
       });
+
+      this.formCheckoutPayment= new FormGroup({
+        CardNumber:new FormControl(''),
+        BillingAddress:new FormControl(''),
+        CardPostCode:new FormControl(''),
+        MonthExpire:new FormControl(''),
+        YearExpire:new FormControl(''),
+        
+          });
 }
 ngOnInit(): void {
   this.ns.viewBannerHearderOnOff(false);
