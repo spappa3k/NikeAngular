@@ -596,12 +596,37 @@ h6 {
   max-width: 140px;
 }
 
+/*******************************/
+/* Shipping Details */
 
+.shippingInfo{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Due colonne di dimensioni flessibili */
+  grid-template-rows: auto auto auto; /* Tre righe con altezza automatica */
+  grid-template-areas: 
+    "street civic"
+    "additional city"
+    "postal ";
+  gap: 10px; 
+}
 
 #StreetAddress{
-  width: 200px;
+  width: 250px;
 }
 
 #CivicNumber{
+  width: 100px;
+}
+
+
+#AdditionalAddress{
+  width: 200px;
+}
+
+#City{
+  width: 160px;
+}
+
+#Cap{
   width: 100px;
 }
