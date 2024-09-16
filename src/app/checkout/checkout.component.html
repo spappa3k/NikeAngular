@@ -3,42 +3,40 @@
   <div class="container">
     <!-- Personal Information Section -->
     <div class="form-section">
-      <h3 class="section-title col-md-12 mb-3" >Informazioni Personali</h3>
+      <h3 class="section-title col-md-12 mb-3">Personal informations</h3>
       <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()">
         <div class="form-row">
           <div class="form-group">
-            <label for="FirstName">Nome:</label>
-            <input type="text" id="FirstName" formControlName="FirstName">
+            <label for="FirstName">First Name:</label>
+            <input type="text" id="FirstName" formControlName="FirstName" maxlength="25"><span style="color: red; margin-left: 50px;">*ERRORE</span>
           </div>
           <div class="form-group">
-            <label for="LastName">Cognome:</label>
-            <input type="text" id="LastName" formControlName="LastName">
+            <label for="LastName">Second Name:</label>
+            <input type="text" id="LastName" formControlName="LastName" maxlength="25">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="Email">Email:</label>
-            <input type="email" id="Email" formControlName="Email">
+            <input type="email" id="Email" formControlName="Email" maxlength="38">
           </div>
           <div class="form-group">
-            <label for="PhoneNumber">Numero di Telefono:</label>
-            <div class="input-group">
-              <span class="input-group-text">+44</span>
-              <input type="tel" id="PhoneNumber" formControlName="PhoneNumber">
-            </div>
+            <label for="PhoneNumber">Phone Number:</label>
+            <span class="prefix">+44</span>
+            <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" maxlength="10">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="Gender">Genere:</label>
+            <label for="Gender">Gender:</label>
             <select id="Gender" formControlName="Gender">
-              <option value="Male">Maschio</option>
-              <option value="Female">Femmina</option>
-              <option value="NotDeclared">Preferisco non dichiarare</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="NotDeclared">Prefer not to say</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="DateOfBirth">Data di Nascita:</label>
+            <label for="DateOfBirth">Date of birth:</label>
             <input type="date" id="DateOfBirth" formControlName="DateOfBirth">
           </div>
         </div>
@@ -48,34 +46,34 @@
 
     <!-- Shipping Information Section -->
     <div class="form-section">
-      <h3 class="section-title col-md-12 mb-3">Informazioni di Spedizione</h3>
+      <h3 class="section-title col-md-12 mb-3">Shipping Informations</h3>
       <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()">
         <div class="form-row">
           <div class="form-group">
-            <label for="StreetAddress">Indirizzo:</label>
-            <input type="text" id="StreetAddress" formControlName="StreetAddress">
+            <label for="StreetAddress">Address:</label>
+            <input type="text" id="StreetAddress" formControlName="StreetAddress" maxlength="50">
           </div>
           <div class="form-group">
-            <label for="CivicNumber">Numero Civico:</label>
-            <input type="text" id="CivicNumber" formControlName="CivicNumber">
+            <label for="CivicNumber">Civic Number:</label>
+            <input type="text" id="CivicNumber" formControlName="CivicNumber" maxlength="5">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="City">Città:</label>
+            <label for="City">City:</label>
             <select id="City" formControlName="City">
               <option *ngFor="let city of cities" [value]="city">{{city}}</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="Cap">Codice Postale:</label>
-            <input type="text" id="Cap" formControlName="Cap">
+            <label for="Cap">Post Code:</label>
+            <input type="text" id="Cap" formControlName="Cap" maxlength="5">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="AdditionalAddress">Informazioni Aggiuntive:</label>
-            <input type="text" id="AdditionalAddress" formControlName="AdditionalAddress">
+            <label for="AdditionalAddress">Additional Address informations:</label>
+            <input type="text" id="AdditionalAddress" formControlName="AdditionalAddress" maxlength="50">
           </div>
         </div>
         <button type="submit">Salva Informazioni di Spedizione</button>
@@ -84,17 +82,17 @@
 
     <!-- Payment Information Section -->
     <div class="form-section">
-      <h3 class="section-title col-md-12 mb-3">Informazioni di Pagamento</h3>
+      <h3 class="section-title col-md-12 mb-3">Payment</h3>
       <form [formGroup]="formCheckoutPayment" (ngSubmit)="OnSubmit()">
         <div class="form-row">
           <div class="form-group">
-            <label for="CardHolderName">Nome Titolare della Carta:</label>
-            <input type="text" id="CardHolderName" formControlName="CardHolderName">
+            <label for="CardHolderName">CardHolder Name:</label>
+            <input type="text" id="CardHolderName" formControlName="CardHolderName" maxlength="50">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="MonthExpire">Data di Scadenza:</label>
+            <label for="MonthExpire">Expiring Date:</label>
             <div class="input-group">
               <input type="text" id="MonthExpire" formControlName="MonthExpire" placeholder="MM" maxlength="2">
               <span class="input-group-text">/</span>

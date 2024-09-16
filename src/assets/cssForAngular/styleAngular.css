@@ -554,7 +554,7 @@ h6 {
 
 /**********************************************/
 
-/* Stile Generale */
+/* Checkout Form */
 
 .checkout-form .container {
   max-width: 800px;
@@ -582,12 +582,13 @@ h6 {
 }
 
 .checkout-form input, select {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .checkout-form input:focus, select:focus {
@@ -622,4 +623,12 @@ h6 {
 
 .checkout-form button:hover {
   background-color: #0056b3;
+}
+/*     Misure nel dettaglio      */
+#PhoneNumber{
+  width: 200px;
+}
+
+.prefix{
+ margin-right: 10px;
 }
