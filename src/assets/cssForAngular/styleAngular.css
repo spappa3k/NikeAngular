@@ -606,6 +606,8 @@ h6 {
 .checkout-form .input-group span {
   background-color: #e9ecef;
   border: 1px solid #ced4da;
+  position: relative;
+  bottom: 8px;
 }
 
 .checkout-form button {
@@ -633,5 +635,9 @@ h6 {
 
 #MonthExpire, #YearExpire{
   width: 80px;
+}
+
+#CVC{
+  width: 60px;
 }
 
