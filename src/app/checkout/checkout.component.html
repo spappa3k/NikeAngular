@@ -49,20 +49,20 @@
   
           <!------------------------------------------------------- Shipping ------------------------------------------------->
           <div class="form-section" style="border: 2px solid red; flex: 1;">
-            <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()">
+            <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()" class="shippingInfo">
             <div class="mb-3">
             <label for="StreetAddress" class="form-label">Street Address:</label>
             <input type="text" id="StreetAddress" formControlName="StreetAddress" class="form-control">
             </div>
   
+            <div class="mb-3">
+              <label for="CivicNumber" class="form-label">Civic Number:</label>
+              <input type="text" id="CivicNumber" formControlName="CivicNumber" class="form-control">
+            </div>
+
           <div class="mb-3">
-            <label for="AdditionalAddress" class="form-label">Additional Address:</label>
+            <label for="AdditionalAddress" class="form-label">Additional Address (optional):</label>
             <input type="text" id="AdditionalAddress" formControlName="AdditionalAddress" class="form-control">
-          </div>
-  
-          <div class="mb-3">
-            <label for="CivicNumber" class="form-label">Civic Number:</label>
-            <input type="text" id="CivicNumber" formControlName="CivicNumber" class="form-control">
           </div>
 
           <div class="mb-3">

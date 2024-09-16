@@ -595,3 +595,13 @@ h6 {
 .personalInfo .date {
   max-width: 140px;
 }
+
+
+
+#StreetAddress{
+  width: 200px;
+}
+
+#CivicNumber{
+  width: 100px;
+}
