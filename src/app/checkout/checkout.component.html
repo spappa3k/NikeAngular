@@ -1,120 +1,113 @@
-<section class="checkoutForm">
-  <div class="container mt-5">
-    <div class="form-section mb-4 p-4 shadow-sm" style="border-radius: 10px; border: 1px solid #e0e0e0; background-color: #f9f9f9;">
-      <h3 class="section-title">Personal Information</h3>
-      <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()" class="personalInfo">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="FirstName" class="form-label">First Name:</label>
-            <input type="text" id="FirstName" formControlName="FirstName" class="form-control">
+<!-- Checkout page -->
+<section class="checkout-form">
+  <div class="container">
+    <!-- Personal Information Section -->
+    <div class="form-section">
+      <h3 class="section-title col-md-12 mb-3" >Informazioni Personali</h3>
+      <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="FirstName">Nome:</label>
+            <input type="text" id="FirstName" formControlName="FirstName">
           </div>
-
-          <div class="col-md-6 mb-3">
-            <label for="LastName" class="form-label">Last Name:</label>
-            <input type="text" id="LastName" formControlName="LastName" class="form-control">
+          <div class="form-group">
+            <label for="LastName">Cognome:</label>
+            <input type="text" id="LastName" formControlName="LastName">
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="Email" class="form-label">Email:</label>
-            <input type="email" id="Email" formControlName="Email" class="form-control">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" formControlName="Email">
           </div>
-
-          <div class="col-md-6 mb-3">
-            <label for="PhoneNumber" class="form-label">Phone Number:</label>
+          <div class="form-group">
+            <label for="PhoneNumber">Numero di Telefono:</label>
             <div class="input-group">
               <span class="input-group-text">+44</span>
-              <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" class="form-control">
+              <input type="tel" id="PhoneNumber" formControlName="PhoneNumber">
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="Gender" class="form-label">Gender:</label>
-            <select id="Gender" formControlName="Gender" class="form-select">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="NotDeclared">Prefer not to say</option>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="Gender">Genere:</label>
+            <select id="Gender" formControlName="Gender">
+              <option value="Male">Maschio</option>
+              <option value="Female">Femmina</option>
+              <option value="NotDeclared">Preferisco non dichiarare</option>
             </select>
           </div>
-
-          <div class="col-md-6 mb-3">
-            <label for="DateOfBirth" class="form-label">Date of Birth:</label>
-            <input type="date" id="DateOfBirth" formControlName="DateOfBirth" class="form-control">
+          <div class="form-group">
+            <label for="DateOfBirth">Data di Nascita:</label>
+            <input type="date" id="DateOfBirth" formControlName="DateOfBirth">
           </div>
         </div>
+        <button type="submit">Salva Informazioni Personali</button>
       </form>
     </div>
 
-    <div class="form-section mb-4 p-4 shadow-sm" style="border-radius: 10px; border: 1px solid #e0e0e0; background-color: #f9f9f9;">
-      <h3 class="section-title">Shipping Information</h3>
-      <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()" class="shippingInfo">
-        <div class="row">
-          <div class="col-md-8 mb-3">
-            <label for="StreetAddress" class="form-label">Street Address:</label>
-            <input type="text" id="StreetAddress" formControlName="StreetAddress" class="form-control">
+    <!-- Shipping Information Section -->
+    <div class="form-section">
+      <h3 class="section-title col-md-12 mb-3">Informazioni di Spedizione</h3>
+      <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="StreetAddress">Indirizzo:</label>
+            <input type="text" id="StreetAddress" formControlName="StreetAddress">
           </div>
-
-          <div class="col-md-4 mb-3">
-            <label for="CivicNumber" class="form-label">Civic Number:</label>
-            <input type="text" id="CivicNumber" formControlName="CivicNumber" class="form-control">
+          <div class="form-group">
+            <label for="CivicNumber">Numero Civico:</label>
+            <input type="text" id="CivicNumber" formControlName="CivicNumber">
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="City" class="form-label">City:</label>
-            <select id="City" formControlName="City" class="form-select">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="City">Città:</label>
+            <select id="City" formControlName="City">
               <option *ngFor="let city of cities" [value]="city">{{city}}</option>
             </select>
           </div>
-
-          <div class="col-md-6 mb-3">
-            <label for="Cap" class="form-label">Postal Code:</label>
-            <input type="text" id="Cap" formControlName="Cap" class="form-control">
+          <div class="form-group">
+            <label for="Cap">Codice Postale:</label>
+            <input type="text" id="Cap" formControlName="Cap">
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12 mb-3">
-            <label for="AdditionalAddress" class="form-label">Additional Address Information:</label>
-            <input type="text" id="AdditionalAddress" formControlName="AdditionalAddress" class="form-control">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="AdditionalAddress">Informazioni Aggiuntive:</label>
+            <input type="text" id="AdditionalAddress" formControlName="AdditionalAddress">
           </div>
         </div>
+        <button type="submit">Salva Informazioni di Spedizione</button>
       </form>
     </div>
 
-    <div class="form-section p-4 shadow-sm" style="border-radius: 10px; border: 1px solid #e0e0e0; background-color: #f9f9f9;">
-      <h3 class="section-title">Payment Information</h3>
-      <form [formGroup]="formCheckoutPayment">
-        <div class="row">
-          <div class="col-md-12 mb-3">
-            <label for="CardHolderName" class="form-label">Card Holder Name:</label>
-            <input type="text" id="CardHolderName" formControlName="CardHolderName" class="form-control">
+    <!-- Payment Information Section -->
+    <div class="form-section">
+      <h3 class="section-title col-md-12 mb-3">Informazioni di Pagamento</h3>
+      <form [formGroup]="formCheckoutPayment" (ngSubmit)="OnSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="CardHolderName">Nome Titolare della Carta:</label>
+            <input type="text" id="CardHolderName" formControlName="CardHolderName">
           </div>
         </div>
-    
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <label for="MonthExpire" class="form-label">Expiring Date:</label>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="MonthExpire">Data di Scadenza:</label>
             <div class="input-group">
-              <input type="text" id="MonthExpire" formControlName="MonthExpire" placeholder="MM" class="form-control" maxlength="2">
+              <input type="text" id="MonthExpire" formControlName="MonthExpire" placeholder="MM" maxlength="2">
               <span class="input-group-text">/</span>
-              <input type="text" id="YearExpire" formControlName="YearExpire" placeholder="YY" class="form-control" maxlength="2">
+              <input type="text" id="YearExpire" formControlName="YearExpire" placeholder="YY" maxlength="2">
             </div>
           </div>
-    
-          <div class="col-md-4 mb-3">
-            <label for="CVC" class="form-label">CVC:</label>
-            <input type="text" id="CVC" formControlName="CVC" class="form-control" maxlength="3">
+          <div class="form-group">
+            <label for="CVC">CVC:</label>
+            <input type="text" id="CVC" formControlName="CVC" maxlength="3">
           </div>
         </div>
-    
-        <button type="submit" class="btn btn-primary w-100">Purchase</button>
+        <button type="submit">Acquista</button>
       </form>
     </div>
-    
   </div>
 </section>

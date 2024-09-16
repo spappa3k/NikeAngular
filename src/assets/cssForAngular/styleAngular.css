@@ -554,108 +554,72 @@ h6 {
 
 /**********************************************/
 
-/* Checkout page */
-/* Form Container */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-}
+/* Stile Generale */
 
-.section-title {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-  color: #333;
-  text-align: left;
-}
-
-.form-section {
-  border-radius: 10px;
-  background-color: #f9f9f9;
+.checkout-form .container {
+  max-width: 800px;
+  margin: 20px auto;
   padding: 20px;
-  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-label {
-  font-weight: 600;
+
+.checkout-form .form-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
   color: #555;
 }
 
-.checkoutForm input, select {
-  padding: 8px;
+.checkout-form input, select {
+  width: 100%;
+  padding: 10px;
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
-  transition: all 0.3s ease;
+  margin-bottom: 16px;
 }
 
-.checkoutForm input:focus, select:focus {
+.checkout-form input:focus, select:focus {
   border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
 }
 
-.checkoutForm button {
+.checkout-form .input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.checkout-form .input-group span {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.checkout-form button {
   background-color: #007bff;
-  border: none;
-  padding: 12px;
   color: #fff;
-  font-size: 1em;
+  padding: 10px 20px;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
-.checkoutForm button:hover {
+.checkout-form button:hover {
   background-color: #0056b3;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .col-md-6, .col-md-8, .col-md-4, .col-md-12 {
-    width: 100%;
-  }
-}
-
-/* Payment Information Section */
-.input-group {
-  display: flex;
-  align-items: center;
-}
-
-.input-group-text {
-  background-color: #e9ecef;
-  border: 1px solid #ced4da;
-}
-
-.form-control {
-  flex: 1;
-  margin-left: 5px; /* Adds space between elements */
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.col-md-4 {
-  flex: 0 0 calc(33.333% - 10px);
-}
-
-.col-md-12 {
-  flex: 0 0 100%;
-}
-
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .col-md-4 {
-    flex: 0 0 100%;
-  }
-}
-
