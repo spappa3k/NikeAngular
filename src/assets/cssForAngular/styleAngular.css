@@ -554,79 +554,108 @@ h6 {
 
 /**********************************************/
 
-/*Checkout page/*
-/* form */
-
-.personalInfo {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Due colonne di dimensioni flessibili */
-  grid-template-rows: auto auto auto; /* Tre righe con altezza automatica */
-  grid-template-areas: 
-    "firstName lastName"
-    "email phoneNumber"
-    "gender dateOfBirth";
-  gap: 10px; /* Spazio tra gli elementi */
+/* Checkout page */
+/* Form Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-
-
-#FirstName {
-  max-width: 165px;
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
 }
 
-#LastName {
-  max-width: 190px;
+.form-section {
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-#Email{
-  max-width: 330px;
+label {
+  font-weight: 600;
+  color: #555;
 }
 
-#PhoneNumber{
-  max-width: 150px;
+.checkoutForm input, select {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
 }
 
-
-.personalInfo select {
-  max-width: 170px;
+.checkoutForm input:focus, select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-
-.personalInfo .date {
-  max-width: 140px;
+.checkoutForm button {
+  background-color: #007bff;
+  border: none;
+  padding: 12px;
+  color: #fff;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/*******************************/
-/* Shipping Details */
-
-.shippingInfo{
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Due colonne di dimensioni flessibili */
-  grid-template-rows: auto auto auto; /* Tre righe con altezza automatica */
-  grid-template-areas: 
-    "street civic"
-    "additional city"
-    "postal ";
-  gap: 10px; 
+.checkoutForm button:hover {
+  background-color: #0056b3;
 }
 
-#StreetAddress{
-  width: 250px;
+/* Responsive */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-6, .col-md-8, .col-md-4, .col-md-12 {
+    width: 100%;
+  }
 }
 
-#CivicNumber{
-  width: 100px;
+/* Payment Information Section */
+.input-group {
+  display: flex;
+  align-items: center;
 }
 
-
-#AdditionalAddress{
-  width: 200px;
+.input-group-text {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
 }
 
-#City{
-  width: 160px;
+.form-control {
+  flex: 1;
+  margin-left: 5px; /* Adds space between elements */
 }
 
-#Cap{
-  width: 100px;
+.row {
+  display: flex;
+  justify-content: space-between;
 }
+
+.col-md-4 {
+  flex: 0 0 calc(33.333% - 10px);
+}
+
+.col-md-12 {
+  flex: 0 0 100%;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-4 {
+    flex: 0 0 100%;
+  }
+}
+
