@@ -640,3 +640,10 @@ h6 {
 #CVC{
   width: 60px;
 }
+
+.mexError {
+  color: #d9534f;
+  font-size: 0.85em;
+  margin-left: 20px;
+   font-weight: bold;
+}
