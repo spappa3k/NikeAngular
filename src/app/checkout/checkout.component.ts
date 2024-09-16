@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NikeService } from '../nike.service';
 
 
@@ -47,7 +47,7 @@ cities = [
 constructor(private ns:NikeService){
 
   this.formCheckoutPersonalInfo= new FormGroup({
-FirstName:new FormControl(''),
+FirstName:new FormControl('', Validators.required),
 LastName:new FormControl(''),
 DateOfBirth:new FormControl(''),
 Gender:new FormControl(''),
@@ -66,6 +66,7 @@ PhoneNumber:new FormControl('')
       this.formCheckoutPayment= new FormGroup({
         CardNumber:new FormControl(''),
         BillingAddress:new FormControl(''),
+        CityBilling:new FormControl(''),
         CardPostCode:new FormControl(''),
         MonthExpire:new FormControl(''),
         YearExpire:new FormControl(''),

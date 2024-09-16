@@ -5,17 +5,18 @@
     <div class="form-section">
       <h3 class="section-title col-md-12 mb-3">Personal informations</h3>
       <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()">
-        <div class="form-row">
+       
           <div class="form-group">
             <label for="FirstName">First Name:</label>
-            <input type="text" id="FirstName" formControlName="FirstName" maxlength="25"><span style="color: red; margin-left: 50px;">*ERRORE</span>
+            <input type="text" id="FirstName" formControlName="FirstName" maxlength="25">
+            <span>*ERRORE</span>
           </div>
           <div class="form-group">
             <label for="LastName">Second Name:</label>
             <input type="text" id="LastName" formControlName="LastName" maxlength="25">
           </div>
-        </div>
-        <div class="form-row">
+       
+       
           <div class="form-group">
             <label for="Email">Email:</label>
             <input type="email" id="Email" formControlName="Email" maxlength="38">
@@ -25,8 +26,8 @@
             <span class="prefix">+44</span>
             <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" maxlength="10">
           </div>
-        </div>
-        <div class="form-row">
+        
+   
           <div class="form-group">
             <label for="Gender">Gender:</label>
             <select id="Gender" formControlName="Gender">
@@ -39,8 +40,7 @@
             <label for="DateOfBirth">Date of birth:</label>
             <input type="date" id="DateOfBirth" formControlName="DateOfBirth">
           </div>
-        </div>
-        <button type="submit">Salva Informazioni Personali</button>
+        
       </form>
     </div>
 
@@ -48,7 +48,7 @@
     <div class="form-section">
       <h3 class="section-title col-md-12 mb-3">Shipping Informations</h3>
       <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()">
-        <div class="form-row">
+      
           <div class="form-group">
             <label for="StreetAddress">Address:</label>
             <input type="text" id="StreetAddress" formControlName="StreetAddress" maxlength="50">
@@ -57,26 +57,26 @@
             <label for="CivicNumber">Civic Number:</label>
             <input type="text" id="CivicNumber" formControlName="CivicNumber" maxlength="5">
           </div>
-        </div>
-        <div class="form-row">
+       
+       
           <div class="form-group">
             <label for="City">City:</label>
             <select id="City" formControlName="City">
               <option *ngFor="let city of cities" [value]="city">{{city}}</option>
             </select>
           </div>
+
           <div class="form-group">
-            <label for="Cap">Post Code:</label>
-            <input type="text" id="Cap" formControlName="Cap" maxlength="5">
+            <label for="CAP">Post Code:</label>
+            <input type="text" id="CAP" formControlName="CAP" maxlength="6">
           </div>
-        </div>
-        <div class="form-row">
+       
+        
           <div class="form-group">
-            <label for="AdditionalAddress">Additional Address informations:</label>
+            <label for="AdditionalAddress">Additional Address informations (optional):</label>
             <input type="text" id="AdditionalAddress" formControlName="AdditionalAddress" maxlength="50">
           </div>
-        </div>
-        <button type="submit">Salva Informazioni di Spedizione</button>
+        
       </form>
     </div>
 
@@ -84,13 +84,24 @@
     <div class="form-section">
       <h3 class="section-title col-md-12 mb-3">Payment</h3>
       <form [formGroup]="formCheckoutPayment" (ngSubmit)="OnSubmit()">
-        <div class="form-row">
+        
           <div class="form-group">
             <label for="CardHolderName">CardHolder Name:</label>
             <input type="text" id="CardHolderName" formControlName="CardHolderName" maxlength="50">
           </div>
-        </div>
-        <div class="form-row">
+        
+          <div class="form-group">
+            <label for="BillingAddress">Billing Address - Street:</label>
+            <input type="text" id="BillingAddress" formControlName="BillingAddress" maxlength="50">
+          </div>
+        
+          <div class="form-group">
+            <label for="CityBilling">Billing Address - City:</label>
+            <select id="CityBilling" formControlName="CityBilling">
+              <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+            </select>
+          </div>
+        
           <div class="form-group">
             <label for="MonthExpire">Expiring Date:</label>
             <div class="input-group">
@@ -103,7 +114,7 @@
             <label for="CVC">CVC:</label>
             <input type="text" id="CVC" formControlName="CVC" maxlength="3">
           </div>
-        </div>
+        
         <button type="submit">Acquista</button>
       </form>
     </div>

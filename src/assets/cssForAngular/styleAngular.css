@@ -626,7 +626,7 @@ h6 {
 }
 /*     Misure nel dettaglio      */
 #PhoneNumber{
-  width: 200px;
+  width: 324px;
 }
 
 .prefix{
@@ -640,4 +640,3 @@ h6 {
 #CVC{
   width: 60px;
 }
-
