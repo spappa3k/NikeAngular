@@ -14,6 +14,8 @@ formCheckoutShipping:FormGroup;
 formCheckoutPayment:FormGroup;
 NameSurnameReg:RegExp=/^[a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]{3,}(?:[-\s][a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]+)*$/;  /* REGEX NAME SURNAME */
 EmailReg:RegExp=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+PhoneReg:RegExp=/^(07\d{9}|7\d{10})$/;
+
 
 cities = [
   "Birmingham",
@@ -51,10 +53,10 @@ constructor(private ns:NikeService){
   this.formCheckoutPersonalInfo= new FormGroup({
 FirstName: new FormControl('', [Validators.required, Validators.pattern(this.NameSurnameReg)]),
 LastName:new FormControl('', [Validators.required, Validators.pattern(this.NameSurnameReg)]),
+Email:new FormControl('', [Validators.required, Validators.pattern(this.EmailReg)]),
+PhoneNumber:new FormControl('', [Validators.required, Validators.pattern(this.PhoneReg)]),
 DateOfBirth:new FormControl(''),
 Gender:new FormControl(''),
-Email:new FormControl(''),
-PhoneNumber:new FormControl('')
   });
 
   this.formCheckoutShipping= new FormGroup({

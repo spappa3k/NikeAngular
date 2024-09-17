@@ -12,7 +12,7 @@
             <input type="text" id="FirstName" formControlName="FirstName" maxlength="25">
             <!--error1-->
             <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('FirstName')?.hasError('pattern') && formCheckoutPersonalInfo.get('FirstName')?.touched">
-              *First Name invalid</span>
+              *First Name not valid</span>
            <!--error2-->
             <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('FirstName')?.hasError('required') && formCheckoutPersonalInfo.get('FirstName')?.touched">
               *First Name is required</span>
@@ -24,7 +24,7 @@
           <input type="text" id="LastName" formControlName="LastName" maxlength="25">
            <!--error1-->
            <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('LastName')?.hasError('pattern') && formCheckoutPersonalInfo.get('FirstName')?.touched">
-            *Last Name invalid</span>
+            *Last Name not valid</span>
          <!--error2-->
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('LastName')?.hasError('required') && formCheckoutPersonalInfo.get('LastName')?.touched">
             *Last Name is required</span>
@@ -35,13 +35,27 @@
         <div class="form-group">
           <label for="Email">Email:</label>
           <input type="email" id="Email" formControlName="Email" maxlength="38">
+           <!--error1-->
+           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('Email')?.hasError('pattern') && formCheckoutPersonalInfo.get('Email')?.touched">
+            *Email not valid</span>
+         <!--error2-->
+          <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('Email')?.hasError('required') && formCheckoutPersonalInfo.get('Email')?.touched">
+            *Email is required</span>
+        
         </div>
         
         <!-- PHONE NUMBER -->
         <div class="form-group">
           <label for="PhoneNumber">Phone Number:</label>
           <span class="prefix">+44</span>
-          <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" maxlength="10">
+          <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" maxlength="15">
+          <!--error1-->
+          <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('PhoneNumber')?.hasError('pattern') && formCheckoutPersonalInfo.get('PhoneNumber')?.touched">
+            *Phone number not valid
+            </span>
+            <!--error2-->
+            <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('PhoneNumber')?.hasError('required') && formCheckoutPersonalInfo.get('PhoneNumber')?.touched">
+            *Phone number is required</span>
         </div>
         
         <!-- GENDER -->
