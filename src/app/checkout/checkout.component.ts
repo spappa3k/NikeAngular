@@ -12,6 +12,7 @@ export class CheckoutComponent implements OnInit{
 formCheckoutPersonalInfo:FormGroup;
 formCheckoutShipping:FormGroup;
 formCheckoutPayment:FormGroup;
+NameSurnameReg:RegExp=/^[a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]{3,}(?:[-\s][a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]+)*$/;
 
 cities = [
   "Birmingham",
@@ -47,8 +48,8 @@ cities = [
 constructor(private ns:NikeService){
 
   this.formCheckoutPersonalInfo= new FormGroup({
-FirstName:new FormControl('', Validators.required),
-LastName:new FormControl(''),
+FirstName: new FormControl('', [Validators.required, Validators.pattern(this.NameSurnameReg)]),
+LastName:new FormControl('', [Validators.required, Validators.pattern(this.NameSurnameReg)]),
 DateOfBirth:new FormControl(''),
 Gender:new FormControl(''),
 Email:new FormControl(''),
