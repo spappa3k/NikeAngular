@@ -37,7 +37,7 @@
           <input type="email" id="Email" formControlName="Email" maxlength="38">
            <!--error1-->
            <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('Email')?.hasError('pattern') && formCheckoutPersonalInfo.get('Email')?.touched">
-            *Email not valid</span>
+            *Email format not valid</span>
          <!--error2-->
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('Email')?.hasError('required') && formCheckoutPersonalInfo.get('Email')?.touched">
             *Email is required</span>
@@ -76,7 +76,7 @@
           <label for="DateOfBirth">Date of birth:</label>
           <input type="date" id="DateOfBirth" formControlName="DateOfBirth">
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('dateTooEarly') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
-            *Date of birth not valid - you can't be more than a century old!
+            *Date of birth not valid - It's set in a far past!
           </span>
          <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('dateTooNear') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
           *Date of birth not valid - You are too young!

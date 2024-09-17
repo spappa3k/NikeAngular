@@ -79,14 +79,14 @@ export class CheckoutComponent implements OnInit {
     const limitTooYoung = new Date();
     const limitFuture= new Date();
 
-    limitTooYoung.setFullYear(limitTooYoung.getFullYear() - 10);
+    limitTooYoung.setFullYear(limitTooYoung.getFullYear() - 5);
     limitTooOld.setFullYear(limitTooOld.getFullYear() - 100);
 
     if (date < limitTooOld) {
       return { dateTooEarly: true }; // Ritorna errore se la data e' piu vecchia di 100 anni dall' attuale
     }
     if (date > limitTooYoung && date<=limitFuture) {
-      return { dateTooNear: true }; // Ritorna errore se la data e' piu vicina a 10 anni dalla data attuale
+      return { dateTooNear: true }; // Ritorna errore se la data e' piu vicina a 5 anni dalla data attuale
     }
     if(date>limitFuture){
       return { dateFuturistic: true}; // Ritorna errore se la data e' futuristica
