@@ -75,8 +75,17 @@
         <div class="form-group">
           <label for="DateOfBirth">Date of birth:</label>
           <input type="date" id="DateOfBirth" formControlName="DateOfBirth">
+          <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('dateTooEarly') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
+            *Date of birth not valid - you can't be more than a century old!
+          </span>
+         <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('dateTooNear') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
+          *Date of birth not valid - You are too young!
+          </span>
+          <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('dateFuturistic') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
+            *Date of birth not valid - It's set in the future!
+            </span>
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('required') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
-
+            *Date of birth required
           </span>
       
         </div>

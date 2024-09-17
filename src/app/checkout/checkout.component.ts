@@ -71,14 +71,25 @@ export class CheckoutComponent implements OnInit {
     }
 
     if (!regexDate.test(value)) {
-      return { invalidDateFormat: true }; 
+      return { invalidDateFormat: true }; // Return error if the format is not correct
     }
 
     const date = new Date(value);
-    const limit = new Date('1920-01-01');
+    const limitTooOld = new Date();
+    const limitTooYoung = new Date();
+    const limitFuture= new Date();
 
-    if (date < limit) {
-      return { dateTooEarly: true }; 
+    limitTooYoung.setFullYear(limitTooYoung.getFullYear() - 10);
+    limitTooOld.setFullYear(limitTooOld.getFullYear() - 100);
+
+    if (date < limitTooOld) {
+      return { dateTooEarly: true }; // Ritorna errore se la data e' piu vecchia di 100 anni dall' attuale
+    }
+    if (date > limitTooYoung && date<=limitFuture) {
+      return { dateTooNear: true }; // Ritorna errore se la data e' piu vicina a 10 anni dalla data attuale
+    }
+    if(date>limitFuture){
+      return { dateFuturistic: true}; // Ritorna errore se la data e' futuristica
     }
 
     return null; 
