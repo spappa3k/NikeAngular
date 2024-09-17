@@ -66,12 +66,19 @@
             <option value="Female">Female</option>
             <option value="NotDeclared">Prefer not to say</option>
           </select>
+          <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('Gender')?.hasError('required') && formCheckoutPersonalInfo.get('Gender')?.touched">
+            *Select the gender
+          </span>
         </div>
         
         <!-- DATE OF BIRTH -->
         <div class="form-group">
           <label for="DateOfBirth">Date of birth:</label>
           <input type="date" id="DateOfBirth" formControlName="DateOfBirth">
+          <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('required') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
+
+          </span>
+      
         </div>
         
       </form>
