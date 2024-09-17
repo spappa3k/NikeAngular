@@ -45,9 +45,9 @@
         </div>
         
         <!-- PHONE NUMBER -->
-        <div class="form-group">
+        <div class="form-group" style="position: relative;">
           <label for="PhoneNumber">Phone Number:</label>
-          <span class="prefix">+44</span>
+          <span class="prefix"><img src="/assets/Img/misc/UnitedKingdom_flag.png" width="26px" height="auto"></span>
           <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" maxlength="15">
           <!--error1-->
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('PhoneNumber')?.hasError('pattern') && formCheckoutPersonalInfo.get('PhoneNumber')?.touched">
