@@ -12,7 +12,8 @@ export class CheckoutComponent implements OnInit{
 formCheckoutPersonalInfo:FormGroup;
 formCheckoutShipping:FormGroup;
 formCheckoutPayment:FormGroup;
-NameSurnameReg:RegExp=/^[a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]{3,}(?:[-\s][a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]+)*$/;
+NameSurnameReg:RegExp=/^[a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]{3,}(?:[-\s][a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]+)*$/;  /* REGEX NAME SURNAME */
+EmailReg:RegExp=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 cities = [
   "Birmingham",
