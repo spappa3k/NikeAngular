@@ -66,6 +66,7 @@
             <option value="Female">Female</option>
             <option value="NotDeclared">Prefer not to say</option>
           </select>
+          <!--error1-->
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('Gender')?.hasError('required') && formCheckoutPersonalInfo.get('Gender')?.touched">
             *Select the gender
           </span>
@@ -75,15 +76,19 @@
         <div class="form-group">
           <label for="DateOfBirth">Date of birth:</label>
           <input type="date" id="DateOfBirth" formControlName="DateOfBirth">
+          <!--error1-->
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('dateTooEarly') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
             *Date of birth not valid - It's set in a far past!
           </span>
+          <!--error2-->
          <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('dateTooNear') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
           *Date of birth not valid - You are too young!
           </span>
+          <!--error3-->
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('dateFuturistic') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
             *Date of birth not valid - It's set in the future!
             </span>
+            <!--error4-->
           <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('DateOfBirth')?.hasError('required') && formCheckoutPersonalInfo.get('DateOfBirth')?.touched">
             *Date of birth required
           </span>
