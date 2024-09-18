@@ -179,11 +179,17 @@
     
         <div class="form-group">
           <label for="CardNumber">Card Number:</label>
-          <input type="text" id="CardNumber" formControlName="CardNumber" maxlength="16">
+          <input type="text" id="CardNumber" formControlName="CardNumber" maxlength="24" (input)="logoCard($event)">
+           <!--error1-->
           <span class="mexError" *ngIf="formCheckoutPayment.get('CardNumber')?.hasError('required') && formCheckoutPayment.get('CardNumber')?.touched">
           *Insert a Card number
           </span>
+          <!--error2-->
+          <span class="mexError" *ngIf="formCheckoutPayment.get('CardNumber')?.hasError('pattern') && formCheckoutPayment.get('CardNumber')?.touched">
+            *Card number not valid
+            </span>
         </div>
+
         <!-- BILLING ADDRESS STREET -->
         <div class="form-group">
           <label for="BillingAddress">Billing Address - Street:</label>

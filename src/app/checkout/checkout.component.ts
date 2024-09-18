@@ -19,7 +19,7 @@ export class CheckoutComponent implements OnInit {
   CivicNReg: RegExp= /^\d+[a-zA-Z]?(?: ?\/?\d*[a-zA-Z]?)?$/;
   CapReg: RegExp= /^([A-Za-z]{1,2}\d[A-Za-z\d]? ?\d[A-Za-z]{2})$/;
   CardReg: RegExp=/(?<!\d)\d{16}(?!\d)|(?<!\d[ _-])(?<!\d)\d{4}([_ -])\d{4}(?:\1\d{4}){2}(?![_ -]?\d)/;
-  
+
   cities = [
     "Birmingham", "Bradford", "Brighton", "Bristol", "Cambridge", "Coventry", "Derby",
     "Glasgow", "Hull", "Leeds", "Leicester", "Liverpool", "London", "Manchester",
@@ -48,7 +48,7 @@ export class CheckoutComponent implements OnInit {
 
     this.formCheckoutPayment = new FormGroup({
       CardHolderName: new FormControl('',[Validators.required, Validators.pattern(this.NameSurnameReg)]),
-      CardNumber: new FormControl('', [Validators.required]),
+      CardNumber: new FormControl('', [Validators.required, Validators.pattern(this.CardReg)]),
       BillingAddress: new FormControl('', [Validators.required,Validators.pattern(this.AddressReg)]),
       CityBilling: new FormControl('', [Validators.required]),
       CardPostCode: new FormControl(''),
@@ -104,5 +104,11 @@ export class CheckoutComponent implements OnInit {
   forceMauisc(event:any){
     const upperValue = event.target.value.toUpperCase();
     this.formCheckoutShipping.get('CAP')?.setValue(upperValue, { emitEvent: false });
+  }
+
+  logoCard(event:any){
+    const valueNumber= event.target.value;
+    let numberToAnalyze= valueNumber.slice(0,2);
+    console.log(numberToAnalyze);
   }
 }
