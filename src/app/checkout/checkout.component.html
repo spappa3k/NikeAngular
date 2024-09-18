@@ -240,6 +240,17 @@
             <input type="text" id="MonthExpire" formControlName="MonthExpire" placeholder="MM" maxlength="2">
             <span class="input-group-text">/</span>
             <input type="text" id="YearExpire" formControlName="YearExpire" placeholder="YY" maxlength="2">
+               <!--error1-->
+           <span style="margin-left: 20px; background-color: transparent; border: none;" class="mexError" *ngIf="formCheckoutPayment.get('YearExpire')?.hasError('invalidYear') && formCheckoutPayment.get('YearExpire')?.touched
+           || formCheckoutPayment.get('MonthExpire')?.hasError('pattern') && formCheckoutPayment.get('MonthExpire')?.touched || formCheckoutPayment.get('YearExpire')?.hasError('required') && formCheckoutPayment.get('YearExpire')?.touched
+           || formCheckoutPayment.get('MonthExpire')?.hasError('required') && formCheckoutPayment.get('MonthExpire')?.touched">
+            *Insert a valid expiring date
+          </span>
+             <!--error2
+             <span style="margin-left: 10px"; class="mexError" *ngIf="formCheckoutPayment.get('YearExpire')?.hasError('required') && formCheckoutPayment.get('YearExpire')?.touched
+              || formCheckoutPayment.get('MonthExpire')?.hasError('required') && formCheckoutPayment.get('MonthExpire')?.touched">
+              *Insert epiring date
+            </span>-->
           </div>
         </div>
         

@@ -19,9 +19,11 @@ export class CheckoutComponent implements OnInit {
   CivicNReg: RegExp= /^\d+[a-zA-Z]?(?: ?\/?\d*[a-zA-Z]?)?$/;
   CapReg: RegExp= /^([A-Za-z]{1,2}\d[A-Za-z\d]? ?\d[A-Za-z]{2})$/;
   CardReg: RegExp=/(?<!\d)\d{16}(?!\d)|(?<!\d[ _-])(?<!\d)\d{4}([_ -])\d{4}(?:\1\d{4}){2}(?![_ -]?\d)/;
+  MonthReg: RegExp=/^(0[1-9]|1[0-2])$/;
 
 
   typeOfCard:string=""
+  errorExpiringDate=false;
 
   cards: string[] = [
     "/assets/Img/cardIcons/visa.png",
@@ -64,8 +66,8 @@ export class CheckoutComponent implements OnInit {
       BillingAddress: new FormControl('', [Validators.required,Validators.pattern(this.AddressReg)]),
       CityBilling: new FormControl('', [Validators.required]),
       CardPostCode: new FormControl(''),
-      MonthExpire: new FormControl(''),
-      YearExpire: new FormControl(''),
+      MonthExpire: new FormControl('',[Validators.required,Validators.pattern(this.MonthReg)]),
+      YearExpire: new FormControl('',[Validators.required,CheckoutComponent.getLastTwoDigitsOfCurrentYear]),
       CVC: new FormControl(''),
     });
   }
@@ -137,14 +139,36 @@ export class CheckoutComponent implements OnInit {
     }else{
       this.typeOfCard="None";
     }
-
-  }
-
-
     /*  
 Visa: 4
 Mastercard: 51–55 
 American Express: 34, 37
 Maestro: 50, 56–58, 6 */
+
+  }
+
+  static getLastTwoDigitsOfCurrentYear(control: AbstractControl): ValidationErrors | null {
+    // Ottieni l'anno corrente
+    const currentYear = new Date().getFullYear();
+    
+    // Converti l'anno in una stringa
+    const yearString = currentYear.toString();
+    
+
+    const lastTwoDigits = yearString.slice(-2);
+    const lastTwoDigitsN: number = +lastTwoDigits;
+
+    const value:number = control.value;
+   
+    if (value >= lastTwoDigitsN+10) {
+      return { invalidYear: true };
+    }
+    else if (value<lastTwoDigitsN) {
+      return { invalidYear: true };
+    } else{
+      return null; //Valido
+    }
+
+}
 
 }
