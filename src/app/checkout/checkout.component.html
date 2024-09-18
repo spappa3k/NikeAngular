@@ -108,12 +108,23 @@
         <div class="form-group">
           <label for="StreetAddress">Address:</label>
           <input type="text" id="StreetAddress" formControlName="StreetAddress" maxlength="50">
+           <!--error1-->
+           <span class="mexError" *ngIf="formCheckoutShipping.get('StreetAddress')?.hasError('pattern') && formCheckoutShipping.get('StreetAddress')?.touched">
+            *Address not valid</span>
+         <!--error2-->
+          <span class="mexError" *ngIf="formCheckoutShipping.get('StreetAddress')?.hasError('required') && formCheckoutShipping.get('StreetAddress')?.touched">
+            *Address is required</span>
         </div>
         
         <!-- CIVIC NUMBER -->
         <div class="form-group">
           <label for="CivicNumber">Civic Number:</label>
-          <input type="text" id="CivicNumber" formControlName="CivicNumber" maxlength="5">
+          <input type="text" id="CivicNumber" formControlName="CivicNumber" maxlength="8">
+          <span class="mexError" *ngIf="formCheckoutShipping.get('CivicNumber')?.hasError('pattern') && formCheckoutShipping.get('CivicNumber')?.touched">
+            *Civic number not valid</span>
+         <!--error2-->
+          <span class="mexError" *ngIf="formCheckoutShipping.get('CivicNumber')?.hasError('required') && formCheckoutShipping.get('CivicNumber')?.touched">
+            *Civic number is required</span>
         </div>
         
         <!-- CITY -->
@@ -122,12 +133,22 @@
           <select id="City" formControlName="City">
             <option *ngFor="let city of cities" [value]="city">{{city}}</option>
           </select>
-        </div>
+            <!--error1-->
+            <span class="mexError" *ngIf="formCheckoutShipping.get('City')?.hasError('required') && formCheckoutShipping.get('City')?.touched">
+              *Select a city
+            </span>
+          </div>
         
         <!-- POST CODE -->
         <div class="form-group">
           <label for="CAP">Post Code:</label>
-          <input type="text" id="CAP" formControlName="CAP" maxlength="6">
+          <input type="text" id="CAP" formControlName="CAP" maxlength="6" (input)="forceMauisc($event)">
+          <!--error1-->
+          <span class="mexError" *ngIf="formCheckoutShipping.get('CAP')?.hasError('pattern') && formCheckoutShipping.get('CAP')?.touched">
+            *Post Code not valid</span>
+         <!--error2-->
+          <span class="mexError" *ngIf="formCheckoutShipping.get('CAP')?.hasError('required') && formCheckoutShipping.get('CAP')?.touched">
+            *A Post Code is required</span>
         </div>
         
         <!-- ADDITIONAL ADDRESS -->
@@ -148,7 +169,14 @@
         <div class="form-group">
           <label for="CardHolderName">CardHolder Name:</label>
           <input type="text" id="CardHolderName" formControlName="CardHolderName" maxlength="50">
-        </div>
+                 <!--error1-->
+                 <span class="mexError" *ngIf="formCheckoutPayment.get('CardHolderName')?.hasError('pattern') && formCheckoutPayment.get('CardHolderName')?.touched">
+                  *Card holder name not valid</span>
+               <!--error2-->
+                <span class="mexError" *ngIf="formCheckoutPayment.get('CardHolderName')?.hasError('required') && formCheckoutPayment.get('CardHolderName')?.touched">
+                  *Card holder name is required</span>
+              </div>
+    
         
         <!-- BILLING ADDRESS STREET -->
         <div class="form-group">
