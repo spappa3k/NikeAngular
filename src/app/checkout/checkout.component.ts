@@ -20,6 +20,17 @@ export class CheckoutComponent implements OnInit {
   CapReg: RegExp= /^([A-Za-z]{1,2}\d[A-Za-z\d]? ?\d[A-Za-z]{2})$/;
   CardReg: RegExp=/(?<!\d)\d{16}(?!\d)|(?<!\d[ _-])(?<!\d)\d{4}([_ -])\d{4}(?:\1\d{4}){2}(?![_ -]?\d)/;
 
+
+  typeOfCard:string=""
+
+  cards: string[] = [
+    "/assets/Img/cardIcons/visa.png",
+    "/assets/Img/cardIcons/mastercard.png",
+    "/assets/Img/cardIcons/americanexpress.png",
+    "/assets/Img/cardIcons/maestro.png",
+  ];
+
+
   cities = [
     "Birmingham", "Bradford", "Brighton", "Bristol", "Cambridge", "Coventry", "Derby",
     "Glasgow", "Hull", "Leeds", "Leicester", "Liverpool", "London", "Manchester",
@@ -101,14 +112,36 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-  forceMauisc(event:any){
+  forceMauisc(event:any){  /* Forziamo l'input del cap ad uppercase */
     const upperValue = event.target.value.toUpperCase();
     this.formCheckoutShipping.get('CAP')?.setValue(upperValue, { emitEvent: false });
   }
 
-  logoCard(event:any){
+  logoCard(event:any){  /* analizziamo i primi due numeri della carta per riconoscerne il tipo */
     const valueNumber= event.target.value;
-    let numberToAnalyze= valueNumber.slice(0,2);
+    let numberToAnalyze=+ valueNumber.slice(0,2);
     console.log(numberToAnalyze);
+    
+    if(numberToAnalyze==4){
+      this.typeOfCard="Visa";
+    }
+    if(numberToAnalyze>=51 && numberToAnalyze<=55){
+      this.typeOfCard="MasterCard";
+    }
+    if(numberToAnalyze==34 || numberToAnalyze==37){
+      this.typeOfCard="AmericanExpress";
+    }
+    if(numberToAnalyze==6 || numberToAnalyze==50 || numberToAnalyze>=56 && numberToAnalyze<=58){
+      this.typeOfCard="Maestro";
+    }
+
+
+
+
+    /*  
+Visa: 4
+Mastercard: 51–55 
+American Express: 34, 37
+Maestro: 50, 56–58, 6 */
   }
 }

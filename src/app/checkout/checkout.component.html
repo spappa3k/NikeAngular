@@ -176,10 +176,17 @@
                 <span class="mexError" *ngIf="formCheckoutPayment.get('CardHolderName')?.hasError('required') && formCheckoutPayment.get('CardHolderName')?.touched">
                   *Card holder name is required</span>
               </div>
-    
-        <div class="form-group">
+
+        <!-- CARD NUMBER -->
+        <div class="form-group" style="position: relative;">
           <label for="CardNumber">Card Number:</label>
           <input type="text" id="CardNumber" formControlName="CardNumber" maxlength="24" (input)="logoCard($event)">
+          
+          <span class="prefix">
+            <ng-container *ngIf="(typeOfCard=='Visa')">
+            <img src="/assets/Img/misc/UnitedKingdom_flag.png" width="26px" height="auto">
+          </ng-container>
+          </span>
            <!--error1-->
           <span class="mexError" *ngIf="formCheckoutPayment.get('CardNumber')?.hasError('required') && formCheckoutPayment.get('CardNumber')?.touched">
           *Insert a Card number
