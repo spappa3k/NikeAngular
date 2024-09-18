@@ -257,13 +257,6 @@
                *ngIf="showExpiringDateError()">
            *Insert a valid expiring date
          </span>
-         
-
-             <!--error2
-             <span style="margin-left: 10px"; class="mexError" *ngIf="formCheckoutPayment.get('YearExpire')?.hasError('required') && formCheckoutPayment.get('YearExpire')?.touched
-              || formCheckoutPayment.get('MonthExpire')?.hasError('required') && formCheckoutPayment.get('MonthExpire')?.touched">
-              *Insert epiring date
-            </span>-->
           </div>
         </div>
         
@@ -271,7 +264,14 @@
         <div class="form-group">
           <label for="CVC">CVC:</label>
           <input type="text" id="CVC" formControlName="CVC" maxlength="3">
+          <!--error1-->
+          <span class="mexError" *ngIf="formCheckoutPayment.get('CVC')?.hasError('pattern') && formCheckoutPayment.get('CVC')?.touched">
+            *CVC not valid</span>
+         <!--error2-->
+          <span class="mexError" *ngIf="formCheckoutPayment.get('CVC')?.hasError('required') && formCheckoutPayment.get('CVC')?.touched">
+            *CVC is required</span>
         </div>
+        
         
         <button type="submit">Acquista</button>
       </form>
