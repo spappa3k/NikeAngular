@@ -233,6 +233,18 @@
               </span>
         </div>
         
+         <!-- POST CODE -->
+         <div class="form-group">
+          <label for="CardPostCode">Post Code:</label>
+          <input type="text" id="CardPostCode" formControlName="CardPostCode" maxlength="6" (input)="forceMauisc($event)">
+          <!--error1-->
+          <span class="mexError" *ngIf="formCheckoutPayment.get('CardPostCode')?.hasError('pattern') && formCheckoutPayment.get('CardPostCode')?.touched">
+            *Post Code not valid</span>
+         <!--error2-->
+          <span class="mexError" *ngIf="formCheckoutPayment.get('CardPostCode')?.hasError('required') && formCheckoutPayment.get('CardPostCode')?.touched">
+            *Post Code is required</span>
+        </div>
+
         <!-- EXPIRING DATE -->
         <div class="form-group">
           <label for="MonthExpire">Expiring Date:</label>
@@ -241,11 +253,12 @@
             <span class="input-group-text">/</span>
             <input type="text" id="YearExpire" formControlName="YearExpire" placeholder="YY" maxlength="2">
                <!--error1-->
-           <span style="margin-left: 20px; background-color: transparent; border: none;" class="mexError" *ngIf="formCheckoutPayment.get('YearExpire')?.hasError('invalidYear') && formCheckoutPayment.get('YearExpire')?.touched
-           || formCheckoutPayment.get('MonthExpire')?.hasError('pattern') && formCheckoutPayment.get('MonthExpire')?.touched || formCheckoutPayment.get('YearExpire')?.hasError('required') && formCheckoutPayment.get('YearExpire')?.touched
-           || formCheckoutPayment.get('MonthExpire')?.hasError('required') && formCheckoutPayment.get('MonthExpire')?.touched">
-            *Insert a valid expiring date
-          </span>
+               <span style="margin-left: 20px; background-color: transparent; border: none;" class="mexError"
+               *ngIf="showExpiringDateError()">
+           *Insert a valid expiring date
+         </span>
+         
+
              <!--error2
              <span style="margin-left: 10px"; class="mexError" *ngIf="formCheckoutPayment.get('YearExpire')?.hasError('required') && formCheckoutPayment.get('YearExpire')?.touched
               || formCheckoutPayment.get('MonthExpire')?.hasError('required') && formCheckoutPayment.get('MonthExpire')?.touched">

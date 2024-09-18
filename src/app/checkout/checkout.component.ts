@@ -19,7 +19,9 @@ export class CheckoutComponent implements OnInit {
   CivicNReg: RegExp= /^\d+[a-zA-Z]?(?: ?\/?\d*[a-zA-Z]?)?$/;
   CapReg: RegExp= /^([A-Za-z]{1,2}\d[A-Za-z\d]? ?\d[A-Za-z]{2})$/;
   CardReg: RegExp=/(?<!\d)\d{16}(?!\d)|(?<!\d[ _-])(?<!\d)\d{4}([_ -])\d{4}(?:\1\d{4}){2}(?![_ -]?\d)/;
-  MonthReg: RegExp=/^(0[1-9]|1[0-2])$/;
+  MonthReg: RegExp=/^(0[1-9]|1[0-2]|[1-9])$/;
+  CVCReg: RegExp = /^\d{3}$/;
+
 
 
   typeOfCard:string=""
@@ -65,10 +67,10 @@ export class CheckoutComponent implements OnInit {
       CardNumber: new FormControl('', [Validators.required, Validators.pattern(this.CardReg)]),
       BillingAddress: new FormControl('', [Validators.required,Validators.pattern(this.AddressReg)]),
       CityBilling: new FormControl('', [Validators.required]),
-      CardPostCode: new FormControl(''),
+      CardPostCode: new FormControl('',[Validators.required,Validators.pattern(this.CapReg)]),
       MonthExpire: new FormControl('',[Validators.required,Validators.pattern(this.MonthReg)]),
       YearExpire: new FormControl('',[Validators.required,CheckoutComponent.getLastTwoDigitsOfCurrentYear]),
-      CVC: new FormControl(''),
+      CVC: new FormControl('',[Validators.required,Validators.pattern(this.CVCReg)]),
     });
   }
 
@@ -171,4 +173,15 @@ Maestro: 50, 56–58, 6 */
 
 }
 
+  // Funzione per determinare se mostrare l'errore
+  showExpiringDateError() {
+    const monthControl = this.formCheckoutPayment.get('MonthExpire');
+    const yearControl = this.formCheckoutPayment.get('YearExpire');
+  
+    // Verifica se almeno uno dei campi è stato toccato e se uno di essi ha un errore
+    return (monthControl?.touched || yearControl?.touched) &&
+           (monthControl?.invalid || yearControl?.invalid);
+
 }
+}
+
