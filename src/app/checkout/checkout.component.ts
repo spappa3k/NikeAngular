@@ -17,8 +17,9 @@ export class CheckoutComponent implements OnInit {
   PhoneReg: RegExp = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/;
   AddressReg: RegExp= /^[a-zA-Z0-9 ]{4,}$/;
   CivicNReg: RegExp= /^\d+[a-zA-Z]?(?: ?\/?\d*[a-zA-Z]?)?$/;
-  CapReg:RegExp= /^([A-Za-z]{1,2}\d[A-Za-z\d]? ?\d[A-Za-z]{2})$/;
-
+  CapReg: RegExp= /^([A-Za-z]{1,2}\d[A-Za-z\d]? ?\d[A-Za-z]{2})$/;
+  CardReg: RegExp=/(?<!\d)\d{16}(?!\d)|(?<!\d[ _-])(?<!\d)\d{4}([_ -])\d{4}(?:\1\d{4}){2}(?![_ -]?\d)/;
+  
   cities = [
     "Birmingham", "Bradford", "Brighton", "Bristol", "Cambridge", "Coventry", "Derby",
     "Glasgow", "Hull", "Leeds", "Leicester", "Liverpool", "London", "Manchester",
@@ -40,16 +41,16 @@ export class CheckoutComponent implements OnInit {
     this.formCheckoutShipping = new FormGroup({
       StreetAddress: new FormControl('', [Validators.required, Validators.pattern(this.AddressReg)]),
       AdditionalAddress: new FormControl(''),
-      CivicNumber: new FormControl('',[Validators.pattern(this.CivicNReg)]),
+      CivicNumber: new FormControl('',[Validators.required, Validators.pattern(this.CivicNReg)]),
       City: new FormControl('',[Validators.required]),
       CAP: new FormControl('',[Validators.required, Validators.pattern(this.CapReg)]),
     });
 
     this.formCheckoutPayment = new FormGroup({
       CardHolderName: new FormControl('',[Validators.required, Validators.pattern(this.NameSurnameReg)]),
-      CardNumber: new FormControl(''),
-      BillingAddress: new FormControl(''),
-      CityBilling: new FormControl(''),
+      CardNumber: new FormControl('', [Validators.required]),
+      BillingAddress: new FormControl('', [Validators.required,Validators.pattern(this.AddressReg)]),
+      CityBilling: new FormControl('', [Validators.required]),
       CardPostCode: new FormControl(''),
       MonthExpire: new FormControl(''),
       YearExpire: new FormControl(''),

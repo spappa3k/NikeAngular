@@ -148,7 +148,7 @@
             *Post Code not valid</span>
          <!--error2-->
           <span class="mexError" *ngIf="formCheckoutShipping.get('CAP')?.hasError('required') && formCheckoutShipping.get('CAP')?.touched">
-            *A Post Code is required</span>
+            *Post Code is required</span>
         </div>
         
         <!-- ADDITIONAL ADDRESS -->
@@ -177,11 +177,23 @@
                   *Card holder name is required</span>
               </div>
     
-        
+        <div class="form-group">
+          <label for="CardNumber">Card Number:</label>
+          <input type="text" id="CardNumber" formControlName="CardNumber" maxlength="16">
+          <span class="mexError" *ngIf="formCheckoutPayment.get('CardNumber')?.hasError('required') && formCheckoutPayment.get('CardNumber')?.touched">
+          *Insert a Card number
+          </span>
+        </div>
         <!-- BILLING ADDRESS STREET -->
         <div class="form-group">
           <label for="BillingAddress">Billing Address - Street:</label>
           <input type="text" id="BillingAddress" formControlName="BillingAddress" maxlength="50">
+           <!--error1-->
+           <span class="mexError" *ngIf="formCheckoutPayment.get('BillingAddress')?.hasError('pattern') && formCheckoutPayment.get('BillingAddress')?.touched">
+            *Address not valid</span>
+         <!--error2-->
+          <span class="mexError" *ngIf="formCheckoutPayment.get('BillingAddress')?.hasError('required') && formCheckoutPayment.get('BillingAddress')?.touched">
+            *Address is required</span>
         </div>
         
         <!-- BILLING ADDRESS CITY -->
@@ -190,6 +202,10 @@
           <select id="CityBilling" formControlName="CityBilling">
             <option *ngFor="let city of cities" [value]="city">{{city}}</option>
           </select>
+               <!--error1-->
+               <span class="mexError" *ngIf="formCheckoutPayment.get('CityBilling')?.hasError('required') && formCheckoutPayment.get('CityBilling')?.touched">
+                *Select a city
+              </span>
         </div>
         
         <!-- EXPIRING DATE -->
