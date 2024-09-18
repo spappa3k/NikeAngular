@@ -9,7 +9,7 @@
         <!--FIRST NAME-->
           <div class="form-group">
             <label for="FirstName">First Name:</label>
-            <input type="text" id="FirstName" formControlName="FirstName" maxlength="25">
+            <input type="text" id="FirstName" formControlName="FirstName" maxlength="25" appTrim>  <!--Directive per funzionamento trim on blur con le regex (trim.directive.ts)-->
             <!--error1-->
             <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('FirstName')?.hasError('pattern') && formCheckoutPersonalInfo.get('FirstName')?.touched">
               *First Name not valid</span>
@@ -21,7 +21,7 @@
            <!-- LAST NAME -->
         <div class="form-group">
           <label for="LastName">Second Name:</label>
-          <input type="text" id="LastName" formControlName="LastName" maxlength="25">
+          <input type="text" id="LastName" formControlName="LastName" maxlength="25" appTrim>  <!--Directive per funzionamento trim on blur con le regex (trim.directive.ts)-->
            <!--error1-->
            <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('LastName')?.hasError('pattern') && formCheckoutPersonalInfo.get('FirstName')?.touched">
             *Last Name not valid</span>
@@ -34,7 +34,7 @@
         <!-- EMAIL -->
         <div class="form-group">
           <label for="Email">Email:</label>
-          <input type="email" id="Email" formControlName="Email" maxlength="38">
+          <input type="email" id="Email" formControlName="Email" maxlength="38" appTrim> <!--Directive per funzionamento trim on blur con le regex (trim.directive.ts)-->
            <!--error1-->
            <span class="mexError" *ngIf="formCheckoutPersonalInfo.get('Email')?.hasError('pattern') && formCheckoutPersonalInfo.get('Email')?.touched">
             *Email format not valid</span>
@@ -45,7 +45,7 @@
         </div>
         
         <!-- PHONE NUMBER -->
-        <div class="form-group" style="position: relative;">
+        <div class="form-group" style="position: relative;" appTrim>
           <label for="PhoneNumber">Phone Number:</label>
           <span class="prefix"><img src="/assets/Img/misc/UnitedKingdom_flag.png" width="26px" height="auto"></span>
           <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" maxlength="15">
@@ -107,7 +107,7 @@
         <!-- ADDRESS -->
         <div class="form-group">
           <label for="StreetAddress">Address:</label>
-          <input type="text" id="StreetAddress" formControlName="StreetAddress" maxlength="50">
+          <input type="text" id="StreetAddress" formControlName="StreetAddress" maxlength="50" appTrim> <!--Directive per funzionamento trim on blur con le regex (trim.directive.ts)-->
            <!--error1-->
            <span class="mexError" *ngIf="formCheckoutShipping.get('StreetAddress')?.hasError('pattern') && formCheckoutShipping.get('StreetAddress')?.touched">
             *Address not valid</span>
@@ -119,7 +119,7 @@
         <!-- CIVIC NUMBER -->
         <div class="form-group">
           <label for="CivicNumber">Civic Number:</label>
-          <input type="text" id="CivicNumber" formControlName="CivicNumber" maxlength="8">
+          <input type="text" id="CivicNumber" formControlName="CivicNumber" maxlength="8" appTrim>
           <span class="mexError" *ngIf="formCheckoutShipping.get('CivicNumber')?.hasError('pattern') && formCheckoutShipping.get('CivicNumber')?.touched">
             *Civic number not valid</span>
          <!--error2-->
@@ -154,7 +154,7 @@
         <!-- ADDITIONAL ADDRESS -->
         <div class="form-group">
           <label for="AdditionalAddress">Additional Address informations (optional):</label>
-          <input type="text" id="AdditionalAddress" formControlName="AdditionalAddress" maxlength="50">
+          <input type="text" id="AdditionalAddress" formControlName="AdditionalAddress" maxlength="50" appTrim> <!--Directive per funzionamento trim on blur con le regex (trim.directive.ts)-->
         </div>
         
       </form>
@@ -168,7 +168,7 @@
         <!-- CARD HOLDER NAME -->
         <div class="form-group">
           <label for="CardHolderName">CardHolder Name:</label>
-          <input type="text" id="CardHolderName" formControlName="CardHolderName" maxlength="50">
+          <input type="text" id="CardHolderName" formControlName="CardHolderName" maxlength="50" appTrim> <!--Directive per funzionamento trim on blur con le regex (trim.directive.ts)-->
                  <!--error1-->
                  <span class="mexError" *ngIf="formCheckoutPayment.get('CardHolderName')?.hasError('pattern') && formCheckoutPayment.get('CardHolderName')?.touched">
                   *Card holder name not valid</span>
@@ -212,7 +212,7 @@
         <!-- BILLING ADDRESS STREET -->
         <div class="form-group">
           <label for="BillingAddress">Billing Address - Street:</label>
-          <input type="text" id="BillingAddress" formControlName="BillingAddress" maxlength="50">
+          <input type="text" id="BillingAddress" formControlName="BillingAddress" maxlength="50" appTrim> <!--Directive per funzionamento trim on blur con le regex (trim.directive.ts)-->
            <!--error1-->
            <span class="mexError" *ngIf="formCheckoutPayment.get('BillingAddress')?.hasError('pattern') && formCheckoutPayment.get('BillingAddress')?.touched">
             *Address not valid</span>
