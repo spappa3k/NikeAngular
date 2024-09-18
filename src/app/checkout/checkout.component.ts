@@ -28,6 +28,7 @@ export class CheckoutComponent implements OnInit {
     "/assets/Img/cardIcons/mastercard.png",
     "/assets/Img/cardIcons/americanexpress.png",
     "/assets/Img/cardIcons/maestro.png",
+    "/assets/Img/cardIcons/empty.png",
   ];
 
 
@@ -119,23 +120,25 @@ export class CheckoutComponent implements OnInit {
 
   logoCard(event:any){  /* analizziamo i primi due numeri della carta per riconoscerne il tipo */
     const valueNumber= event.target.value;
-    let numberToAnalyze=+ valueNumber.slice(0,2);
-    console.log(numberToAnalyze);
+    const currentFirstTwoNumbers = valueNumber.slice(0, 2);
+    console.log(currentFirstTwoNumbers);
     
-    if(numberToAnalyze==4){
+    if(currentFirstTwoNumbers>=40 && currentFirstTwoNumbers<=49){
       this.typeOfCard="Visa";
     }
-    if(numberToAnalyze>=51 && numberToAnalyze<=55){
+    else if(currentFirstTwoNumbers>=51 && currentFirstTwoNumbers<=55){
       this.typeOfCard="MasterCard";
     }
-    if(numberToAnalyze==34 || numberToAnalyze==37){
+    else if(currentFirstTwoNumbers==34 || currentFirstTwoNumbers==37){
       this.typeOfCard="AmericanExpress";
     }
-    if(numberToAnalyze==6 || numberToAnalyze==50 || numberToAnalyze>=56 && numberToAnalyze<=58){
+    else if(currentFirstTwoNumbers>=60 && currentFirstTwoNumbers<=69 || currentFirstTwoNumbers==50 || currentFirstTwoNumbers>=56 && currentFirstTwoNumbers<=58){
       this.typeOfCard="Maestro";
+    }else{
+      this.typeOfCard="None";
     }
 
-
+  }
 
 
     /*  
@@ -143,5 +146,5 @@ Visa: 4
 Mastercard: 51–55 
 American Express: 34, 37
 Maestro: 50, 56–58, 6 */
-  }
+
 }

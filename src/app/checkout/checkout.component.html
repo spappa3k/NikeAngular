@@ -180,11 +180,23 @@
         <!-- CARD NUMBER -->
         <div class="form-group" style="position: relative;">
           <label for="CardNumber">Card Number:</label>
-          <input type="text" id="CardNumber" formControlName="CardNumber" maxlength="24" (input)="logoCard($event)">
+          <input type="text" id="CardNumber" formControlName="CardNumber" maxlength="19" (input)="logoCard($event)">
           
           <span class="prefix">
             <ng-container *ngIf="(typeOfCard=='Visa')">
-            <img src="/assets/Img/misc/UnitedKingdom_flag.png" width="26px" height="auto">
+            <img [src]="cards[0]" width="26px" height="auto">
+          </ng-container>
+          <ng-container *ngIf="(typeOfCard=='MasterCard')">
+            <img [src]="cards[1]" width="26px" height="auto">
+          </ng-container>
+          <ng-container *ngIf="(typeOfCard=='AmericanExpress')">
+            <img [src]="cards[2]" width="20px" height="auto" style=" position:relative; bottom:4px">
+          </ng-container>
+          <ng-container *ngIf="(typeOfCard=='Maestro')">
+            <img [src]="cards[3]" width="26px" height="auto">
+          </ng-container>
+          <ng-container *ngIf="(typeOfCard=='None')">
+          <img [src]="cards[4]">
           </ng-container>
           </span>
            <!--error1-->
