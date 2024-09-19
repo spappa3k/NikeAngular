@@ -81,7 +81,7 @@ export class CheckoutComponent implements OnInit {
     this.ns.viewBannerHearderOnOff(false);
   }
 
-  OnSubmit() {
+  onSubmit() {
     if (this.formCheckoutPersonalInfo.valid && this.formCheckoutShipping.valid && this.formCheckoutPayment.valid) {
       // Se tutti i form sono validi, invia i dati o esegui altre azioni
       console.log('Form Personal Value:', this.formCheckoutPersonalInfo.value);
