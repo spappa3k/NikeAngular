@@ -27,7 +27,7 @@ export class CheckoutComponent implements OnInit {
 
   typeOfCard:string=""
   errorExpiringDate=false;
-  buttonDisabled=true
+
 
   cards: string[] = [
     "/assets/Img/cardIcons/visa.png",
