@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormControl, FormGroup, Validators, AbstractControl, ValidationErrors, FormBuilder } from '@angular/forms';
 import { NikeService } from '../nike.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class CheckoutComponent implements OnInit {
   formCheckoutPersonalInfo: FormGroup;
   formCheckoutShipping: FormGroup;
   formCheckoutPayment: FormGroup;
+   
 
   NameSurnameReg: RegExp = /^[a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]{3,}(?:[-\s][a-zA-ZàèéìòùÀÈÉÌÒÙçÇ]+)*$/;  /* REGEX NAME SURNAME */
   EmailReg: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -44,25 +45,26 @@ export class CheckoutComponent implements OnInit {
     "Wakefield", "Wolverhampton"
   ];
 
-  constructor(private ns: NikeService) {
-    this.formCheckoutPersonalInfo = new FormGroup({
+  constructor(private ns: NikeService, private fb:FormBuilder) {
+ 
+    this.formCheckoutPersonalInfo = fb.group({
       FirstName: new FormControl('', [Validators.required, Validators.pattern(this.NameSurnameReg)]),
       LastName: new FormControl('', [Validators.required, Validators.pattern(this.NameSurnameReg)]),
       Email: new FormControl('', [Validators.required, Validators.pattern(this.EmailReg)]),
       PhoneNumber: new FormControl('', [Validators.required, Validators.pattern(this.PhoneReg)]),
       Gender: new FormControl('', [Validators.required]),
       DateOfBirth: new FormControl('', [Validators.required, CheckoutComponent.dateValidator]),
-    });
+    }),
 
-    this.formCheckoutShipping = new FormGroup({
+    this.formCheckoutShipping = fb.group({
       StreetAddress: new FormControl('', [Validators.required, Validators.pattern(this.AddressReg)]),
       AdditionalAddress: new FormControl(''),
       CivicNumber: new FormControl('',[Validators.required, Validators.pattern(this.CivicNReg)]),
       City: new FormControl('',[Validators.required]),
       CAP: new FormControl('',[Validators.required, Validators.pattern(this.CapReg)]),
-    });
+    })
 
-    this.formCheckoutPayment = new FormGroup({
+    this.formCheckoutPayment = fb.group({
       CardHolderName: new FormControl('',[Validators.required, Validators.pattern(this.NameSurnameReg)]),
       CardNumber: new FormControl('', [Validators.required, Validators.pattern(this.CardReg)]),
       BillingAddress: new FormControl('', [Validators.required,Validators.pattern(this.AddressReg)]),
@@ -73,14 +75,28 @@ export class CheckoutComponent implements OnInit {
       CVC: new FormControl('',[Validators.required,Validators.pattern(this.CVCReg)]),
     });
   }
+  
 
   ngOnInit(): void {
     this.ns.viewBannerHearderOnOff(false);
   }
 
   OnSubmit() {
-    console.log(this.formCheckoutPersonalInfo.value);
+    if (this.formCheckoutPersonalInfo.valid && this.formCheckoutShipping.valid && this.formCheckoutPayment.valid) {
+      // Se tutti i form sono validi, invia i dati o esegui altre azioni
+      console.log('Form Personal Value:', this.formCheckoutPersonalInfo.value);
+      console.log('Form Shipping Value:', this.formCheckoutShipping.value);
+      console.log('Form Payment Value:', this.formCheckoutPayment.value);
+      alert('Tutti i form sono validi!');
+    } else {
+      // Se uno dei form non è valido, segnala gli errori
+      this.formCheckoutPersonalInfo.markAllAsTouched();
+      this.formCheckoutShipping.markAllAsTouched();
+      this.formCheckoutPayment.markAllAsTouched();
+      alert('Uno o più form non sono validi.');
+    }
   }
+
 
   /* Custom Validator per la Data */
   static dateValidator(control: AbstractControl): ValidationErrors | null {

@@ -4,7 +4,7 @@
     <!-- Personal Information Section -->
     <div class="form-section">
       <h3 class="section-title col-md-12 mb-3">Personal informations</h3>
-      <form [formGroup]="formCheckoutPersonalInfo" (ngSubmit)="OnSubmit()">
+      <form [formGroup]="formCheckoutPersonalInfo">
        
         <!--FIRST NAME-->
           <div class="form-group">
@@ -102,7 +102,7 @@
     <!-- Shipping Information Section -->
     <div class="form-section">
       <h3 class="section-title col-md-12 mb-3">Shipping Informations</h3>
-      <form [formGroup]="formCheckoutShipping" (ngSubmit)="OnSubmit()">
+      <form [formGroup]="formCheckoutShipping">
       
         <!-- ADDRESS -->
         <div class="form-group">
@@ -163,7 +163,7 @@
     <!-- Payment Information Section -->
     <div class="form-section">
       <h3 class="section-title col-md-12 mb-3">Payment</h3>
-      <form [formGroup]="formCheckoutPayment" (ngSubmit)="OnSubmit()">
+      <form [formGroup]="formCheckoutPayment">
         
         <!-- CARD HOLDER NAME -->
         <div class="form-group">
@@ -272,9 +272,8 @@
             *CVC is required</span>
         </div>
         
-        
-        <button type="submit">Acquista</button>
       </form>
     </div>
   </div>
+  <button type="submit" (click)="OnSubmit()">Acquista</button>
 </section>
