@@ -272,6 +272,7 @@
           <span class="mexError" *ngIf="formCheckoutPayment.get('CVC')?.hasError('required') && formCheckoutPayment.get('CVC')?.touched">
             *CVC is required</span>
           </div>
+          <div class="totalToView"> Total to pay :&nbsp;<span style="color:rgb(209, 0, 0);">{{totalToView | currency: 'EUR' }}</span></div>
       </form>
     </div>
   </div>

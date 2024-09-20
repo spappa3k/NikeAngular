@@ -28,6 +28,8 @@ export class CheckoutComponent implements OnInit {
 
   typeOfCard:string=""
   errorExpiringDate=false;
+  totalToPay=0;
+  totalToView=0;
 
 
 
@@ -48,7 +50,7 @@ export class CheckoutComponent implements OnInit {
     "Wakefield", "Wolverhampton"
   ];
 
-  constructor(private ns: NikeService, private fb:FormBuilder, private router:Router) {
+  constructor(public ns: NikeService, private fb:FormBuilder, private router:Router) {
  
     this.formCheckoutPersonalInfo = fb.group({
       FirstName: new FormControl('', [Validators.required, Validators.pattern(this.NameSurnameReg)]),
@@ -82,6 +84,12 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.ns.viewBannerHearderOnOff(false);
+    for (let i = 0; i < this.ns.prodottiInBasket.length; i++) {
+     // this.totalToPay+=+this.ns.prodottiInBasket[i].prezzo;
+      console.log(this.ns.prodottiInBasket[i].prezzo)
+      this.totalToPay+= +(this.ns.prodottiInBasket[i].prezzo*this.ns.prodottiInBasket[i].quantita);
+    }
+    this.totalToView=this.totalToPay;
   }
 
   onSubmit() {

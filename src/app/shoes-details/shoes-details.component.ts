@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Prodotti, ProdottoForCheckout } from '../../assets/models/models';
 import { style } from '@angular/animations';
 
+
 @Component({
   selector: 'app-shoes-details',
   templateUrl: './shoes-details.component.html',
@@ -45,10 +46,12 @@ showAlreadyInBasketMessage=false;
              prezzo: this.prodotto!.prezzo,
              immagine: this.prodotto!.immagine,
              taglia: this.prodotto!.taglie_disponibili[this.selectedToBlack],
-             quantita:this.selectedQuantity
-           };
+             quantita:this.selectedQuantity 
+            };
+      
          });      
        this.ns.viewBannerHearderOnOff(false);
+       
   /*  
        const found = this.ns.prodottiInBasket?.find(p => p.id === this.prodotto?.id);
     if (found) {

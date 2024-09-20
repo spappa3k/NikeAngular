@@ -664,6 +664,15 @@ bottom:22px;
   display: inline-block;
 }
 
+.totalToView{
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #002347;
+  text-align: center;
+}
+
+
+
 /* FINE ACQUISTO*/
 
 .endMessageContainer {
