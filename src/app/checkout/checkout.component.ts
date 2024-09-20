@@ -202,7 +202,6 @@ Maestro: 50, 56–58, 6 */
     // Verifica se almeno uno dei campi è stato toccato e se uno di essi ha un errore
     return (monthControl?.touched || yearControl?.touched) &&
            (monthControl?.invalid || yearControl?.invalid);
-
 }
 }
 
