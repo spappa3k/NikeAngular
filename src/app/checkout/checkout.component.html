@@ -142,7 +142,7 @@
         <!-- POST CODE -->
         <div class="form-group">
           <label for="CAP">Post Code:</label>
-          <input type="text" id="CAP" formControlName="CAP" maxlength="6" (input)="forceMauisc($event)">
+          <input type="text" id="CAP" formControlName="CAP" maxlength="8" (input)="forceMauisc($event)">
           <!--error1-->
           <span class="mexError" *ngIf="formCheckoutShipping.get('CAP')?.hasError('pattern') && formCheckoutShipping.get('CAP')?.touched">
             *Post Code not valid</span>
@@ -236,7 +236,7 @@
          <!-- POST CODE -->
          <div class="form-group">
           <label for="CardPostCode">Post Code:</label>
-          <input type="text" id="CardPostCode" formControlName="CardPostCode" maxlength="6" (input)="forceMauisc($event)">
+          <input type="text" id="CardPostCode" formControlName="CardPostCode" maxlength="8" (input)="forceMauisc($event)">
           <!--error1-->
           <span class="mexError" *ngIf="formCheckoutPayment.get('CardPostCode')?.hasError('pattern') && formCheckoutPayment.get('CardPostCode')?.touched">
             *Post Code not valid</span>
