@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, AbstractControl, ValidationErrors, FormBuilder } from '@angular/forms';
 import { NikeService } from '../nike.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -29,6 +30,7 @@ export class CheckoutComponent implements OnInit {
   errorExpiringDate=false;
 
 
+
   cards: string[] = [
     "/assets/Img/cardIcons/visa.png",
     "/assets/Img/cardIcons/mastercard.png",
@@ -46,7 +48,7 @@ export class CheckoutComponent implements OnInit {
     "Wakefield", "Wolverhampton"
   ];
 
-  constructor(private ns: NikeService, private fb:FormBuilder) {
+  constructor(private ns: NikeService, private fb:FormBuilder, private router:Router) {
  
     this.formCheckoutPersonalInfo = fb.group({
       FirstName: new FormControl('', [Validators.required, Validators.pattern(this.NameSurnameReg)]),
@@ -88,14 +90,8 @@ export class CheckoutComponent implements OnInit {
       console.log('Form Personal Value:', this.formCheckoutPersonalInfo.value);
       console.log('Form Shipping Value:', this.formCheckoutShipping.value);
       console.log('Form Payment Value:', this.formCheckoutPayment.value);
-      alert('Tutti i form sono validi!');
-    } else {
-      // Se uno dei form non è valido, segnala gli errori
-      this.formCheckoutPersonalInfo.markAllAsTouched();
-      this.formCheckoutShipping.markAllAsTouched();
-      this.formCheckoutPayment.markAllAsTouched();
-      alert('Uno o più form non sono validi.');
-    }
+      this.router.navigate(['endPurchase']);
+    } 
   }
 
 

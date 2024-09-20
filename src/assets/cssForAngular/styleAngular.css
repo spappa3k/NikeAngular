@@ -648,6 +648,7 @@ left: 10px;
 bottom:22px;
  }
 
+ /* Bottone Finale */
  .button-container {
   text-align: center; 
   margin-top: 20px;
@@ -662,3 +663,37 @@ bottom:22px;
   font-size: 16px;
   display: inline-block;
 }
+
+/* FINE ACQUISTO*/
+
+.endMessageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.endMessage {
+  text-align: center;
+  padding: 40px;
+  border: 2px solid #4CAF50;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.firmaMessage {
+  position: relative;
+  top:100px;
+  left: 370px
+}
+
+.firmaMessage p {
+  font-size: 1.5em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: red;
+}
+

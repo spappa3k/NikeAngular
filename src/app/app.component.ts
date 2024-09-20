@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ListComponent } from './list/list.component';
+import { NikeService } from './nike.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,7 +14,7 @@ export class AppComponent{
 
   @ViewChild(ListComponent) listComponent?: ListComponent;
 
-  constructor(private router: Router){}
+  constructor(private router: Router, public ns:NikeService){}
 
   /* ricevi stringa emessa dall output e reindirizza a /list */
 

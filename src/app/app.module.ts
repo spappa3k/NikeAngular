@@ -21,6 +21,7 @@ import { BasketComponent } from './basket/basket.component';
 import { AddedToBasketComponent } from './added-to-basket/added-to-basket.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { TrimDirective } from './trim.directive';
+import { EndPurchaseComponent } from './end-purchase/end-purchase.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TrimDirective } from './trim.directive';
     BasketComponent,
     AddedToBasketComponent,
     CheckoutComponent,
-    TrimDirective
+    TrimDirective,
+    EndPurchaseComponent
   ],
   imports: [
     BrowserModule,

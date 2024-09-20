@@ -12,6 +12,7 @@ export class NikeService{
   prodottiInBasket:ProdottoForCheckout[]=[]
   numberOfShoes:number=0
   NMAXPairs:number=12;
+  endOfPurchase=false;
 
   constructor(private http: HttpClient) {
   }
