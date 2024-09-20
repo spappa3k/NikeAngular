@@ -5,7 +5,12 @@
             <span>Register</span> or <span>Log-in</span>
         </p>
     </div>
-    <section id="wrapperBasketPage">
+<div class="noItemsInBasket" *ngIf="ns.prodottiInBasket.length<=0">
+    YOUR BASKET IS EMPTY
+    <button type="button" [routerLink]="['']">Back</button>
+</div>
+
+    <section id="wrapperBasketPage" *ngIf="ns.prodottiInBasket.length>0">
     <div id="column1">
         <ng-container *ngFor="let prodotto of prodottiInBasket; let i = index">
             <div id="shoeBasket">
@@ -63,8 +68,8 @@
             <p class="totalAFterShipping">Total: {{TotalAFterShipping | currency:'EUR': 'symbol' :'1.2-2'}}</p>
     
             <!-- Bottone di acquisto -->
-            <div class="endButtons" *ngIf="numberOFPairs < ns.NMAXPairs + 1">
-                <button type="button" id="purchase">Checkout</button>
+            <div class="endButtons" *ngIf="ns.prodottiInBasket.length>0">
+                <button type="button" id="purchase" (click)="sendTotalToNs()" [routerLink]="['/checkout']">Checkout</button>
             </div>
     
     

@@ -87,6 +87,10 @@ updateTotalAfterShipping(){
   }
 }
 
+sendTotalToNs(){
+  this.ns.TotalAfterBasket=this.TotalAFterShipping;
+}
+
 
       ngOnDestroy():void{
         console.log("distrutto");

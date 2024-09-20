@@ -14,8 +14,7 @@
                 <p>{{prodottoToPush.prezzo| currency:'EUR': 'symbol' :'1.2-2'}} Quantity:{{prodottoToPush.quantita}}</p>
             </div>
             <div id="buttonsBasket">
-                <button type="button" (click)="itemAddedOn.emit(false)" [routerLink]="['/basket']">Basket</button>
-                <button type="button" (click)="itemAddedOn.emit(false)" [routerLink]="['/checkout']">Buy</button>
+                <button type="button" (click)="itemAddedOn.emit(false)" [routerLink]="['/basket']">Go to your basket</button>
             </div>
         </div>
         </div>

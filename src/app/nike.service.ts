@@ -13,6 +13,7 @@ export class NikeService{
   numberOfShoes:number=0
   NMAXPairs:number=12;
   endOfPurchase=false;
+  TotalAfterBasket=0;
 
   constructor(private http: HttpClient) {
   }

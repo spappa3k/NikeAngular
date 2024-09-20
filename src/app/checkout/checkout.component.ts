@@ -28,7 +28,6 @@ export class CheckoutComponent implements OnInit {
 
   typeOfCard:string=""
   errorExpiringDate=false;
-  totalToPay=0;
   totalToView=0;
 
 
@@ -84,12 +83,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.ns.viewBannerHearderOnOff(false);
-    for (let i = 0; i < this.ns.prodottiInBasket.length; i++) {
-     // this.totalToPay+=+this.ns.prodottiInBasket[i].prezzo;
-      console.log(this.ns.prodottiInBasket[i].prezzo)
-      this.totalToPay+= +(this.ns.prodottiInBasket[i].prezzo*this.ns.prodottiInBasket[i].quantita);
-    }
-    this.totalToView=this.totalToPay;
+    this.totalToView=this.ns.TotalAfterBasket;
   }
 
   onSubmit() {
