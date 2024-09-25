@@ -729,34 +729,56 @@ bottom:22px;
 
 /******************************************MEDIA QUERIES**************************************/
 
+@media screen and (max-width:1200px) {
+  .homeCategories{
+    left:20%;
+  }
+}
+
 @media screen and (max-width:1140px) {
 
   #wrapperSearchAndBasket{
     left: 74%;
+    width: 190px;
   }
+
+}
   
-  @media screen and (max-width:800px) {
+  @media screen and (max-width:768px) {  /* TABLET */
 
     #wrapperSearchAndBasket{
       left: 65%;
     }
+    .homeCategories{
+      display: none;
+     }
+
+     #UpperHead{
+      display: none;
+     }
 
 }
 
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:600px) { /* PHONE */
 
   #wrapperSearchAndBasket{
     left: 55%;
   }
+  
 
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:480px) {  /* SMALLER PHONE */
 
   #wrapperSearchAndBasket{
-    left: 40%;
+    left: 45%;
+    width: 180px;
+
   }
 
-}
+
+    
+
+
 }

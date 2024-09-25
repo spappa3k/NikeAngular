@@ -97,8 +97,6 @@ body{
  }
 
  .homeCategories{
-    display: block;
-    float: left;
     position: absolute;
     z-index: 0;
    left:580px;
@@ -1149,9 +1147,3 @@ background-color: #f0f0f0;
         src: url('assets/fonts/helvetica/HelveticaNeueLight.otf');
     }
   
-
-    @media screen and (max-width:800px) {
-        #UpperHead{
-            background-color: rgb(255, 0, 0);
-        }
-    }
