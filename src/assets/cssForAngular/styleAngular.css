@@ -729,6 +729,12 @@ bottom:22px;
 
 /******************************************MEDIA QUERIES**************************************/
 
+@media screen and (max-width:1400px) {
+  .textOnBanner{
+    top:350px;
+  }
+}
+
 @media screen and (max-width:1200px) {
   .homeCategories{
     left:20%;
@@ -740,6 +746,9 @@ bottom:22px;
   #wrapperSearchAndBasket{
     left: 74%;
     width: 190px;
+  }
+  #mainBanner{
+    display: none;
   }
 
 }
@@ -755,6 +764,10 @@ bottom:22px;
 
      #UpperHead{
       display: none;
+     }
+
+     .menuButtonMobile{
+      display: block;
      }
 
 }
