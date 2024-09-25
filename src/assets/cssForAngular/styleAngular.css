@@ -728,9 +728,15 @@ bottom:22px;
 }
 
 /******************************************MEDIA QUERIES**************************************/
+/*
+@media screen and (max-width:1420px) {
 
-@media screen and (max-width:900px) {
-  #UpperHead{
-      background-color: rgb(255, 0, 0);
+  .wrapperSearchbar{
+    left: 1080px;
   }
+  
+#rightIcons{
+  left: 1270px;
 }
+}
+*/
