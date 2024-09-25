@@ -727,6 +727,23 @@ bottom:22px;
   color: red;
 }
 
+/*  MENU MOBILE */
+.menuButtonMobile{
+  display: none;
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+}
+
+.menuButtonMobile img{
+width: 100%;
+margin-left: 1px;
+}
+
 /******************************************MEDIA QUERIES**************************************/
 
 @media screen and (max-width:1400px) {
@@ -774,6 +791,7 @@ bottom:22px;
      .menuButtonMobile{
       display: block;
      }
+
 
 }
 
