@@ -728,15 +728,35 @@ bottom:22px;
 }
 
 /******************************************MEDIA QUERIES**************************************/
-/*
-@media screen and (max-width:1420px) {
 
-  .wrapperSearchbar{
-    left: 1080px;
+@media screen and (max-width:1140px) {
+
+  #wrapperSearchAndBasket{
+    left: 74%;
   }
   
-#rightIcons{
-  left: 1270px;
+  @media screen and (max-width:800px) {
+
+    #wrapperSearchAndBasket{
+      left: 65%;
+    }
+
+}
+
+
+@media screen and (max-width:600px) {
+
+  #wrapperSearchAndBasket{
+    left: 55%;
+  }
+
+}
+
+@media screen and (max-width:500px) {
+
+  #wrapperSearchAndBasket{
+    left: 40%;
+  }
+
 }
 }
-*/

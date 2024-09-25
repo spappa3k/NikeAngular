@@ -120,7 +120,7 @@ max-width: 600px;
  /*-----------------------------------------SEARCH BAR */
  #wrapperSearchAndBasket{
     position: absolute;
-    left: 85%;
+    left: 82%;
     top: 10px;
     display: flex;
     flex-direction: row;
