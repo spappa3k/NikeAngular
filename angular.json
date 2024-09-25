@@ -41,7 +41,7 @@
               "src/assets/Bootstrap/bootstrap.min.css",
               "src/cssReset.css",
               "src/styles.css",
-              "src/assets/cssForAngular/styleAngular.css"
+              "src/assets/cssForAngular/styleAngular.css"                       
             ],
             "scripts": []
           },

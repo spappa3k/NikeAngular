@@ -727,3 +727,10 @@ bottom:22px;
   color: red;
 }
 
+/******************************************MEDIA QUERIES**************************************/
+
+@media screen and (max-width:900px) {
+  #UpperHead{
+      background-color: rgb(255, 0, 0);
+  }
+}
