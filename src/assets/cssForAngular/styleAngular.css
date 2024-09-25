@@ -448,8 +448,8 @@ h6 {
   width: 12px;
   height: 12px;
   position: absolute;
-  bottom: 23px;
-  left: 20px;
+  bottom: 25px;
+  left: 204px;
   font-size: 0.55em;
   background-color: rgb(255, 33, 33);
   padding-top: 2px;
@@ -747,6 +747,11 @@ bottom:22px;
     left: 74%;
     width: 190px;
   }
+
+  .counterBasket {
+    left:178px;
+  }
+
   #mainBanner{
     display: none;
   }

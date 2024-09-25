@@ -95,8 +95,9 @@
 </div>
 <div id="rightIcons">
 <ul>
-    <li style="position: relative;" [routerLink]="['/basket']"><img src="/assets/Img/Header/basket.png">
-    <div class="counterBasket" *ngIf="ns.numberOfShoes!=0">{{ns.numberOfShoes}}</div>
+    <li  [routerLink]="['/basket']"><img src="/assets/Img/Header/basket.png">
+        <div class="counterBasket" *ngIf="ns.numberOfShoes!=0">{{ns.numberOfShoes}}</div> </li>
+    
 </ul>
 </div>
 </div>

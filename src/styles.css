@@ -118,7 +118,7 @@ max-width: 600px;
  /*-----------------------------------------SEARCH BAR */
  #wrapperSearchAndBasket{
     position: absolute;
-    left: 82%;
+    left: 81%;
     top: 10px;
     display: flex;
     flex-direction: row;
@@ -173,7 +173,13 @@ padding-left: 8px;
 
  /*-----------------------------------------LEFT ICONS */
 
+ #rightIcons{
+    display: flex;
+    flex-direction: row;
+ }
+
 #rightIcons li{
+    margin-left: 5px;
     margin-top: 5px;
     width: 32px;
     height: 32px;
