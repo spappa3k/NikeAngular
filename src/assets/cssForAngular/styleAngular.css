@@ -830,7 +830,6 @@ margin-left: 1px;
 
     #wrapperSearchAndBasket{
       left: 30%;
-      border: #000 2px solid;
       width: 100%;
     }
     .homeCategories{
@@ -856,7 +855,6 @@ margin-left: 1px;
 
     #searchbar, #wrapperSearchbar{
       width: 130px;
-      border: #f30000;
     }
 
     #rightIcons{
