@@ -824,6 +824,10 @@ margin-left: 1px;
     width: 105px;
   }
 
+  footer{
+    height: 480px;
+        }
+
 }
   
   @media screen and (max-width:768px) {  /* TABLET */
@@ -848,10 +852,6 @@ margin-left: 1px;
       left:364px;
     }
 
-    .cardHome {
-      width: 312px;
-      height: 228px;
-    }
 
     #searchbar, #wrapperSearchbar{
       width: 130px;
@@ -860,6 +860,10 @@ margin-left: 1px;
     #rightIcons{
       margin-left: 160px;
     }
+
+    footer{
+      height: 520px;
+          }
 
 }
 
@@ -878,20 +882,29 @@ margin-left: 1px;
     left:281px;
   }
 
+  footer{
+    height: 570px;
+        }
 
 }
 
 @media screen and (max-width:480px) {  /* SMALLER PHONE */
 
+  
   #wrapperSearchAndBasket{
-    width: 190px;
+    left: 32%;
   }
-
+  
   #rightIcons{
-    margin-left: 130px;
+    margin-left: 5px
   }
 
   .counterBasket {
-    left:196px;
+    left:211px;
   }
+
+
+  footer{
+    height: 600px;
+        }
 }

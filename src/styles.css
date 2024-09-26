@@ -7,6 +7,19 @@ body{
     font-family: helveticaLight;
     color:#444f59;
 }
+
+a {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: #007bff; /* Cambia il colore del link */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Aggiunge una transizione fluida */
+    border-bottom: 1px solid transparent; /* Aggiunge una sottile linea trasparente sotto il link */
+  }
+  
+  a:hover {
+    color: #0056b3; /* Cambia leggermente il colore al passaggio del mouse */
+    border-bottom: 1px solid #007bff; /* Aggiunge una sottile linea sotto il link al passaggio del mouse */
+  }
+  
 /* CLICCABILI*/
 .clickable{
     cursor: pointer;

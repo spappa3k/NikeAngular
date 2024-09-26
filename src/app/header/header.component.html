@@ -111,9 +111,9 @@
 <section id="menuMobileTendina" *ngIf="menuMobilePressed">
     <div>
       <ul>
-        <li>Explore</li>
-        <li>Shop All New Arrivals</li>
-        <li>Best Sellers</li>
+        <a [routerLink]="['/list','all']"> <li>Explore</li></a>
+        <a [routerLink]="['/list','newArrivals']"><li>Shop All New Arrivals</li></a>
+        <a [routerLink]="['/list','best']"><li>Best Sellers</li></a>
       </ul>
     </div>
   </section>
