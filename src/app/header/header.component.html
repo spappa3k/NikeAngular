@@ -100,12 +100,26 @@
 </ul>
 </div>
 <div id="menuMobile">
-    <button class="menuButtonMobile"><img src="/assets/Img/Header/hamburger-menu.png">
-    </button></div>
+    <button class="menuButtonMobile" (click)="mobileMenuOnOff()"><img src="/assets/Img/Header/hamburger-menu.png">
+    </button>
+</div>
 </div>
 
 </section>
-<!-- -------------------------------------------------------------  SLIDER HEADER-->
+
+<!--------------------------------  MENU MOBILE -------------------------------------->
+<section id="menuMobileTendina" *ngIf="menuMobilePressed">
+    <div>
+      <ul>
+        <li>Explore</li>
+        <li>Shop All New Arrivals</li>
+        <li>Best Sellers</li>
+      </ul>
+    </div>
+  </section>
+  
+
+<!-- ---------------------------  SLIDER HEADER -------------------------------------->
 
 <section id="Slider">  
     <!--1-->                 

@@ -11,6 +11,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class HeaderComponent implements OnInit{
 isMenuVisible=false;
 currentIndex:number=0;
+menuMobilePressed=false;
 
 /* reactive form per ricerca prodotto dsa nome*/
 searchForm:FormGroup
@@ -97,6 +98,14 @@ onSubmit(){   /* prendiamo il nome del prodotto dal submit ed emettiamolo in out
   if(this.productName){
   this.evento.emit(this.productName);
   this.searchForm.reset();
+  }
+}
+
+mobileMenuOnOff(){
+  if(this.menuMobilePressed==false){
+  this.menuMobilePressed=true;
+  }else{
+    this.menuMobilePressed=false;
   }
 }
 }

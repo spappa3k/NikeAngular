@@ -731,9 +731,8 @@ bottom:22px;
 .menuButtonMobile{
   display: none;
   margin-left: 5px;
-  margin-top: 5px;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: none;
   background-color: transparent;
@@ -744,18 +743,60 @@ width: 100%;
 margin-left: 1px;
 }
 
+#menuMobileTendina {
+  position: absolute;
+  top: 50px;
+  z-index: 1000;
+  width: 100%;
+  border: 2px solid #000;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Aggiunta di ombra per dare profondità */
+  border-radius: 8px; /* Bordo arrotondato */
+  transition: max-height 0.5s ease, opacity 0.5s ease; /* Transizione fluida */
+
+}
+
+
+#menuMobileTendina li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #ddd; /* Separatore sottile tra le voci */
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transizione fluida per hover */
+}
+
+#menuMobileTendina li:last-child {
+  border-bottom: none; /* Rimuove il bordo inferiore all'ultimo elemento */
+}
+
+#menuMobileTendina li:hover {
+  background-color: #f1f1f1; /* Cambio colore di sfondo al passaggio del mouse */
+  color: #007bff; /* Cambio colore del testo al passaggio del mouse */
+}
+
+#menuMobileTendina li:active {
+  background-color: #007bff; /* Colore di sfondo quando l'elemento è attivo/cliccato */
+  color: white;
+}
+
+
 /******************************************MEDIA QUERIES**************************************/
 
 @media screen and (max-width:1400px) {
   .textOnBanner{
     top:350px;
   }
+
+  .homeCategories{
+    left:40%;
+  }
 }
 
 @media screen and (max-width:1200px) {
-  .homeCategories{
-    left:20%;
-  }
+
 }
 
 @media screen and (max-width:1140px) {
@@ -773,12 +814,24 @@ margin-left: 1px;
     display: none;
   }
 
+  .homeCategories{
+    left:26%;
+    font-size: 0.92em;
+  }
+
+
+  #searchbar{
+    width: 105px;
+  }
+
 }
   
   @media screen and (max-width:768px) {  /* TABLET */
 
     #wrapperSearchAndBasket{
-      left: 65%;
+      left: 30%;
+      border: #000 2px solid;
+      width: 100%;
     }
     .homeCategories{
       display: none;
@@ -792,6 +845,23 @@ margin-left: 1px;
       display: block;
      }
 
+     .counterBasket {
+      left:364px;
+    }
+
+    .cardHome {
+      width: 312px;
+      height: 228px;
+    }
+
+    #searchbar, #wrapperSearchbar{
+      width: 130px;
+      border: #f30000;
+    }
+
+    #rightIcons{
+      margin-left: 160px;
+    }
 
 }
 
@@ -799,22 +869,31 @@ margin-left: 1px;
 @media screen and (max-width:600px) { /* PHONE */
 
   #wrapperSearchAndBasket{
-    left: 55%;
+    left: 30%;
   }
   
+  #rightIcons{
+    margin-left: 75px;
+  }
+
+  .counterBasket {
+    left:281px;
+  }
+
 
 }
 
 @media screen and (max-width:480px) {  /* SMALLER PHONE */
 
   #wrapperSearchAndBasket{
-    left: 45%;
-    width: 180px;
-
+    width: 190px;
   }
 
+  #rightIcons{
+    margin-left: 130px;
+  }
 
-    
-
-
+  .counterBasket {
+    left:196px;
+  }
 }

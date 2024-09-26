@@ -177,14 +177,13 @@ padding-left: 8px;
     display: flex;
     flex-direction: row;
  }
-
 #rightIcons li{
     margin-left: 5px;
     margin-top: 5px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-}
+} 
 
 #rightIcons img{
     margin-left: 6px;
