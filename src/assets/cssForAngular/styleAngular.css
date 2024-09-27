@@ -920,6 +920,25 @@ margin-left: 1px;
               display: none;
             }
 
+            #bigShow {
+              left:100px;
+            }
+
+            #sizes{
+              position: relative;
+              left: 125px;
+              margin-top: 40px;
+            }
+
+            #addToButton{
+              margin-bottom: 100px;
+            }
+
+            .frameImg{
+              width: 20px;
+            }
+            
+
 
 }
 
