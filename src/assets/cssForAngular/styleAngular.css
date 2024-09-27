@@ -166,6 +166,11 @@ h6 {
   font-weight: bold;
 }
 
+.Sport .onBanners{
+  top: 210px;
+}
+
+
 
 /* HOME NEW IN THIS WEEK */
 #containerShoesHome .cardHome:hover {
@@ -412,7 +417,6 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: 400px;
   height: 200px;
   background-color: rgb(255, 255, 255);
@@ -792,10 +796,18 @@ margin-left: 1px;
   .homeCategories{
     left:40%;
   }
+
+  .containerList {
+    margin-left: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
 @media screen and (max-width:1200px) {
-
+  .cardList{
+    width: 250px;
+  }
 }
 
 @media screen and (max-width:1140px) {
@@ -826,6 +838,23 @@ margin-left: 1px;
   footer{
     height: 480px;
         }
+
+        .cardHome{
+          width: 300px;
+        }
+
+        .Sport .cardHome{
+          height: 200px;
+                      }
+
+        .banners .onBanners{
+          top:  120px;
+        }
+        .Sport .onBanners{
+          top:  140px;
+        }
+
+
 
 }
   
@@ -864,6 +893,31 @@ margin-left: 1px;
       height: 520px;
           }
 
+          .cardList{
+            width: 150px;
+          }
+
+          #sideOfList {
+            width: 300px;
+            }
+
+            .cardHome{
+              width: 200px;
+            }
+
+            .onBanners button{
+              display: none;
+            }
+            .onBanners{
+              font-size: 0.7em;
+            }
+
+            .Sport .cardHome{
+              height: 150px;
+            }
+
+
+
 }
 
 
@@ -885,6 +939,17 @@ margin-left: 1px;
     height: 570px;
         }
 
+        .cardList{
+          width: 200px;
+        }
+
+        .containerList {
+          margin-left: 40px;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
+       
+
 }
 
 @media screen and (max-width:480px) {  /* SMALLER PHONE */
@@ -905,5 +970,9 @@ margin-left: 1px;
 
   footer{
     height: 600px;
+        }
+
+        .cardList{
+          width: 100px;
         }
 }
