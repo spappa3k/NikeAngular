@@ -748,7 +748,6 @@ margin-left: 1px;
   top: 50px;
   z-index: 1000;
   width: 100%;
-  border: 2px solid #000;
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Aggiunta di ombra per dare profondità */
   border-radius: 8px; /* Bordo arrotondato */

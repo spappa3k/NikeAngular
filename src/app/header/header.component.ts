@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, HostListener } from '@angular/core';
 import { interval } from 'rxjs';
 import { NikeService } from '../nike.service';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -12,6 +12,10 @@ export class HeaderComponent implements OnInit{
 isMenuVisible=false;
 currentIndex:number=0;
 menuMobilePressed=false;
+
+public getScreenWidth: any;
+public getScreenHeight: any;
+
 
 /* reactive form per ricerca prodotto dsa nome*/
 searchForm:FormGroup
@@ -62,8 +66,21 @@ ngOnInit(): void {
  setInterval(() => {
     this.changeSlide();
   }, 3000);
+
+  this.getScreenWidth = window.innerWidth;
+  this.getScreenHeight = window.innerHeight;
 }
 
+
+@HostListener('window:resize', ['$event'])
+onWindowResize() {
+  this.getScreenWidth = window.innerWidth;
+  this.getScreenHeight = window.innerHeight;
+  console.log("width: ",this.getScreenWidth);
+  if(this.getScreenWidth<768){
+    this.menuMobilePressed=false;
+  }
+}
 
 
 

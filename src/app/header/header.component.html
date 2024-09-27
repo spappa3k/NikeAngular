@@ -108,7 +108,7 @@
 </section>
 
 <!--------------------------------  MENU MOBILE -------------------------------------->
-<section id="menuMobileTendina" *ngIf="menuMobilePressed">
+<section id="menuMobileTendina" *ngIf="menuMobilePressed && getScreenWidth<768">
     <div>
       <ul>
         <a [routerLink]="['/list','all']"> <li>Explore</li></a>
@@ -116,6 +116,7 @@
         <a [routerLink]="['/list','best']"><li>Best Sellers</li></a>
       </ul>
     </div>
+    <div class="backgroundCoverAdded" style="position: absolute; height: 1500px; overflow: auto;" ></div>
   </section>
   
 
