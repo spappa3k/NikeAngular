@@ -30,8 +30,6 @@ pushIt(){
   console.log("Prodotto pushato: ", this.prodottoToPush);
 }
 
-carryOnBuying(){
- this.ns.basketAddedOpen=false;
-}
+
 
 }

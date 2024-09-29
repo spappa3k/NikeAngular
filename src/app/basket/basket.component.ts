@@ -63,8 +63,14 @@ binIt(index:number){
 this.prodottiInBasket.splice(index,1);   
 this.ns.prodottiInBasket=this.prodottiInBasket;
 this.totalAtAllProducts=0;
-this.ns.numberOfShoes=this.prodottiInBasket.length;
+this.ns.numberOfShoes = 0;
+
+for (let i = 0; i < this.prodottiInBasket.length; i++) {
+  this.ns.numberOfShoes += this.prodottiInBasket[i].quantita; // Somma la quantità di ogni prodotto
+}
+
 this.storeTotal();
+console.log("NS TOTALI", this.ns.prodottiInBasket);
 }
 
 storeTotal(){

@@ -114,7 +114,6 @@ this.prodottoInfoToPush!.quantita=this.selectedQuantity;
     this.showMaximumShoesMessage=true;
   }
 
-  this.ns.basketAddedOpen=true;
   }
 
   itemAddedToBasketFromEmit(itemAddedFE:boolean){
@@ -131,6 +130,5 @@ this.itemAdded=itemAddedFE;
   }
 
 ngOnDestroy():void{
-  this.ns.basketAddedOpen=false;
 }
 }
