@@ -33,7 +33,7 @@
 </nav> 
 </div>  
 <!-- -------------------------------------------------------------  UNDERMENU-->
-<div class="underMenu" [ngClass]="{'show-menu':isMenuVisible}" (mouseleave)="hide()">
+<div class="underMenu" [ngClass]="{'show-menu':isMenuVisible}" (mouseleave)="hide()" *ngIf="getScreenWidth>768">
     <div class="boxColumns">
     <div class="column">
         <ul>

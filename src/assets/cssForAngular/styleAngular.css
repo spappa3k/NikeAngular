@@ -853,10 +853,58 @@ margin-left: 1px;
         .Sport .onBanners{
           top:  140px;
         }
-
-
-
+        
+.noItems{
+align-items: normal;
+position: relative;
+right: 20px;
 }
+
+#shoesImgList{
+  display: none;
+}
+
+#bigShow {
+  left:100px;
+}
+
+#sizes{
+  position: relative;
+  left: 100px;
+  margin-top: 40px;
+}
+
+#addToButton{
+  margin-bottom: 100px;
+}
+
+.frameImg{
+  width: 20px;
+}
+}
+
+
+@media screen and (max-width:920px) { 
+#bigShow {
+  left:0px;
+}
+
+#sizes{
+  position: relative;
+  left: 0px;
+  margin-top: 40px;
+}
+
+#addToButton{
+  margin-bottom: 100px;
+}
+
+.frameImg{
+  width: 20px;
+}
+}
+
+
   
   @media screen and (max-width:768px) {  /* TABLET */
 
@@ -913,12 +961,9 @@ margin-left: 1px;
             }
 
             .Sport .cardHome{
-              height: 150px;
+              height: 130px;
             }
 
-            #shoesImgList{
-              display: none;
-            }
 
             #bigShow {
               left:100px;
@@ -926,7 +971,7 @@ margin-left: 1px;
 
             #sizes{
               position: relative;
-              left: 125px;
+              left: 100px;
               margin-top: 40px;
             }
 
@@ -937,7 +982,22 @@ margin-left: 1px;
             .frameImg{
               width: 20px;
             }
+
+            .title{
+              font-size: 1.2em;
+            }
+
+            #detailsNewWeek h6{
+              font-size: 1em;
+            }
+
+            #detailsNewWeek p{
+              font-size: 0.88em;
+            }
             
+            .noItems{
+              right: 60px;
+              }
 
 
 }
@@ -970,7 +1030,12 @@ margin-left: 1px;
           grid-template-columns: repeat(1, 1fr);
           gap: 20px;
         }
-       
+
+        .noItems{
+          right: 140px;
+          }
+          
+
 
 }
 
@@ -997,4 +1062,18 @@ margin-left: 1px;
         .cardList{
           width: 100px;
         }
+
+        .noItems{
+          right: 200px;
+          }
+
+          #bigShow {
+            right:300px;
+          }
+
+          #sizes{
+            position: relative;
+            right: 300px;
+            margin-top: 40px;
+          }
 }
