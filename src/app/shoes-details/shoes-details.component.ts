@@ -124,10 +124,12 @@ this.itemAdded=itemAddedFE;
 
   hideMaxMessage(){
     this.showMaximumShoesMessage=false;
+    this.ns.basketAddedOpen=false;
   }
 
   hideAlreadyInBasketMessage(){
     this.showAlreadyInBasketMessage=false;
+    this.ns.basketAddedOpen=false;
   }
 
 ngOnDestroy():void{
