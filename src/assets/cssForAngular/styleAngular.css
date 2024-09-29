@@ -802,12 +802,23 @@ margin-left: 1px;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+
+  #itemAdded{
+    left: 76%;
+    top:96px;
+}
+
 }
 
 @media screen and (max-width:1200px) {
   .cardList{
     width: 250px;
   }
+
+  #itemAdded{
+    left: 75%;
+    top:96px;
+}
 }
 
 @media screen and (max-width:1140px) {
@@ -881,6 +892,11 @@ right: 20px;
 .frameImg{
   width: 20px;
 }
+
+#itemAdded{
+  left: 70%;
+  top:96px;
+}
 }
 
 
@@ -901,6 +917,10 @@ right: 20px;
 
 .frameImg{
   width: 20px;
+}
+
+#itemAdded{
+  left: 65%;
 }
 }
 
@@ -998,7 +1018,10 @@ right: 20px;
             .noItems{
               right: 60px;
               }
-
+              #itemAdded{
+                left: 55%;
+                top:58px;
+              }
 
 }
 
@@ -1033,6 +1056,11 @@ right: 20px;
 
         .noItems{
           right: 140px;
+          }
+
+          #itemAdded{
+            left: 40%;
+            top:58px;
           }
           
 
@@ -1075,5 +1103,10 @@ right: 20px;
             position: relative;
             right: 300px;
             margin-top: 40px;
+          }
+
+          #itemAdded{
+            left: 30%;
+            top:58px;
           }
 }

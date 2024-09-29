@@ -26,7 +26,7 @@ showAlreadyInBasketMessage=false;
 
 
 
-  constructor(private ns: NikeService, private route: ActivatedRoute) { }
+  constructor(public ns: NikeService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
        // GET ID
@@ -51,6 +51,7 @@ showAlreadyInBasketMessage=false;
       
          });      
        this.ns.viewBannerHearderOnOff(false);
+      
        
   /*  
        const found = this.ns.prodottiInBasket?.find(p => p.id === this.prodotto?.id);
@@ -113,6 +114,7 @@ this.prodottoInfoToPush!.quantita=this.selectedQuantity;
     this.showMaximumShoesMessage=true;
   }
 
+  this.ns.basketAddedOpen=true;
   }
 
   itemAddedToBasketFromEmit(itemAddedFE:boolean){
@@ -128,6 +130,7 @@ this.itemAdded=itemAddedFE;
     this.showAlreadyInBasketMessage=false;
   }
 
-ngOnDestroy():void{}
-
+ngOnDestroy():void{
+  this.ns.basketAddedOpen=false;
+}
 }

@@ -53,7 +53,7 @@
           </select>
     </div>
  </div>
- <div id="addToButton">
+ <div id="addToButton" *ngIf="!ns.basketAddedOpen">
     <button type="button" id="realButton" (click)="itemAddetoToBasket()">Add to Basket</button>
  </div>
 </section>
