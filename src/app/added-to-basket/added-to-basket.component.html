@@ -1,6 +1,6 @@
 <section id="itemAdded" *ngIf="prodottoToPush">
     <div>
-        <span class="smallV"></span>Added to the basket <span><button type="button" (click)="itemAddedOn.emit(false)">x</button></span>
+        <span class="smallV"></span>Added to the basket <span><button type="button" (click)="itemAddedOn.emit(false); carryOnBuying()">x</button></span>
         <div class="productBasket">
             <div class="imgProduct">
                 <img [src]="prodottoToPush.immagine">

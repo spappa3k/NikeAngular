@@ -14,6 +14,7 @@ export class NikeService{
   NMAXPairs:number=12;
   endOfPurchase=false;
   TotalAfterBasket=0;
+  basketAddedOpen=false;
 
   constructor(private http: HttpClient) {
   }
