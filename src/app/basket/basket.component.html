@@ -52,15 +52,15 @@
             <div>
                 <label class="shipping-option">
                     <input type="radio" name="shipping" [(ngModel)]="selectedShipping" [value]="0" (change)="updateTotalAfterShipping()">
-                    Free Shipping : <span>5 - 7 working days delivery</span>
+                    Free Shipping <span>5 - 7 working days delivery</span>
                 </label>
                 <label class="shipping-option">
                     <input type="radio" name="shipping" [(ngModel)]="selectedShipping" [value]="3.99" (change)="updateTotalAfterShipping()">
-                   € 3.99 : <span>2 - 3 working days delivery</span>
+                   € 3.99 <span>2 - 3 working days delivery</span>
                 </label>
                 <label class="shipping-option">
                     <input type="radio" name="shipping" [(ngModel)]="selectedShipping" [value]="5.99" (change)="updateTotalAfterShipping()">
-                   € 5.99 : <span>Next working day delivery</span>
+                   € 5.99 <span>Next working day delivery</span>
                 </label>
             </div>
         
@@ -68,7 +68,7 @@
             <p class="totalAFterShipping">Total: {{TotalAFterShipping | currency:'EUR': 'symbol' :'1.2-2'}}</p>
     
             <!-- Bottone di acquisto -->
-            <div class="endButtons" *ngIf="ns.prodottiInBasket.length>0">
+            <div class="endButtons" *ngIf="ns.prodottiInBasket.length>0 &&ns.numberOfShoes<ns.NMAXPairs+1">
                 <button type="button" id="purchase" (click)="sendTotalToNs()" [routerLink]="['/checkout']">Checkout</button>
             </div>
     

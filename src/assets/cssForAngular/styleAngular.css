@@ -808,6 +808,7 @@ margin-left: 1px;
     top:96px;
 }
 
+
 }
 
 @media screen and (max-width:1200px) {
@@ -819,6 +820,11 @@ margin-left: 1px;
     left: 75%;
     top:96px;
 }
+
+.endButtons button{
+  width: 200px;
+  }
+
 }
 
 @media screen and (max-width:1140px) {
@@ -897,10 +903,32 @@ right: 20px;
   left: 70%;
   top:96px;
 }
+
+.priceshoeBasket{
+  position: absolute;
+ left:150px;
+ font-size: 1.2em;
+ }
+
+
+#wrapperBasketPage{
+ margin-left: 0px;
+}
+
+#wrapperBasketPage #column2 {
+  width: 300px;
+  height: 80%;
+  float: left;
+  margin-left: 25px;
+
+}
+
+
 }
 
 
 @media screen and (max-width:920px) { 
+
 #bigShow {
   left:0px;
 }
@@ -1023,6 +1051,10 @@ right: 20px;
                 top:58px;
               }
 
+              .imgShoeBasket{
+                display: none;
+              }
+
 }
 
 
@@ -1063,7 +1095,26 @@ right: 20px;
             top:58px;
           }
           
+          #wrapperBasketPage #column2 {
+            width: 200px;
+          }
+          .wrapperColumn2{
+font-size: 0.9em;
+          }
 
+          .wrapperColumn2 span{
+font-size: 0.8em;
+          }
+
+          .endButtons button{
+            width: 100px;
+            }
+
+            .priceshoeBasket{
+              bottom: 35px;
+             left:120px;
+             font-size: 1em;
+             }
 
 }
 
