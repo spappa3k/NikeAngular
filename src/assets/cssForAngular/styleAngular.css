@@ -43,7 +43,23 @@
   margin-right: 8px;
 }
 
+/*   FIXAGGIO A*/
+.leftLogos a {
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+}
 
+.leftLogos a img {
+  border: none !important;
+  outline: none !important;
+}
+
+.leftLogos a:focus, .leftLogos a:hover, .leftLogos a:active {
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+}
 
 /* Banner Video*/
 
@@ -1120,6 +1136,8 @@ font-size: 0.8em;
             }
 
 }
+
+
 
 @media screen and (max-width:480px) {  /* SMALLER PHONE */
 
