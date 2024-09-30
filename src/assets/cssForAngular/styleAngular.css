@@ -753,6 +753,7 @@ bottom:22px;
 .menuButtonMobile{
   display: none;
   margin-left: 5px;
+  margin-bottom: 4px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -997,6 +998,7 @@ right: 20px;
 
     #searchbar, #wrapperSearchbar{
       width: 130px;
+      margin-bottom: 5px;
     }
 
     #rightIcons{
@@ -1071,6 +1073,9 @@ right: 20px;
               .section-title{
                 display: none;
               }
+
+              #rightIcons li{
+                margin-top: 5px;}
 
 }
 
