@@ -222,16 +222,18 @@ h6 {
 }
 
 #whereToInsertSizes .noSelected {
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(255, 255, 255);
   height: 30px;
   text-align: center;
   padding-top: 7px;
   font-size: 0.9em;
+  border: #dadada 1px solid;
 }
 
 #whereToInsertSizes .noSelected:hover {
   border: 1px solid gray;
   background-color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 .selectedSizeAngular {
