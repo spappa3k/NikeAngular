@@ -9,6 +9,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "resolveJsonModule": true, // Aggiunta per supportare i JSON
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
