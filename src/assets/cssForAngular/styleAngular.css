@@ -844,6 +844,10 @@ margin-left: 1px;
   width: 200px;
   }
 
+  .firmaMessage{
+    left:160px;
+  }
+
 }
 
 @media screen and (max-width:1140px) {
@@ -968,6 +972,10 @@ right: 20px;
 
 #itemAdded{
   left: 65%;
+}
+
+.firmaMessage{
+  left:40px;
 }
 }
 

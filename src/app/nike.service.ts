@@ -37,6 +37,8 @@ viewBannerHearderOnOff(isBannerOn:boolean){
 this.bannerOn=isBannerOn;
 }
 
+//-------------------------------------------------------------------------- CHIAMATE A jsonbin.io
+/*
 allProducts(): Observable<Prodotti[]> {
   return this.http.get<{ record: { prodotti: Prodotti[] } }>(this.jsonBinUrl).pipe(
     map(response => response.record.prodotti) // Mappa la risposta per restituire solo l'array di prodotti
@@ -48,10 +50,6 @@ searchById(idToSearch: number) {
     map(response => response.record.prodotti.find(prodotto => prodotto.id === idToSearch)) // Trova il prodotto per ID
   );
 }
-
-
-// DO THE API CALL DEPENDING ON THE LISTCOMPONENT
-
 
     sneakersOnly() {
       return this.http.get<{ record: { prodotti: Prodotti[] } }>(this.jsonBinUrl).pipe(
@@ -82,34 +80,15 @@ searchById(idToSearch: number) {
         map(res=>res.record.prodotti.filter(prodotto=>prodotto.best_seller===5) )
       );
     }
-
-
-    pushToBasket(prodotto:ProdottoForCheckout){
-      const prodottoCopia = { ...prodotto }; // crea una copia dell oggetto senza modificarne l originale
-    this.prodottiInBasket.push(prodottoCopia);
-    console.log(this.prodottiInBasket);
-    this.numberOfShoes=this.numberOfShoes+prodotto.quantita;
-    console.log("PRODOTTI NEL SERVICE ",this.prodottiInBasket);
-    }
-    /* DA TOGLIERE DOPO */
-    emptyArray(){
-      this.prodottiInBasket=[];
-      this.numberOfShoes=0;
-      console.log("BASKET SVUOTATO")
-    }
-                  }
+*/
+//-------------------------------------------------------------------------- CHIAMATE JSON SERVER LOCALE
     
- /* 
+
  allProducts(){
   return this.http.get<Prodotti[]>("http://localhost:3000/prodotti")
 }
-*/
-/*
-allProducts(): Observable<Prodotti[]> {
-  return this.http.get<Prodotti[]>('assets/data/db.json');
-}*/
 
-  /* searchById(idToSearch:number){
+  searchById(idToSearch:number){
 const id=idToSearch
 return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
   }
@@ -129,5 +108,21 @@ return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
               }
               best(){
                 return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?best_seller=5")
-              } */
+              } 
   
+
+                
+    pushToBasket(prodotto:ProdottoForCheckout){
+      const prodottoCopia = { ...prodotto }; // crea una copia dell oggetto senza modificarne l originale
+    this.prodottiInBasket.push(prodottoCopia);
+    console.log(this.prodottiInBasket);
+    this.numberOfShoes=this.numberOfShoes+prodotto.quantita;
+    console.log("PRODOTTI NEL SERVICE ",this.prodottiInBasket);
+    }
+    /* DA TOGLIERE DOPO */
+    emptyArray(){
+      this.prodottiInBasket=[];
+      this.numberOfShoes=0;
+      console.log("BASKET SVUOTATO")
+    }
+                  }
