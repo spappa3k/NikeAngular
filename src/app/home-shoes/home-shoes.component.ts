@@ -12,7 +12,7 @@ export class HomeShoesComponent {
   bestSelling?:Prodotti[];
 
 constructor(private ns:NikeService, private http:HttpClient){
-  this.http.get<Prodotti[]>("http://localhost:3000/prodotti")
+  this.ns.allProducts()
   .subscribe(data=>{
     this.bestSelling=data.filter(p => p.nuovo_arrivi === true);
     console.log(this.bestSelling);
