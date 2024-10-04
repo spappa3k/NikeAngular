@@ -5,6 +5,8 @@ import { map, Observable } from 'rxjs';
 import prodottiData from '../assets/data/db.json';
 
 
+/* */
+
 @Injectable({
   providedIn: 'root'
 })
@@ -80,7 +82,17 @@ searchById(idToSearch: number) {
       );
     }
 
-    new
+    newArrivals() {
+      return this.http.get<{ record: { prodotti: Prodotti[] } }>("https://api.jsonbin.io/v3/b/66ffbc9fe41b4d34e43cca7e").pipe(
+        map(response => response.record.prodotti.filter(prodotto => prodotto.nuovo_arrivi === true))
+      );
+    }
+
+    best(){
+      return this.http.get<{record:{prodotti:Prodotti[]}}>(this.jsonBinUrl).pipe(
+        map(res=>res.record.prodotti.filter(prodotto=>prodotto.best_seller===5) )
+      );
+    }
 
  /* sneakersOnly(){
     return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?categoria=Sneakers")
