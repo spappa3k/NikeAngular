@@ -45,7 +45,7 @@ allProducts(){
   return this.http.get<Prodotti[]>(this.npoint+"/prodotti")
 }
 searchById(idToSearch:number){
-  const id=idToSearch
+  const id=idToSearch-1;
   return this.http.get<Prodotti>(this.npoint+"/prodotti/"+id)
     }
    
