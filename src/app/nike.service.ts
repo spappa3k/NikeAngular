@@ -5,7 +5,14 @@ import { map, Observable } from 'rxjs';
 import prodottiData from '../assets/data/db.json';
 
 
-/* */
+/* 
+LE CHIAMATE HTTP INIZIALMENTE ERANO STATE CREATE PER ACQUISIRE I DATI DAL JSON SERVER CREATO IN LOCALE
+SUCCESSIVAMENTE PER SCOPO DIMOSTRATIVO DEL PORTFOLIO PERSONALE E POTER HOSTARE SUL MIO SITO WEB pappalardodev.com
+HO DECISO DI APPOGGIARMI A jsonbin.io PER EFFETTUARE LE API CALL IN MANIERA DINAMICA E NON LOCALE
+
+
+reminder personale --- se le 10.000 pending requestest si stanno per esaurire cambiare account o metodo
+*/
 
 @Injectable({
   providedIn: 'root'
@@ -30,29 +37,11 @@ viewBannerHearderOnOff(isBannerOn:boolean){
 this.bannerOn=isBannerOn;
 }
 
-
-
 allProducts(): Observable<Prodotti[]> {
   return this.http.get<{ record: { prodotti: Prodotti[] } }>(this.jsonBinUrl).pipe(
     map(response => response.record.prodotti) // Mappa la risposta per restituire solo l'array di prodotti
   );
 }
-
-/*
-allProducts(){
-  return this.http.get<Prodotti[]>("http://localhost:3000/prodotti")
-}
-*/
-/*
-allProducts(): Observable<Prodotti[]> {
-  return this.http.get<Prodotti[]>('assets/data/db.json');
-}*/
-
-  /* searchById(idToSearch:number){
-const id=idToSearch
-return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
-  }
-*/
 
 searchById(idToSearch: number) {
   return this.http.get<{ record: { prodotti: Prodotti[] } }>(this.jsonBinUrl).pipe(
@@ -94,7 +83,38 @@ searchById(idToSearch: number) {
       );
     }
 
- /* sneakersOnly(){
+
+    pushToBasket(prodotto:ProdottoForCheckout){
+      const prodottoCopia = { ...prodotto };
+    this.prodottiInBasket.push(prodottoCopia);
+    console.log(this.prodottiInBasket);
+    this.numberOfShoes=this.numberOfShoes+prodotto.quantita;
+    console.log("PRODOTTI NEL SERVICE ",this.prodottiInBasket);
+    }
+    /* DA TOGLIERE DOPO */
+    emptyArray(){
+      this.prodottiInBasket=[];
+      this.numberOfShoes=0;
+      console.log("BASKET SVUOTATO")
+    }
+                  }
+    
+ /* 
+ allProducts(){
+  return this.http.get<Prodotti[]>("http://localhost:3000/prodotti")
+}
+*/
+/*
+allProducts(): Observable<Prodotti[]> {
+  return this.http.get<Prodotti[]>('assets/data/db.json');
+}*/
+
+  /* searchById(idToSearch:number){
+const id=idToSearch
+return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
+  }
+ 
+ sneakersOnly(){
     return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?categoria=Sneakers")
       }
       runningOnly(){
@@ -111,17 +131,3 @@ searchById(idToSearch: number) {
                 return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?best_seller=5")
               } */
   
-pushToBasket(prodotto:ProdottoForCheckout){
-  const prodottoCopia = { ...prodotto };
-this.prodottiInBasket.push(prodottoCopia);
-console.log(this.prodottiInBasket);
-this.numberOfShoes=this.numberOfShoes+prodotto.quantita;
-console.log("PRODOTTI NEL SERVICE ",this.prodottiInBasket);
-}
-/* DA TOGLIERE DOPO */
-emptyArray(){
-  this.prodottiInBasket=[];
-  this.numberOfShoes=0;
-  console.log("BASKET SVUOTATO")
-}
-              }
