@@ -8,7 +8,8 @@ import prodottiData from '../assets/data/db.json';
 /* 
 LE CHIAMATE HTTP INIZIALMENTE ERANO STATE CREATE PER ACQUISIRE I DATI DAL JSON SERVER CREATO IN LOCALE
 SUCCESSIVAMENTE PER SCOPO DIMOSTRATIVO DEL PORTFOLIO PERSONALE E POTER HOSTARE SUL MIO SITO WEB pappalardodev.com
-HO DECISO DI APPOGGIARMI A jsonbin.io PER EFFETTUARE LE API CALL IN MANIERA DINAMICA E NON LOCALE
+HO DECISO DI APPOGGIARMI A api.npoint PER EFFETTUARE LE API CALL IN MANIERA DINAMICA E NON LOCALE.
+IN CASO DI NON FUNZIONAMENTE APPOGIARSI A jsonbin.io (CODICE SOTTO limite di 10.000 chiamate)
 
 
 reminder personale --- se le 10.000 pending requestest si stanno per esaurire cambiare account o metodo
@@ -28,6 +29,7 @@ export class NikeService{
   TotalAfterBasket=0;
   basketAddedOpen=false;
   private jsonBinUrl = 'https://api.jsonbin.io/v3/b/66ffbc9fe41b4d34e43cca7e'; 
+  private npoint = 'https://api.npoint.io/7af2c3cb919987d6213f';
 
   constructor(private http: HttpClient) {
   }
@@ -36,6 +38,48 @@ export class NikeService{
 viewBannerHearderOnOff(isBannerOn:boolean){
 this.bannerOn=isBannerOn;
 }
+
+//-------------------------------------------------------------------------- CHIAMATE A api.npoint.io
+
+allProducts(){
+  return this.http.get<Prodotti[]>(this.npoint+"/prodotti")
+}
+searchById(idToSearch:number){
+  const id=idToSearch
+  return this.http.get<Prodotti>(this.npoint+"/prodotti/"+id)
+    }
+   
+   sneakersOnly(){
+      return this.http.get<Prodotti[]>(this.npoint+"/prodotti").pipe(
+        map(response => response.filter(prodotto => prodotto.categoria === "Sneakers"))
+      );
+        }
+
+        runningOnly(){
+          return this.http.get<Prodotti[]>(this.npoint+"/prodotti").pipe(
+            map(response => response.filter(prodotto => prodotto.categoria === "Running"))
+          );
+            }
+
+            trainingOnly() {
+              return this.http.get<Prodotti[]>(this.npoint + "/prodotti").pipe(
+                map(response => response.filter(prodotto => prodotto.categoria === "Training"))
+              );
+            }
+            
+            newArrivals() {
+              return this.http.get<Prodotti[]>(this.npoint + "/prodotti").pipe(
+                map(response => response.filter(prodotto => prodotto.nuovo_arrivi === true))
+              );
+            }
+            
+            best() {
+              return this.http.get<Prodotti[]>(this.npoint + "/prodotti").pipe(
+                map(response => response.filter(prodotto => prodotto.best_seller === 5))
+              );
+            }
+            
+
 
 //-------------------------------------------------------------------------- CHIAMATE A jsonbin.io
 /*
@@ -83,11 +127,12 @@ searchById(idToSearch: number) {
 */
 //-------------------------------------------------------------------------- CHIAMATE JSON SERVER LOCALE
     
-
+/*
  allProducts(){
   return this.http.get<Prodotti[]>("http://localhost:3000/prodotti")
 }
-
+*/
+/*
   searchById(idToSearch:number){
 const id=idToSearch
 return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
@@ -110,7 +155,7 @@ return this.http.get<Prodotti>("http://localhost:3000/prodotti/"+id)
                 return this.http.get<Prodotti[]>("http://localhost:3000/prodotti?best_seller=5")
               } 
   
-
+*/
                 
     pushToBasket(prodotto:ProdottoForCheckout){
       const prodottoCopia = { ...prodotto }; // crea una copia dell oggetto senza modificarne l originale
