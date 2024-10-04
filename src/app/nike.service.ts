@@ -85,7 +85,7 @@ searchById(idToSearch: number) {
 
 
     pushToBasket(prodotto:ProdottoForCheckout){
-      const prodottoCopia = { ...prodotto };
+      const prodottoCopia = { ...prodotto }; // crea una copia dell oggetto senza modificarne l originale
     this.prodottiInBasket.push(prodottoCopia);
     console.log(this.prodottiInBasket);
     this.numberOfShoes=this.numberOfShoes+prodotto.quantita;
