@@ -12,7 +12,7 @@ HO DECISO DI APPOGGIARMI A api.npoint PER EFFETTUARE LE API CALL IN MANIERA DINA
 IN CASO DI NON FUNZIONAMENTE APPOGIARSI A jsonbin.io (CODICE SOTTO limite di 10.000 chiamate)
 
 
-reminder personale --- se le 10.000 pending requestest si stanno per esaurire cambiare account o metodo
+Per hostare il sito e renderlo visibile sul mio portfolio ho usato app.netlify.com
 */
 
 @Injectable({
