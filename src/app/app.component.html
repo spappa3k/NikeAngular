@@ -1,7 +1,8 @@
+
 <ng-container *ngIf="!ns.endOfPurchase">
 <app-header (evento)="takeNameProduct($event)"></app-header>
+<app-copyright></app-copyright>
 </ng-container>
-
 <router-outlet></router-outlet>
 
 <ng-container *ngIf="!ns.endOfPurchase">
