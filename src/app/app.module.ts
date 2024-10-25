@@ -22,6 +22,7 @@ import { AddedToBasketComponent } from './added-to-basket/added-to-basket.compon
 import { CheckoutComponent } from './checkout/checkout.component';
 import { TrimDirective } from './trim.directive';
 import { EndPurchaseComponent } from './end-purchase/end-purchase.component';
+import { CopyrightComponent } from './copyright/copyright.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { EndPurchaseComponent } from './end-purchase/end-purchase.component';
     AddedToBasketComponent,
     CheckoutComponent,
     TrimDirective,
-    EndPurchaseComponent
+    EndPurchaseComponent,
+    CopyrightComponent
   ],
   imports: [
     BrowserModule,
